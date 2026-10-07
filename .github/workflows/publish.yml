@@ -29,6 +29,14 @@ jobs:
       - run: pnpm run typecheck
       - run: pnpm test
       - run: pnpm run build
+      # "npm stage" only exists from npm 11.15.0, and the npm bundled with the
+      # runner's Node 22 is older - without this the step dies with
+      # 'Unknown command: "stage"'.
+      - name: Upgrade npm so the stage command exists
+        shell: bash
+        run: |
+          npm install -g npm@^11.15.0
+          echo "npm: $(npm --version)"
       - name: Verify the tag matches the package version
         shell: bash
         run: |
