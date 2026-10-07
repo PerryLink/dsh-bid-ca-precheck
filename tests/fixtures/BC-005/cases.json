@@ -1,0 +1,28 @@
+{
+  "ruleId": "BC-005",
+  "configure": {
+    "BC-005": {
+      "highRiskKeywords": [
+        "资格"
+      ]
+    }
+  },
+  "pairs": [
+    {
+      "name": "expected-state",
+      "material": "BC-005-compliant.json",
+      "expect": {
+        "ruleId": "BC-005",
+        "count": 0
+      }
+    },
+    {
+      "name": "difference-present",
+      "material": "BC-005-unsafe.json",
+      "expect": {
+        "ruleId": "BC-005",
+        "count": 1
+      }
+    }
+  ]
+}

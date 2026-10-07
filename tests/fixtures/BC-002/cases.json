@@ -1,0 +1,31 @@
+{
+  "ruleId": "BC-002",
+  "configure": {
+    "BC-002": {
+      "values": [
+        "满足",
+        "部分满足",
+        "不满足",
+        "待确认"
+      ]
+    }
+  },
+  "pairs": [
+    {
+      "name": "expected-state",
+      "material": "BC-002-compliant.json",
+      "expect": {
+        "ruleId": "BC-002",
+        "count": 0
+      }
+    },
+    {
+      "name": "difference-present",
+      "material": "BC-002-unsafe.json",
+      "expect": {
+        "ruleId": "BC-002",
+        "count": 1
+      }
+    }
+  ]
+}
