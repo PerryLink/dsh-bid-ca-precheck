@@ -1,4 +1,25 @@
-# dsh-bid-ca-precheck
+# dsh-bid-ca-precheck — Bid document compliance pre-check against each tender requirement
+
+`dsh-bid-ca-precheck` reads one 投标符合性响应台账 — the tender's requirements and the bidder's responses, keyed by the register's own column names in Chinese or English — applies a versioned rule pack, and checks that register's own completeness and internal consistency: that every tender requirement has a recorded response, that the verdict comes from the vocabulary you configure, that clause numbers are unique within the register, that the register declares its project and its bidder, that a clause you marked high-risk carries evidence, and that the requirement column still holds real requirements rather than template placeholders.
+
+## What it answers
+
+| You ask | What it answers |
+|---|---|
+| A tender requirement's `response` column is blank. Is that reported? | Yes. `BC-001` reports the row, because every tender requirement must have a recorded response. It only checks that the `response` column is filled — it does not judge whether the response satisfies the requirement, which is the evaluation committee's call. |
+| I filled the `verdict` column and the report still says the rule could not run. Why? | `BC-002` compares each value with the verdict vocabulary you configure, and that list ships empty, so until you fill `values` the rule reports itself in `skipped` rather than guessing. Once configured it only reports a value that is not in your list; it never judges whether the verdict itself is correct. |
+| The same clause number appears on two rows of the register. | `BC-003` reports the repeated `clause` value: when one number appears twice, nobody can tell which row answers which requirement. Whitespace is ignored, so `3.2` and ` 3.2 ` count as the same number. It only checks uniqueness — it does not decide which of the two rows is right; a hit usually means duplicate registration or a copied-wrong number. |
+| The register does not say which project it covers or who the bidder is. | `BC-004` reports the missing header field and requires both `project` and `bidder`. That need comes from traceability — a verdict that cannot be tied to a project and a bidder cannot be reviewed later — not from a clause that requires a register header. |
+| Which rows must carry evidence? | `BC-005`: every row whose `requirement` text contains one of your high-risk keywords, matched by containment. `highRiskKeywords` ships empty, so until you fill it the rule reports itself in `skipped` rather than passing silently. It only checks that the `evidence` column is filled, not whether the evidence is valid or sufficient. |
+| A few rows still read 【……】 or 待填 in the requirement column. | `BC-006` reports them: `【`, `】`, `{{`, `}}`, `XXX`, `待填`, `TBD` and similar terms left in the `requirement` column usually mean the register was copied from a template and never filled in. The terms list is yours to adjust. The rule flags the placeholder only; it does not decide whether the requirement itself is real. |
+
+## Standards it follows
+
+| Document | Number | Cited by rules |
+|---|---|---|
+| 《中华人民共和国招标投标法》 | 1999年8月30日通过，2017年12月27日修正（全国人大常委会《关于修改〈中华人民共和国招标投标法〉、〈中华人民共和国计量法〉的决定》），本法自2000年1月1日起施行 | BC-001, BC-003, BC-004, BC-006 |
+| 《中华人民共和国招标投标法实施条例》 | 国务院令第613号（2011 年 12 月 20 日公布，2017 年 3 月 1 日修订，自 2012 年 2 月 1 日起施行） | BC-002 |
+| 《中华人民共和国招标投标法》 | 1999年8月30日通过，2017年12月27日修正，自2000年1月1日起施行 | BC-005 |
 
 **Boundary:** this plugin checks a **投标符合性响应台账** for what a register can be held to — that every
 tender requirement has a recorded response, that verdicts come from your vocabulary and clause numbers are

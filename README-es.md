@@ -1,4 +1,25 @@
-# dsh-bid-ca-precheck
+# dsh-bid-ca-precheck — Verificación previa de la conformidad de la oferta frente a cada requisito del pliego
+
+`dsh-bid-ca-precheck` lee un 投标符合性响应台账 —los requisitos del pliego y las respuestas del licitador, tomados con los propios nombres de columna del registro, en chino o en inglés—, aplica un paquete de reglas versionado y comprueba la completitud y la coherencia interna de ese registro: que cada requisito del pliego tenga una respuesta registrada, que el veredicto proceda del vocabulario que usted configure, que los números de cláusula sean únicos dentro del registro, que el registro declare su proyecto y su licitador, que una cláusula que usted marcó como de alto riesgo lleve evidencia y que la columna de requisitos contenga requisitos reales y no marcadores de plantilla.
+
+## Qué responde
+
+| Usted pregunta | Qué responde |
+|---|---|
+| La columna `response` de un requisito del pliego está vacía, ¿se informa de ello? | Sí. `BC-001` señala la fila, porque todo requisito del pliego debe tener una respuesta registrada. Solo comprueba que la columna `response` esté rellena: no juzga si la respuesta satisface el requisito, que es competencia de la comisión de evaluación. |
+| Rellené la columna `verdict` y el informe dice que la regla no pudo ejecutarse. ¿Por qué? | `BC-002` compara cada valor con el vocabulario de veredictos que usted configure, y esa lista viene vacía, así que hasta que rellene `values` la regla se informa a sí misma en `skipped` en lugar de adivinar. Una vez configurada solo informa de un valor que no esté en su lista; nunca juzga si el veredicto es correcto. |
+| El mismo número de cláusula aparece en dos filas del registro. | `BC-003` informa del valor `clause` repetido: si un número aparece dos veces, nadie puede decir qué fila responde a qué requisito. Se ignoran los espacios, así que `3.2` y ` 3.2 ` cuentan como el mismo número. Solo comprueba la unicidad; no decide cuál de las dos filas es la correcta: un hallazgo suele significar registro duplicado o un número copiado mal. |
+| El registro no dice qué proyecto cubre ni quién es el licitador. | `BC-004` informa del campo de cabecera que falta y exige tanto `project` como `bidder`. Esa necesidad viene de la trazabilidad —un veredicto que no puede ligarse a un proyecto y a un licitador no se puede revisar después—, no de una cláusula que exija una cabecera en el registro. |
+| ¿Qué filas deben llevar evidencia? | `BC-005`: toda fila cuyo texto de `requirement` contenga por inclusión una de sus palabras clave de alto riesgo. `highRiskKeywords` viene vacía, así que hasta que la rellene la regla se informa en `skipped` en lugar de pasar en silencio. Solo comprueba que la columna `evidence` esté rellena, no si la evidencia es válida o suficiente. |
+| Algunas filas aún dicen 【……】 o `待填` en la columna de requisitos. | `BC-006` las informa: `【`, `】`, `{{`, `}}`, `XXX`, `待填`, `TBD` y términos parecidos que quedan en la columna `requirement` suelen indicar que el registro se copió de una plantilla y nunca se rellenó. La lista de términos es suya para ajustarla. La regla solo señala el marcador; no decide si el requisito en sí es real. |
+
+## Normas que sigue
+
+| Documento | Número | Reglas que lo citan |
+|---|---|---|
+| 《中华人民共和国招标投标法》 | 1999年8月30日通过，2017年12月27日修正（全国人大常委会《关于修改〈中华人民共和国招标投标法〉、〈中华人民共和国计量法〉的决定》），本法自2000年1月1日起施行 | BC-001, BC-003, BC-004, BC-006 |
+| 《中华人民共和国招标投标法实施条例》 | 国务院令第613号（2011 年 12 月 20 日公布，2017 年 3 月 1 日修订，自 2012 年 2 月 1 日起施行） | BC-002 |
+| 《中华人民共和国招标投标法》 | 1999年8月30日通过，2017年12月27日修正，自2000年1月1日起施行 | BC-005 |
 
 **Boundary:** this plugin checks a **投标符合性响应台账** for what a register can be held to — that every
 tender requirement has a recorded response, that verdicts come from your vocabulary and clause numbers are

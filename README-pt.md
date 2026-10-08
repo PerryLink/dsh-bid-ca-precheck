@@ -1,4 +1,25 @@
-# dsh-bid-ca-precheck
+# dsh-bid-ca-precheck — Verificação prévia da conformidade da proposta face a cada requisito do caderno de encargos
+
+`dsh-bid-ca-precheck` lê um 投标符合性响应台账 —os requisitos do caderno de encargos e as respostas do proponente, obtidos com os próprios nomes de coluna do registo, em chinês ou em inglês—, aplica um pacote de regras versionado e verifica a completude e a coerência interna desse registo: que cada requisito do caderno de encargos tenha uma resposta registada, que o veredicto venha do vocabulário que você configurar, que os números de cláusula sejam únicos no registo, que o registo declare o seu projeto e o seu proponente, que uma cláusula que você marcou como de risco elevado traga evidência e que a coluna de requisitos contenha requisitos reais e não marcadores de modelo.
+
+## O que ele responde
+
+| Você pergunta | O que ele responde |
+|---|---|
+| A coluna `response` de um requisito do caderno de encargos está vazia — isso é reportado? | Sim. `BC-001` assinala a linha, porque todo requisito do caderno de encargos deve ter uma resposta registada. Verifica apenas que a coluna `response` está preenchida: não julga se a resposta satisfaz o requisito, o que é competência da comissão de avaliação. |
+| Preenchi a coluna `verdict` e o relatório diz que a regra não pôde ser executada. Porquê? | `BC-002` compara cada valor com o vocabulário de veredictos que você configurar, e essa lista vem vazia, por isso até preencher `values` a regra reporta-se a si mesma em `skipped` em vez de adivinhar. Depois de configurada, só reporta um valor que não esteja na sua lista; nunca julga se o veredicto está correto. |
+| O mesmo número de cláusula aparece em duas linhas do registo. | `BC-003` reporta o valor `clause` repetido: se um número aparece duas vezes, ninguém consegue dizer que linha responde a que requisito. Os espaços são ignorados, por isso `3.2` e ` 3.2 ` contam como o mesmo número. Verifica apenas a unicidade; não decide qual das duas linhas está certa — um achado costuma significar registo duplicado ou número copiado mal. |
+| O registo não diz que projeto cobre nem quem é o proponente. | `BC-004` reporta o campo de cabeçalho em falta e exige tanto `project` como `bidder`. Essa necessidade vem da rastreabilidade —um veredicto que não se liga a um projeto e a um proponente não pode ser revisto depois—, não de uma cláusula que exija um cabeçalho no registo. |
+| Que linhas têm de trazer evidência? | `BC-005`: todas as linhas cujo texto de `requirement` contenha, por inclusão, uma das suas palavras-chave de risco elevado. `highRiskKeywords` vem vazia, por isso até a preencher a regra reporta-se em `skipped` em vez de passar em silêncio. Verifica apenas que a coluna `evidence` está preenchida, não se a evidência é válida ou suficiente. |
+| Algumas linhas ainda dizem 【……】 ou `待填` na coluna de requisitos. | `BC-006` reporta-as: `【`, `】`, `{{`, `}}`, `XXX`, `待填`, `TBD` e termos semelhantes deixados na coluna `requirement` costumam indicar que o registo foi copiado de um modelo e nunca preenchido. A lista de termos é sua para ajustar. A regra assinala apenas o marcador; não decide se o requisito em si é real. |
+
+## Normas que segue
+
+| Documento | Número | Regras que o citam |
+|---|---|---|
+| 《中华人民共和国招标投标法》 | 1999年8月30日通过，2017年12月27日修正（全国人大常委会《关于修改〈中华人民共和国招标投标法〉、〈中华人民共和国计量法〉的决定》），本法自2000年1月1日起施行 | BC-001, BC-003, BC-004, BC-006 |
+| 《中华人民共和国招标投标法实施条例》 | 国务院令第613号（2011 年 12 月 20 日公布，2017 年 3 月 1 日修订，自 2012 年 2 月 1 日起施行） | BC-002 |
+| 《中华人民共和国招标投标法》 | 1999年8月30日通过，2017年12月27日修正，自2000年1月1日起施行 | BC-005 |
 
 **Boundary:** this plugin checks a **投标符合性响应台账** for what a register can be held to — that every
 tender requirement has a recorded response, that verdicts come from your vocabulary and clause numbers are
