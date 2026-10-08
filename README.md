@@ -63,13 +63,12 @@ rule pack, and returns a report.
 
 | Rule | Check | Severity | Basis kind |
 |---|---|---|---|
-| `BC-001` | every requirement has a recorded response | warn | principle |
+| `BC-001` | every requirement has a recorded response | warn | direct |
 | `BC-002` | the verdict uses your vocabulary (off by default) | info | local |
 | `BC-003` | clause numbers are unique in the register | warn | principle |
 | `BC-004` | the register names its project and its bidder | warn | principle |
-| `BC-005` | a high-risk clause carries evidence (off by default) | warn | principle |
+| `BC-005` | a high-risk clause carries evidence (off by default) | warn | direct |
 | `BC-006` | the requirement column holds no unreplaced placeholder | warn | principle |
-
 ## Install
 
 ```sh
