@@ -1,5 +1,14 @@
 # Changelog
 
+## 0.2.1
+
+- Citation pass: every `excerpt` was checked against this repository's own
+  `rules/evidence/` record, and the record was completed for the clauses the
+  rules quote.
+- BC-006 cited 第二十四条 but labelled it 第二十三条; the clause field now names the article the excerpt quotes.
+- Adds `rules/citations-baseline.json`, which the `check:citations` gate reads:
+  it lists any excerpt not yet traceable to the evidence, and that list can
+  only shrink.
 ## 0.2.0
 
 - Release infrastructure brought to the family standard: `verify:self-contained`,
