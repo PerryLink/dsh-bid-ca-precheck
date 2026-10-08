@@ -2,4 +2,9 @@
 
 ## 0.1.0
 
-- Initial release — 投标文件符合性预检（按招标文件逐条核对响应情况，仅提示差异，不作出定性结论）
+- Release infrastructure brought to the family standard: `verify:self-contained`,
+  `check:lockfile` and `check:readmes` gates, a `prepublishOnly` that re-runs the whole chain,
+  SECURITY.md, dependabot, and the OpenSSF Scorecard workflow.
+- The README install command now names the published package instead of a local tarball.
+- Rule pack: 6 rules across BC-001..BC-006.
+- Licensed Apache-2.0.

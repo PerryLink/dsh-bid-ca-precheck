@@ -52,8 +52,7 @@ rule pack, and returns a report.
 ## Install
 
 ```sh
-pnpm pack
-dsh plugin --profile <name> add ./dsh-bid-ca-precheck-0.1.0.tgz
+dsh plugin --profile <name> add dsh-bid-ca-precheck
 dsh --profile <name> --dump-config | grep 'dsh-bid-ca-precheck'
 ```
 

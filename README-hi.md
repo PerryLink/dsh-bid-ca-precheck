@@ -41,8 +41,7 @@ committee, and this plugin never makes them** — a test asserts that no rule he
 ## Install
 
 ```sh
-pnpm pack
-dsh plugin --profile <name> add ./*.tgz
+dsh plugin --profile <name> add dsh-bid-ca-precheck
 dsh --profile <name> --dump-config | grep 'dsh-bid-ca-precheck'
 ```
 
