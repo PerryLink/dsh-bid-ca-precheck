@@ -106,7 +106,7 @@ describe('rule pack', () => {
     }
     const source = await readFile(rulesPath, 'utf8')
     // The pack must still record that quotations are only added once verified.
-    expect(source).toContain('取得条文后必须做两件事')
+    expect(source).toContain('已取得逐字条文的规则')
   })
 
   it('states plainly that it never adjudicates validity, rejection or material deviation', async () => {
