@@ -4,6 +4,13 @@
 
 `dsh-bid-ca-precheck` 读取一份投标符合性响应台账——招标文件的要求与投标人的响应，按台账自己的中英文列名取值——套用一版规则库，核对这份台账自身的齐备与自洽：每条招标要求是否记录了响应、响应结论是否取自你配置的取值清单、条款号在台账内是否唯一、台账是否声明了项目与投标人、你标记为高风险的条款是否填写了证明材料、招标要求栏里是不是真实要求而不是模板占位符。
 
+## Install
+
+```sh
+dsh plugin --profile <name> add dsh-bid-ca-precheck
+dsh --profile <name> --dump-config | grep 'dsh-bid-ca-precheck'
+```
+
 ## 实际输出长什么样
 
 ![Terminal demo of dsh-bid-ca-precheck: real output over its BC-001 fixture](https://raw.githubusercontent.com/PerryLink/dsh-bid-ca-precheck/main/docs/assets/dsh-bid-ca-precheck-hero.png)
@@ -68,13 +75,6 @@ committee, and this plugin never makes them** — a test asserts that no rule he
 ## What it does
 
 规则表、字段说明与行为细节见 [README.md](README.md#what-it-does)（英文主版本）。本插件只列出材料与所引条款之间的字面差异，并对无法执行的检查在 `skipped` 中逐项说明。
-
-## Install
-
-```sh
-dsh plugin --profile <name> add dsh-bid-ca-precheck
-dsh --profile <name> --dump-config | grep 'dsh-bid-ca-precheck'
-```
 
 ## Configuration
 

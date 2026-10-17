@@ -4,6 +4,13 @@
 
 `dsh-bid-ca-precheck` reads one 投标符合性响应台账 — the tender's requirements and the bidder's responses, keyed by the register's own column names in Chinese or English — applies a versioned rule pack, and checks that register's own completeness and internal consistency: that every tender requirement has a recorded response, that the verdict comes from the vocabulary you configure, that clause numbers are unique within the register, that the register declares its project and its bidder, that a clause you marked high-risk carries evidence, and that the requirement column still holds real requirements rather than template placeholders.
 
+## Install
+
+```sh
+dsh plugin --profile <name> add dsh-bid-ca-precheck
+dsh --profile <name> --dump-config | grep 'dsh-bid-ca-precheck'
+```
+
 ## What it looks like
 
 ![Terminal demo of dsh-bid-ca-precheck: real output over its BC-001 fixture](https://raw.githubusercontent.com/PerryLink/dsh-bid-ca-precheck/main/docs/assets/dsh-bid-ca-precheck-hero.png)
@@ -79,13 +86,6 @@ rule pack, and returns a report.
 | `BC-004` | the register names its project and its bidder | warn | principle |
 | `BC-005` | a high-risk clause carries evidence (off by default) | warn | direct |
 | `BC-006` | the requirement column holds no unreplaced placeholder | warn | principle |
-## Install
-
-```sh
-dsh plugin --profile <name> add dsh-bid-ca-precheck
-dsh --profile <name> --dump-config | grep 'dsh-bid-ca-precheck'
-```
-
 ## Configuration
 
 | Key | Type | Default | Description |

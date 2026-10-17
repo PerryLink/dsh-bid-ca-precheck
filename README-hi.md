@@ -4,6 +4,13 @@
 
 `dsh-bid-ca-precheck` एक 投标符合性响应台账 पढ़ता है — निविदा की आवश्यकताएँ और बोली लगाने वाले के उत्तर, रजिस्टर के अपने चीनी या अंग्रेज़ी कॉलम-नामों से लिए गए — और एक संस्करण-बद्ध नियम-पैक लागू करके उसी रजिस्टर की पूर्णता और आंतरिक सहमति जाँचता है: हर निविदा आवश्यकता के सामने उत्तर दर्ज है या नहीं, निर्णय (verdict) आपके द्वारा कॉन्फ़िगर की गई सूची से लिया गया है या नहीं, क्लॉज़ क्रमांक रजिस्टर में अनन्य हैं या नहीं, रजिस्टर अपना प्रोजेक्ट और बोली लगाने वाला बताता है या नहीं, आपके चिह्नित किए उच्च-जोखिम क्लॉज़ के साथ प्रमाण दर्ज है या नहीं, और आवश्यकता-कॉलम में टेम्पलेट प्लेसहोल्डर के बजाय वास्तविक आवश्यकताएँ हैं या नहीं।
 
+## Install
+
+```sh
+dsh plugin --profile <name> add dsh-bid-ca-precheck
+dsh --profile <name> --dump-config | grep 'dsh-bid-ca-precheck'
+```
+
 ## आउटपुट कैसा दिखता है
 
 ![Terminal demo of dsh-bid-ca-precheck: real output over its BC-001 fixture](https://raw.githubusercontent.com/PerryLink/dsh-bid-ca-precheck/main/docs/assets/dsh-bid-ca-precheck-hero.png)
@@ -68,13 +75,6 @@ committee, and this plugin never makes them** — a test asserts that no rule he
 ## What it does
 
 नियम-सूची, फ़ील्ड और विस्तृत व्यवहार [README.md](README.md#what-it-does) (अंग्रेज़ी मुख्य संस्करण) में हैं। यह प्लगइन केवल उद्धृत धाराओं के सामने शाब्दिक अंतर सूचीबद्ध करता है और हर न चल पाई जाँच को `skipped` में बताता है।
-
-## Install
-
-```sh
-dsh plugin --profile <name> add dsh-bid-ca-precheck
-dsh --profile <name> --dump-config | grep 'dsh-bid-ca-precheck'
-```
 
 ## Configuration
 

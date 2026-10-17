@@ -4,6 +4,13 @@
 
 `dsh-bid-ca-precheck` lê um 投标符合性响应台账 —os requisitos do caderno de encargos e as respostas do proponente, obtidos com os próprios nomes de coluna do registo, em chinês ou em inglês—, aplica um pacote de regras versionado e verifica a completude e a coerência interna desse registo: que cada requisito do caderno de encargos tenha uma resposta registada, que o veredicto venha do vocabulário que você configurar, que os números de cláusula sejam únicos no registo, que o registo declare o seu projeto e o seu proponente, que uma cláusula que você marcou como de risco elevado traga evidência e que a coluna de requisitos contenha requisitos reais e não marcadores de modelo.
 
+## Install
+
+```sh
+dsh plugin --profile <name> add dsh-bid-ca-precheck
+dsh --profile <name> --dump-config | grep 'dsh-bid-ca-precheck'
+```
+
 ## Como é a saída
 
 ![Terminal demo of dsh-bid-ca-precheck: real output over its BC-001 fixture](https://raw.githubusercontent.com/PerryLink/dsh-bid-ca-precheck/main/docs/assets/dsh-bid-ca-precheck-hero.png)
@@ -68,13 +75,6 @@ committee, and this plugin never makes them** — a test asserts that no rule he
 ## What it does
 
 A tabela de regras, os campos e o comportamento detalhado estão em [README.md](README.md#what-it-does) (versão principal em inglês). O plugin apenas lista divergências literais frente às cláusulas citadas e indica em `skipped` cada verificação que não pôde ser executada.
-
-## Install
-
-```sh
-dsh plugin --profile <name> add dsh-bid-ca-precheck
-dsh --profile <name> --dump-config | grep 'dsh-bid-ca-precheck'
-```
 
 ## Configuration
 
