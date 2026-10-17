@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.2.10] - 2026-10-18
+
+### Fixed
+
+- **The rule-pack header no longer claims every excerpt is a non-quotation.** The gate checks 6 segments; the header now says verbatim excerpts are quoted and unquoted clauses are marked “本次未取得”, with `kind` reflecting the basis strength.
+
 ## [0.2.9] - 2026-10-18
 
 ### Changed

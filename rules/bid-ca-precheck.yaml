@@ -9,13 +9,13 @@
 #   - kind: derived-from-principle       条款未直接规定，仅能由原则性条款推论（severity 最多 warn）
 #   - kind: institutional-configuration 阈值出自本机构配置（severity 最多 info）
 #
-# ⚠️⚠️ 本规则库的诚实说明：**excerpt 一律不是引文。**
+# ⚠️ 本规则库的诚实说明：**excerpt 逐条如实——已取得逐字原文的按原文引，未取得的写“本次未取得”，不伪造。**
 #   本插件核对的是"投标文件对招标文件逐条要求的响应台账"是否齐备、自洽。
-#   **核查未取得**《招标投标法》《招标投标法实施条例》以及各类评标办法的逐字条文，
-#   因此本规则库**不伪造任何"原文"**：每条规则的 excerpt 都写明"该条文本次未取得"，
-#   依据状态放在 note 里如实说明；kind 一律降为 derived-from-principle（封顶 warn）
+#   **已取得的条文按逐字引文标注；未取得的**《招标投标法》《招标投标法实施条例》以及各类评标办法条文如实写“本次未取得”，
+#   因此本规则库**不伪造任何"原文"**；未取得条文的 excerpt 写明“该条文本次未取得”，
+#   依据状态放在 note 里如实说明；kind 按依据强度标注为 direct / derived-from-principle（封顶 warn）
 #   或 institutional-configuration（封顶 info）。
-#   **取得条文后必须做两件事**：把 excerpt 换成真正的逐字摘录，把 kind 升为 direct。
+#   已取得逐字条文的规则，excerpt 用原文并把 kind 标为 direct。
 #   在那之前，本插件的命中信息只应被读作"这一条没写响应 / 这一栏空着 / 结论不在册"，
 #   而**不是**"投标无效"或"违反了某条法规"。
 #
