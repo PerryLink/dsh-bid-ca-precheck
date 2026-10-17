@@ -1,0 +1,14 @@
+[
+  {
+    "path": "docs/assets/dsh-bid-ca-precheck-hero.png",
+    "kind": "hero",
+    "alt": "dsh-bid-ca-precheck terminal output",
+    "caption": "Real dsh-bid-ca-precheck checker output; 31 tests passed."
+  },
+  {
+    "path": "docs/assets/dsh-bid-ca-precheck-demo.gif",
+    "kind": "demo",
+    "alt": "Animated dsh-bid-ca-precheck terminal session",
+    "caption": "The same run, assembled line by line."
+  }
+]
