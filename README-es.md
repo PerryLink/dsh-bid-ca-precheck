@@ -1,5 +1,7 @@
 # dsh-bid-ca-precheck — Verificación previa de la conformidad de la oferta frente a cada requisito del pliego
 
+[English](README.md) · [简体中文](README-zh.md) · [Español](README-es.md) · [Português](README-pt.md) · [हिन्दी](README-hi.md)
+
 [![DSH Market](https://raw.githubusercontent.com/2BingLing/dsh-market/master/assets/readme/badge-listed-en.svg)](https://dsh.market/)
 
 `dsh-bid-ca-precheck` lee un 投标符合性响应台账 —los requisitos del pliego y las respuestas del licitador, tomados con los propios nombres de columna del registro, en chino o en inglés—, aplica un paquete de reglas versionado y comprueba la completitud y la coherencia interna de ese registro: que cada requisito del pliego tenga una respuesta registrada, que el veredicto proceda del vocabulario que usted configure, que los números de cláusula sean únicos dentro del registro, que el registro declare su proyecto y su licitador, que una cláusula que usted marcó como de alto riesgo lleve evidencia y que la columna de requisitos contenga requisitos reales y no marcadores de plantilla.
