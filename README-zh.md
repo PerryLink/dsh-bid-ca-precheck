@@ -42,23 +42,19 @@ dsh --profile <name> --dump-config | grep 'dsh-bid-ca-precheck'
 
 **边界（中文译文，以英文原文为准）：** 本插件核对一份 **投标符合性响应台账** 在台账层面可以要求到的内容——每条招标要求是否记录了响应，响应结论是否取自你的取值口径，条款号是否唯一，高风险条款是否附有证明材料，以及招标要求栏里是否仍是真实要求而不是模板占位符。它**不**判定投标是否有效、是否应当被否决，也不判定某项响应是否构成重大偏离。**这些判断属于评标委员会，本插件从不作出这些判断**——有测试断言本插件中没有任何规则会是 `error`。
 
-> ### ⚠️ Read this before trusting a citation in the report
+> ### ⚠️ 在采信报告中的引文之前，请先读这一段（以英文原文为准）
 >
-> **Every `excerpt` in this plugin's rule pack says, in so many words, that the clause text was not
-> obtained.** The regime lives in 《招标投标法》, 《招标投标法实施条例》 and each project's 评标办法. The
-> verification pass for this plugin could not retrieve verbatim clause text from them, so rather than
-> paraphrase a quotation the pack states the gap in the `excerpt` field itself and puts the honest
-> reasoning in `note`. Every rule is therefore `warn` or `info`, and a test asserts that no rule claims a
-> quotation it does not have. **When the texts are in hand, two things must be done: replace each
-> `excerpt` with the real clause, and raise `kind` to `direct`.**
+> **本插件规则包中的每一条 `excerpt` 都明确写着：本次未取得条款原文。** 该制度见诸《招标投标法》、
+> 《招标投标法实施条例》以及各项目的评标办法。本插件的核验环节未能从中取得逐字条款原文，
+> 因此规则包没有转述引文，而是在 `excerpt` 字段本身写明这一缺口，并将诚实的推理写入 `note`。
+> 因此每条规则都是 `warn` 或 `info`，并有测试断言没有任何规则声称拥有它并不拥有的引文。
+> **取得文本后，必须做两件事：将每条 `excerpt` 替换为真实条款，并将 `kind` 提升为 `direct`。**
 >
-> The worst failure mode of a register tool is a register copied from a template and mistaken for a
-> checked one, so `BC-006` looks for exactly that: `【】`, `{{}}`, `XXX`, `待填`, `TBD` left in the
-> requirement column.
+> 台账工具最糟糕的失效模式，是一份从模板复制而来、却被误认为已经核对过的台账，因此 `BC-006`
+> 专门查找的正是这种情况：要求栏中残留的 `【】`、`{{}}`、`XXX`、`待填`、`TBD`。
 >
-> Two lists are yours, not a standard's: the verdict vocabulary (`BC-002`) and the high-risk keywords
-> (`BC-005`). Both ship **empty**, and a rule whose list is unset reports itself in `skipped` rather than
-> passing silently.
+> 有两份清单是你的，而不是某项标准规定的：结论词汇表（`BC-002`）与高风险关键词（`BC-005`）。
+> 两者出厂均为**空**，清单未配置的规则会在 `skipped` 中自行报告，而不是静默通过。
 
 ## Compatibility
 
