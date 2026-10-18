@@ -40,12 +40,7 @@ dsh --profile <name> --dump-config | grep 'dsh-bid-ca-precheck'
 | 《中华人民共和国招标投标法实施条例》 | 国务院令第613号（2011 年 12 月 20 日公布，2017 年 3 月 1 日修订，自 2012 年 2 月 1 日起施行） | BC-002 |
 | 《中华人民共和国招标投标法》 | 1999年8月30日通过，2017年12月27日修正，自2000年1月1日起施行 | BC-005 |
 
-**Boundary:** this plugin checks a **投标符合性响应台账** for what a register can be held to — that every
-tender requirement has a recorded response, that verdicts come from your vocabulary and clause numbers are
-unique, that a high-risk clause carries evidence, and that the requirement column still holds real
-requirements rather than template placeholders. It does **not** decide whether a bid is valid, whether it
-should be rejected, or whether a response is a material deviation. **Those calls belong to the evaluation
-committee, and this plugin never makes them** — a test asserts that no rule here can be `error`.
+**边界（中文译文，以英文原文为准）：** 本插件核对一份 **投标符合性响应台账** 在台账层面可以要求到的内容——每条招标要求是否记录了响应，响应结论是否取自你的取值口径，条款号是否唯一，高风险条款是否附有证明材料，以及招标要求栏里是否仍是真实要求而不是模板占位符。它**不**判定投标是否有效、是否应当被否决，也不判定某项响应是否构成重大偏离。**这些判断属于评标委员会，本插件从不作出这些判断**——有测试断言本插件中没有任何规则会是 `error`。
 
 > ### ⚠️ Read this before trusting a citation in the report
 >
