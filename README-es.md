@@ -15,13 +15,18 @@ dsh --profile <name> --dump-config | grep 'dsh-bid-ca-precheck'
 
 ## Cómo se ve la salida
 
-![Terminal demo of dsh-bid-ca-precheck: real output over its BC-001 fixture](https://raw.githubusercontent.com/PerryLink/dsh-bid-ca-precheck/main/docs/assets/dsh-bid-ca-precheck-hero.png)
+![Diagrama de flujo de dsh-bid-ca-precheck: llamada → plugin → resultado.](docs/assets/dsh-bid-ca-precheck-flow.svg)
 
-![Animated terminal demo of dsh-bid-ca-precheck](https://raw.githubusercontent.com/PerryLink/dsh-bid-ca-precheck/main/docs/assets/dsh-bid-ca-precheck-demo.gif)
+*Resumen del flujo: llamada → plugin → resultado. Los ejemplos siguientes usan la superficie de comandos real.*
+
 
 Salida real de este plugin sobre su propio fixture de prueba `BC-001` — no es un montaje. El paquete de reglas no inventa citas, así que cada hallazgo nombra la cláusula aplicada y advierte que su texto no se obtuvo.
 
 ## Qué responde
+
+### Ejemplos
+
+La tabla siguiente es el conjunto de ejemplos: la primera fila es el caso detallado y las demás son casos breves.
 
 | Usted pregunta | Qué responde |
 |---|---|
