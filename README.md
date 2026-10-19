@@ -3,6 +3,7 @@
 [English](README.md) · [简体中文](README-zh.md) · [Español](README-es.md) · [Português](README-pt.md) · [हिन्दी](README-hi.md)
 
 [![DSH Market](https://raw.githubusercontent.com/2BingLing/dsh-market/master/assets/readme/badge-listed-en.svg)](https://dsh.market/)
+[![dshfind](https://dshfind.com/api/badge/PerryLink/dsh-bid-ca-precheck?metric=downloads)](https://dshfind.com/en/plugins/PerryLink/dsh-bid-ca-precheck?ref=badge)
 
 `dsh-bid-ca-precheck` reads one 投标符合性响应台账 — the tender's requirements and the bidder's responses, keyed by the register's own column names in Chinese or English — applies a versioned rule pack, and checks that register's own completeness and internal consistency: that every tender requirement has a recorded response, that the verdict comes from the vocabulary you configure, that clause numbers are unique within the register, that the register declares its project and its bidder, that a clause you marked high-risk carries evidence, and that the requirement column still holds real requirements rather than template placeholders.
 
