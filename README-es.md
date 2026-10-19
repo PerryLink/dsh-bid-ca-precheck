@@ -29,6 +29,35 @@ Salida real de este plugin sobre su propio fixture de prueba `BC-001` — no es 
 
 La tabla siguiente es el conjunto de ejemplos: la primera fila es el caso detallado y las demás son casos breves.
 
+#### Salida detallada
+
+**Herramienta** `bid_ca_precheck`
+
+**Entrada**
+
+~~~json
+{"rows":[{"条款号":"2.1","招标要求":"投标人应具有建筑工程施工总承包二级及以上资质","投标响应":"","响应结论":"满足", ...}]}
+~~~
+ 
+**Salida**
+
+~~~json
+{
+  "id": "dsh-bid-ca-precheck.BC-001.de09b5a6",
+  "ruleId": "BC-001",
+  "severity": "warn",
+  "locator": {
+    "row": 1,
+    "field": "response"
+  },
+  "found": "第 1 行「response」为空",
+  "expected": "「response」应填写",
+  "fix": "补填响应内容；本条只核对是否填写，不判断该响应对招标要求是否构成实质性满足"
+}
+~~~
+
+*Observado en `dsh-bid-ca-precheck/tests/fixtures/BC-001/BC-001-unsafe.json; dsh-bid-ca-precheck/tests/fixtures/BC-001/cases.json; dsh-bid-ca-precheck/rules/bid-ca-precheck.yaml; dsh-bid-ca-precheck/tests/index.test.ts`*
+
 | Usted pregunta | Qué responde |
 |---|---|
 | La columna `response` de un requisito del pliego está vacía, ¿se informa de ello? | Sí. `BC-001` señala la fila, porque todo requisito del pliego debe tener una respuesta registrada. Solo comprueba que la columna `response` esté rellena: no juzga si la respuesta satisface el requisito, que es competencia de la comisión de evaluación. |

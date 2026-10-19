@@ -29,6 +29,35 @@ dsh --profile <name> --dump-config | grep 'dsh-bid-ca-precheck'
 
 नीचे दी गई तालिका उदाहरण-समुच्चय है: पहली पंक्ति विस्तृत केस है, बाकी संक्षिप्त केस हैं।
 
+#### विस्तृत आउटपुट
+
+**उपकरण** `bid_ca_precheck`
+
+**इनपुट**
+
+~~~json
+{"rows":[{"条款号":"2.1","招标要求":"投标人应具有建筑工程施工总承包二级及以上资质","投标响应":"","响应结论":"满足", ...}]}
+~~~
+ 
+**आउटपुट**
+
+~~~json
+{
+  "id": "dsh-bid-ca-precheck.BC-001.de09b5a6",
+  "ruleId": "BC-001",
+  "severity": "warn",
+  "locator": {
+    "row": 1,
+    "field": "response"
+  },
+  "found": "第 1 行「response」为空",
+  "expected": "「response」应填写",
+  "fix": "补填响应内容；本条只核对是否填写，不判断该响应对招标要求是否构成实质性满足"
+}
+~~~
+
+*स्रोत `dsh-bid-ca-precheck/tests/fixtures/BC-001/BC-001-unsafe.json; dsh-bid-ca-precheck/tests/fixtures/BC-001/cases.json; dsh-bid-ca-precheck/rules/bid-ca-precheck.yaml; dsh-bid-ca-precheck/tests/index.test.ts`*
+
 | आपका सवाल | इसका जवाब |
 |---|---|
 | किसी निविदा आवश्यकता का `response` कॉलम खाली है — क्या यह दर्ज होता है? | हाँ। `BC-001` उस पंक्ति को दर्ज करता है, क्योंकि हर निविदा आवश्यकता के सामने उत्तर दर्ज होना चाहिए। यह केवल देखता है कि `response` कॉलम भरा है या नहीं — यह नहीं आँकता कि उत्तर उस आवश्यकता को पूरा करता है या नहीं, जो मूल्यांकन समिति का निर्णय है। |
