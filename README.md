@@ -92,21 +92,9 @@ committee, and this plugin never makes them** — a test asserts that no rule he
 
 > ### ⚠️ Read this before trusting a citation in the report
 >
-> **Every `excerpt` in this plugin's rule pack says, in so many words, that the clause text was not
-> obtained.** The regime lives in 《招标投标法》, 《招标投标法实施条例》 and each project's 评标办法. The
-> verification pass for this plugin could not retrieve verbatim clause text from them, so rather than
-> paraphrase a quotation the pack states the gap in the `excerpt` field itself and puts the honest
-> reasoning in `note`. Every rule is therefore `warn` or `info`, and a test asserts that no rule claims a
-> quotation it does not have. **When the texts are in hand, two things must be done: replace each
-> `excerpt` with the real clause, and raise `kind` to `direct`.**
+> **`excerpt` status is per rule, not uniform.** Some rules quote the clause verbatim (`kind: direct`), some are derived from the principle of the cited articles (`kind: derived-from-principle`, capped at `warn`), and some use thresholds your institution configures (`kind: institutional-configuration`, capped at `info`). The pack never paraphrases a quotation: when the text was not obtained, the `excerpt` field says so and the reasoning lives in `note`; a test asserts that no rule claims a quotation it does not have. **For any rule still marked as not obtained, replace the `excerpt` with the real clause and raise `kind` to `direct` once the text is in hand.**
 >
-> The worst failure mode of a register tool is a register copied from a template and mistaken for a
-> checked one, so `BC-006` looks for exactly that: `【】`, `{{}}`, `XXX`, `待填`, `TBD` left in the
-> requirement column.
->
-> Two lists are yours, not a standard's: the verdict vocabulary (`BC-002`) and the high-risk keywords
-> (`BC-005`). Both ship **empty**, and a rule whose list is unset reports itself in `skipped` rather than
-> passing silently.
+> The conclusion is the reviewer's: this plugin lists differences it can point to in the material and does not decide facts or compliance.
 
 ## Compatibility
 
