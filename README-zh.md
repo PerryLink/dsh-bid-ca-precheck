@@ -1,6 +1,6 @@
 # dsh-bid-ca-precheck — 投标文件符合性预检
 
-## 快速试跑（1 分钟）
+### 快速试跑（1 分钟）
 
 ```bash
 node samples/quickstart/run.mjs --check
