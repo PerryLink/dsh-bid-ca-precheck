@@ -1,8 +1,8 @@
 <div align="center">
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="docs/assets/dsh-bid-ca-precheck-flow-dark.svg">
-  <img src="docs/assets/dsh-bid-ca-precheck-flow-light.svg" width="100%" alt="dsh-bid-ca-precheck डेटा प्रवाह: बोली अनुरूपता प्रतिक्रिया रजिस्टर (JSON / YAML) → bid_ca_precheck टूल → rules/bid-ca-precheck.yaml नियम-पैक (BC-001..BC-006) → issues[] + skipped[] रिपोर्ट → समीक्षक का निर्णय; कॉन्फ़िगरेशन rulesFile / disabledRules / onlyRules / timeoutMs से जाता है">
+  <source media="(prefers-color-scheme: dark)" srcset="docs/assets/dsh-bid-ca-precheck-hero-en-dark.webp">
+  <img src="docs/assets/dsh-bid-ca-precheck-hero-en-light.webp" width="100%" alt="dsh-bid-ca-precheck चित्र: एक अनुरूपता रजिस्टर जिसकी पंक्ति 1 में प्रतिक्रिया खाली है और पंक्ति 2 में क्लॉज़ 2.1 दोहराया गया तथा {{grade}} प्लेसहोल्डर शेष है; छह नियमों की सूची में BC-002 और BC-005 सूची कॉन्फ़िगर न होने से छोड़े गए हैं; नीचे BC-001 कार्ड (पंक्ति 1 · response: पाया, अपेक्षित, सुधार) और रिपोर्ट पंक्ति issues[] 3 · skipped[] 2, निर्णय मूल्यांकन समिति के पास">
 </picture>
 
 # dsh-bid-ca-precheck
@@ -43,6 +43,11 @@ dsh plugin --profile <name> add dsh-bid-ca-precheck
 - **किसके लिए**: निविदा विशेषज्ञ और निविदा एजेंट; कमांड लाइन जानने की ज़रूरत नहीं — सामग्री चैट में दे दीजिए।
 - **आप क्या देते हैं**: जाँच जिस मूल सामग्री पर चलती है (तालिका, रजिस्टर या दस्तावेज़); मूल कभी नहीं बदला जाता। Excel को पहले JSON/YAML में बदला जा सकता है, मंच अनुमति दे तो चैट में ही।
 - **यह क्या देता है**: «कौन-सी पंक्ति, कौन-सा कॉलम, क्या अंतर, कैसे सुधारें» की सूची; हर वह जाँच जो नहीं चल सकी, कारण के साथ `skipped` में दर्ज होती है।
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="docs/assets/dsh-bid-ca-precheck-flow-v5-dark.svg">
+  <img src="docs/assets/dsh-bid-ca-precheck-flow-v5-light.svg" width="100%" alt="dsh-bid-ca-precheck संरचना: क्लॉज़-वार तुलना — छह नियमों में से प्रत्येक रजिस्टर का एक कॉलम पढ़ता है (response, verdict, clause, header, evidence, requirement) और स्तर तथा पंक्ति-कॉलम देता है; BC-002 और BC-005 सूची कॉन्फ़िगर न होने से skipped में हैं; issues[] और skipped[] दोनों समीक्षक तक पहुँचते हैं, निर्णय रिपोर्ट में नहीं है">
+</picture>
 
 ## तीन चरणों में शुरुआत
 

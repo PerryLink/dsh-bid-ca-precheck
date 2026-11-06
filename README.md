@@ -1,8 +1,8 @@
 <div align="center">
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="docs/assets/dsh-bid-ca-precheck-flow-dark.svg">
-  <img src="docs/assets/dsh-bid-ca-precheck-flow-light.svg" width="100%" alt="dsh-bid-ca-precheck 数据流：投标符合性响应台账（JSON / YAML）→ bid_ca_precheck 工具 → rules/bid-ca-precheck.yaml 规则包（BC-001..BC-006）→ issues[] + skipped[] 报告 → 审核人裁决；配置经 rulesFile / disabledRules / onlyRules / timeoutMs 注入">
+  <source media="(prefers-color-scheme: dark)" srcset="docs/assets/dsh-bid-ca-precheck-hero-zh-dark.webp">
+  <img src="docs/assets/dsh-bid-ca-precheck-hero-zh-light.webp" width="100%" alt="dsh-bid-ca-precheck 配图：一份投标符合性响应台账，第 1 行响应栏为空，第 2 行条款号 2.1 重复、招标要求残留【填写资质等级】；六条规则清单中 BC-002 与 BC-005 因清单未配置而跳过；下方 BC-001 判定卡写第 1 行 · response 的发现、应填与建议，报告行为 issues[] 3 条 · skipped[] 2 条，结论留给评标委员会">
 </picture>
 
 # dsh-bid-ca-precheck
@@ -43,6 +43,11 @@ dsh plugin --profile <name> add dsh-bid-ca-precheck
 - **给谁用**：投标专员、招标代理；不用懂命令行，在对话里把材料交给它即可。
 - **你交什么**：这项核对用到的原始材料（表格、清单或文书）；不改原件。Excel 可先转成 JSON/YAML，对话里也能代转。
 - **它交什么**：一份「哪一行、哪一栏、差什么、怎么补」的清单；没能执行的检查逐条列入 `skipped` 并写明原因。
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="docs/assets/dsh-bid-ca-precheck-flow-v5-dark.svg">
+  <img src="docs/assets/dsh-bid-ca-precheck-flow-v5-light.svg" width="100%" alt="dsh-bid-ca-precheck 结构图：条款对照——六条规则各读台账的一栏（投标响应、响应结论、条款号、表头、证明材料、招标要求），逐行给出级别与行号栏名；BC-002 与 BC-005 因清单未配置进 skipped；issues[] 与 skipped[] 两条通道一起进入审核人，结论不在报告里">
+</picture>
 
 ## 三步上手
 

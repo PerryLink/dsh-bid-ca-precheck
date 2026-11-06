@@ -1,8 +1,8 @@
 <div align="center">
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="docs/assets/dsh-bid-ca-precheck-flow-dark.svg">
-  <img src="docs/assets/dsh-bid-ca-precheck-flow-light.svg" width="100%" alt="Fluxo de dados do dsh-bid-ca-precheck: registro de resposta de conformidade da proposta (JSON / YAML) → ferramenta bid_ca_precheck → pacote de regras rules/bid-ca-precheck.yaml (BC-001..BC-006) → relatório issues[] + skipped[] → decisão do revisor; configuração injetada via rulesFile / disabledRules / onlyRules / timeoutMs">
+  <source media="(prefers-color-scheme: dark)" srcset="docs/assets/dsh-bid-ca-precheck-hero-en-dark.webp">
+  <img src="docs/assets/dsh-bid-ca-precheck-hero-en-light.webp" width="100%" alt="Imagem do dsh-bid-ca-precheck: um registo de conformidade cuja linha 1 tem a resposta vazia e cuja linha 2 repete a cláusula 2.1 e mantém o marcador {{grade}}; a lista das seis regras assinala BC-002 e BC-005 como ignoradas por as listas não estarem configuradas; abaixo, o cartão do BC-001 (linha 1 · response: encontrado, esperado, correção) e a linha issues[] 3 · skipped[] 2, com o veredicto entregue à comissão de avaliação">
 </picture>
 
 # dsh-bid-ca-precheck
@@ -43,6 +43,11 @@ Não decide se uma proposta é válida, se deve ser rejeitada, se uma resposta c
 - **Para quem é**: especialistas em licitações e agentes de cadernos de encargos; não é preciso saber usar a linha de comandos — o material é entregue no chat.
 - **O que você entrega**: o material de origem sobre o qual a verificação trabalha (uma tabela, um registo ou um documento); o original nunca é modificado. O Excel pode ser convertido antes para JSON/YAML, no chat se a plataforma permitir.
 - **O que ele devolve**: uma lista do que não bate, onde e como corrigir; cada verificação que não pôde ser executada é listada em `skipped` com o motivo.
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="docs/assets/dsh-bid-ca-precheck-flow-v5-dark.svg">
+  <img src="docs/assets/dsh-bid-ca-precheck-flow-v5-light.svg" width="100%" alt="Estrutura do dsh-bid-ca-precheck: um quadro de confronto por cláusulas — cada uma das seis regras lê uma coluna do registo (response, verdict, clause, header, evidence, requirement) e devolve o nível e a linha e coluna; BC-002 e BC-005 são ignoradas por as listas não estarem configuradas; issues[] e skipped[] chegam juntos ao revisor, e o veredicto não está no relatório">
+</picture>
 
 ## Instalação em três passos
 

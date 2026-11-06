@@ -1,8 +1,8 @@
 <div align="center">
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="docs/assets/dsh-bid-ca-precheck-flow-dark.svg">
-  <img src="docs/assets/dsh-bid-ca-precheck-flow-light.svg" width="100%" alt="dsh-bid-ca-precheck data flow: bid compliance response register (JSON / YAML) → bid_ca_precheck tool → rules/bid-ca-precheck.yaml rule pack (BC-001..BC-006) → issues[] + skipped[] report → reviewer decision; config injected via rulesFile / disabledRules / onlyRules / timeoutMs">
+  <source media="(prefers-color-scheme: dark)" srcset="docs/assets/dsh-bid-ca-precheck-hero-en-dark.webp">
+  <img src="docs/assets/dsh-bid-ca-precheck-hero-en-light.webp" width="100%" alt="dsh-bid-ca-precheck hero: a bid compliance register whose row 1 response is blank and whose row 2 repeats clause 2.1 and keeps a {{grade}} placeholder; the six-rule checklist marks BC-002 and BC-005 as skipped because their lists are not configured; below, the BC-001 finding card (row 1, response: found, expected, fix) and the report line issues[] 3 · skipped[] 2, with the verdict left to the evaluation committee">
 </picture>
 
 # dsh-bid-ca-precheck
@@ -43,6 +43,11 @@ It does not decide whether a bid is valid, whether it should be rejected, whethe
 - **Who it is for**: bid specialists and tender agents; no command line required — hand it the material in chat.
 - **What you give it**: the source material the check works on (a table, register or document); the original is never modified. Excel can be converted to JSON/YAML first, in chat if the platform supports it.
 - **What it returns**: a list of what is inconsistent, where, and what to fix; every check that could not run is listed in `skipped` with its reason.
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="docs/assets/dsh-bid-ca-precheck-flow-v5-dark.svg">
+  <img src="docs/assets/dsh-bid-ca-precheck-flow-v5-light.svg" width="100%" alt="dsh-bid-ca-precheck structure: a clause cross-reference — each of the six rules reads one register column (response, verdict, clause, header, evidence, requirement) and reports a severity plus row and column; BC-002 and BC-005 are skipped because their lists are not configured; issues[] and skipped[] both lead to the reviewer, and the verdict is not in the report">
+</picture>
 
 ## Three-step setup
 
