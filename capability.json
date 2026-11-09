@@ -1,0 +1,29 @@
+{
+  "schemaVersion": 1,
+  "tier": "L1-lite",
+  "input_formats": [
+    "json",
+    "yaml"
+  ],
+  "outputs": [
+    "markdown",
+    "json"
+  ],
+  "rules": {
+    "total": 6,
+    "executed": 4,
+    "skipped": 2,
+    "manual": 0,
+    "unsupported": 0
+  },
+  "benchmark": {
+    "kind": "quickstart-sample",
+    "corpus_size": 1,
+    "note": "投标文件符合性预检的 quickstart 样例；无真实投标文件语料",
+    "measured_at": "2026-11-09"
+  },
+  "limits": [
+    "2 条规则因材料未提供对应字段而跳过",
+    "不做合规/定性判定；未执行规则会列在 skipped"
+  ]
+}
