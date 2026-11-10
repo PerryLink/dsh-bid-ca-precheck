@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-10T11:52:21.845Z",
+  "generatedAt": "2026-11-10T11:55:24.017Z",
   "benchmark": "public-worldbank",
   "command": "node bench/public-worldbank/evaluate.mjs",
   "syntheticBidWarning": "The notices are requirements-side public data. Everything on the bid side (bidder, response, verdict, evidence, mutations) is synthetic and is not a real bidder submission or outcome.",
@@ -682,7 +682,7 @@
         },
         "issues": [],
         "exact": true,
-        "durationMs": 1
+        "durationMs": 2
       }
     },
     {
@@ -800,7 +800,7 @@
         },
         "issues": [],
         "exact": true,
-        "durationMs": 1
+        "durationMs": 2
       },
       "configured": {
         "rulesetVersion": "2026.1-bench-configured",
@@ -873,7 +873,7 @@
         },
         "issues": [],
         "exact": true,
-        "durationMs": 1
+        "durationMs": 2
       },
       "configured": {
         "rulesetVersion": "2026.1-bench-configured",
@@ -1019,7 +1019,7 @@
         },
         "issues": [],
         "exact": true,
-        "durationMs": 0
+        "durationMs": 1
       },
       "configured": {
         "rulesetVersion": "2026.1-bench-configured",
@@ -1140,7 +1140,7 @@
           }
         ],
         "exact": true,
-        "durationMs": 1
+        "durationMs": 2
       }
     },
     {
@@ -1676,7 +1676,7 @@
           }
         ],
         "exact": true,
-        "durationMs": 2
+        "durationMs": 1
       }
     },
     {
@@ -1821,7 +1821,7 @@
           }
         ],
         "exact": true,
-        "durationMs": 0
+        "durationMs": 1
       },
       "configured": {
         "rulesetVersion": "2026.1-bench-configured",
@@ -2210,7 +2210,7 @@
           }
         ],
         "exact": true,
-        "durationMs": 1
+        "durationMs": 0
       }
     },
     {
@@ -2567,7 +2567,7 @@
         },
         "issues": [],
         "exact": true,
-        "durationMs": 1
+        "durationMs": 0
       },
       "configured": {
         "rulesetVersion": "2026.1-bench-configured",
