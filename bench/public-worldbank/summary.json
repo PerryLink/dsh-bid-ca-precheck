@@ -1,0 +1,2680 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-11-10T11:51:44.542Z",
+  "benchmark": "public-worldbank",
+  "command": "node bench/public-worldbank/evaluate.mjs",
+  "syntheticBidWarning": "The notices are requirements-side public data. Everything on the bid side (bidder, response, verdict, evidence, mutations) is synthetic and is not a real bidder submission or outcome.",
+  "plugin": {
+    "name": "dsh-bid-ca-precheck",
+    "version": "0.2.14",
+    "tool": "bid_ca_precheck",
+    "injected": [
+      "tools"
+    ],
+    "entrypoint": "lib/index.mjs",
+    "entrypointSha256": "042ade7b799ee3fb6deb671213fee9ee3f3c0c6b231c436681a6d9a207a97fe1",
+    "shippedRulesetVersion": "2026.1",
+    "configuredRulesetVersion": "2026.1-bench-configured"
+  },
+  "source": {
+    "publisher": "World Bank",
+    "dataset": {
+      "title": "Procurement Notice",
+      "catalogId": "0037776",
+      "financesOneId": "DS00979",
+      "publisher": "World Bank",
+      "catalogUrl": "https://datacatalog.worldbank.org/search/dataset/0037776/procurement-notice",
+      "licenseName": "Creative Commons Attribution 4.0 International (CC BY 4.0)",
+      "licenseUrl": "https://datacatalog.worldbank.org/public-licenses",
+      "licenseVerifiedAt": "2026-11-10",
+      "licenseNote": "The World Bank Data Catalog lists the Procurement Notice dataset (DS00979) as CC BY 4.0. The API response has no license field; verified at the dataset level. Re-verify before redistribution."
+    },
+    "endpoint": "https://search.worldbank.org/api/v2/procnotices?format=json&rows=200&page=1&qterm=construction",
+    "retrievedAt": "2026-11-10T11:48:24.771Z",
+    "rawFile": "bench/public-worldbank/.data/wb-procnotices.construction.json",
+    "rawSha256": "7bba29c6bb54df3a5fe6bb983e1555b389dd5202ce9b6d93f689a4bcc88d7ce1",
+    "api": {
+      "rows": 200,
+      "page": "1",
+      "total": "128545",
+      "noticesOnPage": 200
+    },
+    "license": {
+      "title": "Procurement Notice",
+      "catalogId": "0037776",
+      "financesOneId": "DS00979",
+      "publisher": "World Bank",
+      "catalogUrl": "https://datacatalog.worldbank.org/search/dataset/0037776/procurement-notice",
+      "licenseName": "Creative Commons Attribution 4.0 International (CC BY 4.0)",
+      "licenseUrl": "https://datacatalog.worldbank.org/public-licenses",
+      "licenseVerifiedAt": "2026-11-10",
+      "licenseNote": "The World Bank Data Catalog lists the Procurement Notice dataset (DS00979) as CC BY 4.0. The API response has no license field; verified at the dataset level. Re-verify before redistribution."
+    }
+  },
+  "selection": {
+    "requested": 8,
+    "selected": 8,
+    "countries": [
+      "Cambodia",
+      "Cameroon",
+      "Chad",
+      "Eastern and Southern Africa",
+      "Ethiopia",
+      "Malawi",
+      "Philippines",
+      "Western and Central Africa"
+    ],
+    "notices": [
+      {
+        "bid_reference_no": "MOEYS-HEIP2-ITC-ICB-W-001",
+        "notice_type": "Invitation for Bids",
+        "submission_deadline_date": "2026-12-04T00:00:00Z",
+        "project_ctry_name": "Cambodia",
+        "bid_description": "Construction of a complex building at ITC",
+        "procurement_method_name": "Request for Bids",
+        "project_name": "Second Higher Education Improvement Project",
+        "notice_id": "OP00476260"
+      },
+      {
+        "bid_reference_no": "CM-MINEPAT-570276-CW-RFB",
+        "notice_type": "Invitation for Bids",
+        "submission_deadline_date": "2026-12-04T00:00:00Z",
+        "project_ctry_name": "Cameroon",
+        "bid_description": "TRAVAUX DE CONSTRUCTION/REHABILITATION DES INFRASTRUCTURES SOCIO-ECONOMIQUES (ECOLES, MAGASIN DE STOCKAGE, INFRA COMMUNAUTAIRES ET PASTORALES) DANS LES COMMUNES MORA ET WAZA (DEPARTEMENTS DU MAYO SAVA ET DU LOGONE ET CHARI)",
+        "procurement_method_name": "Request for Bids",
+        "project_name": "Enhancing Connectivity and Resilience in the Far North of Cameroon for Inclusiveness Project",
+        "notice_id": "OP00479936"
+      },
+      {
+        "bid_reference_no": "TD-CILOP-552032-CW-RFB",
+        "notice_type": "Invitation for Bids",
+        "submission_deadline_date": "2026-11-20T00:00:00Z",
+        "project_ctry_name": "Chad",
+        "bid_description": "Construction de 30 écoles dans les provinces du Moyen Chari et du Mandoul",
+        "procurement_method_name": "Request for Bids",
+        "project_name": "CHAD Improving Learning Outcomes Project",
+        "notice_id": "OP00479842"
+      },
+      {
+        "bid_reference_no": "ET-SWEPR-573634-CW-RFB",
+        "notice_type": "Invitation for Bids",
+        "submission_deadline_date": "2026-12-07T00:00:00Z",
+        "project_ctry_name": "Eastern and Southern Africa",
+        "bid_description": "construction of Gara SSIP at kafa zone Goba woreda",
+        "procurement_method_name": "Request for Bids",
+        "project_name": "Food Systems Resilience Program for Eastern and Southern Africa",
+        "notice_id": "OP00479696"
+      },
+      {
+        "bid_reference_no": "ET-AFR-RPCU-589814-CW-RFB",
+        "notice_type": "Invitation for Bids",
+        "submission_deadline_date": "2026-12-07T00:00:00Z",
+        "project_ctry_name": "Ethiopia",
+        "bid_description": "Construction  of    Poultry multiplication  and feed processing centre  in Dubti Woreda",
+        "procurement_method_name": "Request for Bids",
+        "project_name": "Lowlands Livelihood Resilience Project, Phase Two (LLRP II)",
+        "notice_id": "OP00479980"
+      },
+      {
+        "bid_reference_no": "MW-NSDC-565038-CW-RFB",
+        "notice_type": "Invitation for Bids",
+        "submission_deadline_date": "2026-11-23T00:00:00Z",
+        "project_ctry_name": "Malawi",
+        "bid_description": "CONSTRUCTION AND REHABILITATION OF CHITAWO PRIMARY SCHOOL BLOCKS",
+        "procurement_method_name": "Request for Bids",
+        "project_name": "Regional Climate Resilience Program for Eastern and Southern Africa 2 Project (RCRP2)",
+        "notice_id": "OP00479033"
+      },
+      {
+        "bid_reference_no": "PRDP-SU-IB-R009-ZDN-009-SER-001-2026-PWS",
+        "notice_type": "Invitation for Bids",
+        "submission_deadline_date": "2026-12-09T00:00:00Z",
+        "project_ctry_name": "Philippines",
+        "bid_description": "Construction of Sinai-Biayon-Poblacion Alto-Poblacion Bajo-Liwanag-San Juan -Dampalan Level II Potable Water System (PWS)",
+        "procurement_method_name": "Request for Bids",
+        "project_name": "Philippine Rural Development Project Scale-up",
+        "notice_id": "OP00480149"
+      },
+      {
+        "bid_reference_no": "BF-CILSS-BF-574726-CW-RFB",
+        "notice_type": "Invitation for Bids",
+        "submission_deadline_date": "2027-01-07T00:00:00Z",
+        "project_ctry_name": "Western and Central Africa",
+        "bid_description": "Recrutement d'entreprises pour les travaux de rénovation et d’extension de la cité des étudiants d’AGRHYMET CCR-AOS en deux (02) lots: Lot 1: Travaux de rénovation de 130 chambres Lot 2: Travaux de construction d'un bâtiment R+1 de 20 chambres",
+        "procurement_method_name": "Request for Bids",
+        "project_name": "West Africa Food System Resilience Program (FSRP)",
+        "notice_id": "OP00479417"
+      }
+    ],
+    "candidateStats": {
+      "input": 200,
+      "notObject": 0,
+      "notInvitationForBids": 169,
+      "missingDeadline": 0,
+      "unparseableDeadline": 0,
+      "missingReference": 0,
+      "missingDescription": 0,
+      "missingCountry": 0,
+      "missingMethod": 0,
+      "notConstruction": 13,
+      "noHighRiskKeyword": 0,
+      "placeholder": 0,
+      "duplicateReference": 0,
+      "accepted": 18
+    }
+  },
+  "candidates": {
+    "input": 200,
+    "notObject": 0,
+    "notInvitationForBids": 169,
+    "missingDeadline": 0,
+    "unparseableDeadline": 0,
+    "missingReference": 0,
+    "missingDescription": 0,
+    "missingCountry": 0,
+    "missingMethod": 0,
+    "notConstruction": 13,
+    "noHighRiskKeyword": 0,
+    "placeholder": 0,
+    "duplicateReference": 0,
+    "accepted": 18
+  },
+  "caseCounts": {
+    "total": 26,
+    "clean": 8,
+    "mutation": 14,
+    "blindSpot": 4,
+    "byTargetRule": {
+      "BC-001": 2,
+      "BC-002": 2,
+      "BC-003": 2,
+      "BC-004": 3,
+      "BC-005": 2,
+      "BC-006": 3
+    },
+    "ids": [
+      "clean-01-moeys-heip2-itc-icb-w-001",
+      "clean-02-cm-minepat-570276-cw-rfb",
+      "clean-03-td-cilop-552032-cw-rfb",
+      "clean-04-et-swepr-573634-cw-rfb",
+      "clean-05-et-afr-rpcu-589814-cw-rfb",
+      "clean-06-mw-nsdc-565038-cw-rfb",
+      "clean-07-prdp-su-ib-r009-zdn-009-ser-001-2026-pws",
+      "clean-08-bf-cilss-bf-574726-cw-rfb",
+      "bc001-missing-response-a",
+      "bc001-missing-response-b",
+      "bc002-off-vocabulary-a",
+      "bc002-off-vocabulary-b",
+      "bc003-duplicate-clause-exact",
+      "bc003-duplicate-clause-whitespace",
+      "bc004-missing-project",
+      "bc004-missing-bidder",
+      "bc004-missing-both",
+      "bc005-missing-evidence-a",
+      "bc005-missing-evidence-b",
+      "bc006-placeholder-double-brace",
+      "bc006-placeholder-cjk-bracket",
+      "bc006-placeholder-xxx",
+      "blind-wrong-deadline",
+      "blind-wrong-notice-type",
+      "blind-extra-bid-row",
+      "blind-missing-bid-row"
+    ]
+  },
+  "overlayFills": {
+    "BC-002": {
+      "values": [
+        "SYNTHETIC_ACK"
+      ]
+    },
+    "BC-005": {
+      "highRiskKeywords": [
+        "Construction",
+        "construction",
+        "CONSTRUCTION"
+      ]
+    }
+  },
+  "modes": {
+    "default": {
+      "mode": "default",
+      "rulesetVersion": "2026.1",
+      "scoredRules": [
+        "BC-001",
+        "BC-003",
+        "BC-004",
+        "BC-006"
+      ],
+      "notScoredRules": [
+        "BC-002",
+        "BC-005"
+      ],
+      "perRule": {
+        "BC-001": {
+          "rule": "BC-001",
+          "severity": "warn",
+          "title": "Every tender requirement has a recorded response",
+          "expected": 2,
+          "actual": 2,
+          "tp": 2,
+          "fp": 0,
+          "fn": 0,
+          "cases": 26,
+          "precision": 1,
+          "recall": 1,
+          "f1": 1
+        },
+        "BC-003": {
+          "rule": "BC-003",
+          "severity": "warn",
+          "title": "Clause numbers are unique in the register",
+          "expected": 2,
+          "actual": 2,
+          "tp": 2,
+          "fp": 0,
+          "fn": 0,
+          "cases": 26,
+          "precision": 1,
+          "recall": 1,
+          "f1": 1
+        },
+        "BC-004": {
+          "rule": "BC-004",
+          "severity": "warn",
+          "title": "The register names its project and bidder",
+          "expected": 3,
+          "actual": 3,
+          "tp": 3,
+          "fp": 0,
+          "fn": 0,
+          "cases": 26,
+          "precision": 1,
+          "recall": 1,
+          "f1": 1
+        },
+        "BC-006": {
+          "rule": "BC-006",
+          "severity": "warn",
+          "title": "The requirement column has no unreplaced placeholder",
+          "expected": 3,
+          "actual": 3,
+          "tp": 3,
+          "fp": 0,
+          "fn": 0,
+          "cases": 26,
+          "precision": 1,
+          "recall": 1,
+          "f1": 1
+        }
+      },
+      "totals": {
+        "expected": 10,
+        "actual": 10,
+        "tp": 10,
+        "fp": 0,
+        "fn": 0,
+        "precision": 1,
+        "recall": 1,
+        "f1": 1
+      },
+      "caseExact": 26,
+      "caseTotal": 26,
+      "cleanTotal": 8,
+      "cleanPass": 8,
+      "mutationTotal": 10,
+      "mutationPass": 10,
+      "blindSpotTotal": 4,
+      "blindSpotDetected": 0,
+      "skippedByRule": {
+        "BC-002": 26,
+        "BC-005": 26
+      },
+      "executionTotals": {
+        "total": 156,
+        "executed": 104,
+        "skipped": 52,
+        "manual": 0,
+        "unsupported": 0
+      },
+      "failed": []
+    },
+    "configured": {
+      "mode": "configured",
+      "rulesetVersion": "2026.1-bench-configured",
+      "scoredRules": [
+        "BC-001",
+        "BC-002",
+        "BC-003",
+        "BC-004",
+        "BC-005",
+        "BC-006"
+      ],
+      "notScoredRules": [],
+      "perRule": {
+        "BC-001": {
+          "rule": "BC-001",
+          "severity": "warn",
+          "title": "Every tender requirement has a recorded response",
+          "expected": 2,
+          "actual": 2,
+          "tp": 2,
+          "fp": 0,
+          "fn": 0,
+          "cases": 26,
+          "precision": 1,
+          "recall": 1,
+          "f1": 1
+        },
+        "BC-002": {
+          "rule": "BC-002",
+          "severity": "info",
+          "title": "The verdict uses the configured vocabulary (off by default)",
+          "expected": 2,
+          "actual": 2,
+          "tp": 2,
+          "fp": 0,
+          "fn": 0,
+          "cases": 26,
+          "precision": 1,
+          "recall": 1,
+          "f1": 1
+        },
+        "BC-003": {
+          "rule": "BC-003",
+          "severity": "warn",
+          "title": "Clause numbers are unique in the register",
+          "expected": 2,
+          "actual": 2,
+          "tp": 2,
+          "fp": 0,
+          "fn": 0,
+          "cases": 26,
+          "precision": 1,
+          "recall": 1,
+          "f1": 1
+        },
+        "BC-004": {
+          "rule": "BC-004",
+          "severity": "warn",
+          "title": "The register names its project and bidder",
+          "expected": 3,
+          "actual": 3,
+          "tp": 3,
+          "fp": 0,
+          "fn": 0,
+          "cases": 26,
+          "precision": 1,
+          "recall": 1,
+          "f1": 1
+        },
+        "BC-005": {
+          "rule": "BC-005",
+          "severity": "warn",
+          "title": "High-risk clauses carry evidence (off by default)",
+          "expected": 2,
+          "actual": 2,
+          "tp": 2,
+          "fp": 0,
+          "fn": 0,
+          "cases": 26,
+          "precision": 1,
+          "recall": 1,
+          "f1": 1
+        },
+        "BC-006": {
+          "rule": "BC-006",
+          "severity": "warn",
+          "title": "The requirement column has no unreplaced placeholder",
+          "expected": 3,
+          "actual": 3,
+          "tp": 3,
+          "fp": 0,
+          "fn": 0,
+          "cases": 26,
+          "precision": 1,
+          "recall": 1,
+          "f1": 1
+        }
+      },
+      "totals": {
+        "expected": 14,
+        "actual": 14,
+        "tp": 14,
+        "fp": 0,
+        "fn": 0,
+        "precision": 1,
+        "recall": 1,
+        "f1": 1
+      },
+      "caseExact": 26,
+      "caseTotal": 26,
+      "cleanTotal": 8,
+      "cleanPass": 8,
+      "mutationTotal": 14,
+      "mutationPass": 14,
+      "blindSpotTotal": 4,
+      "blindSpotDetected": 0,
+      "skippedByRule": {},
+      "executionTotals": {
+        "total": 156,
+        "executed": 156,
+        "skipped": 0,
+        "manual": 0,
+        "unsupported": 0
+      },
+      "failed": []
+    }
+  },
+  "caseResults": [
+    {
+      "id": "clean-01-moeys-heip2-itc-icb-w-001",
+      "kind": "clean",
+      "targetRule": null,
+      "description": "Clean synthetic register for MOEYS-HEIP2-ITC-ICB-W-001 (Cambodia); the response, verdict and evidence cells are synthetic placeholders, not bidder claims.",
+      "expected": {
+        "BC-001": 0,
+        "BC-002": 0,
+        "BC-003": 0,
+        "BC-004": 0,
+        "BC-005": 0,
+        "BC-006": 0
+      },
+      "default": {
+        "rulesetVersion": "2026.1",
+        "issueCount": 0,
+        "summary": {
+          "error": 0,
+          "info": 0,
+          "warn": 0
+        },
+        "skippedRules": [
+          "BC-002",
+          "BC-005"
+        ],
+        "execution": {
+          "executed": 4,
+          "manual": 0,
+          "skipped": 2,
+          "total": 6,
+          "unsupported": 0
+        },
+        "actual": {
+          "BC-001": 0,
+          "BC-002": 0,
+          "BC-003": 0,
+          "BC-004": 0,
+          "BC-005": 0,
+          "BC-006": 0
+        },
+        "issues": [],
+        "exact": true,
+        "durationMs": 5
+      },
+      "configured": {
+        "rulesetVersion": "2026.1-bench-configured",
+        "issueCount": 0,
+        "summary": {
+          "error": 0,
+          "info": 0,
+          "warn": 0
+        },
+        "skippedRules": [],
+        "execution": {
+          "executed": 6,
+          "manual": 0,
+          "skipped": 0,
+          "total": 6,
+          "unsupported": 0
+        },
+        "actual": {
+          "BC-001": 0,
+          "BC-002": 0,
+          "BC-003": 0,
+          "BC-004": 0,
+          "BC-005": 0,
+          "BC-006": 0
+        },
+        "issues": [],
+        "exact": true,
+        "durationMs": 3
+      }
+    },
+    {
+      "id": "clean-02-cm-minepat-570276-cw-rfb",
+      "kind": "clean",
+      "targetRule": null,
+      "description": "Clean synthetic register for CM-MINEPAT-570276-CW-RFB (Cameroon); the response, verdict and evidence cells are synthetic placeholders, not bidder claims.",
+      "expected": {
+        "BC-001": 0,
+        "BC-002": 0,
+        "BC-003": 0,
+        "BC-004": 0,
+        "BC-005": 0,
+        "BC-006": 0
+      },
+      "default": {
+        "rulesetVersion": "2026.1",
+        "issueCount": 0,
+        "summary": {
+          "error": 0,
+          "info": 0,
+          "warn": 0
+        },
+        "skippedRules": [
+          "BC-002",
+          "BC-005"
+        ],
+        "execution": {
+          "executed": 4,
+          "manual": 0,
+          "skipped": 2,
+          "total": 6,
+          "unsupported": 0
+        },
+        "actual": {
+          "BC-001": 0,
+          "BC-002": 0,
+          "BC-003": 0,
+          "BC-004": 0,
+          "BC-005": 0,
+          "BC-006": 0
+        },
+        "issues": [],
+        "exact": true,
+        "durationMs": 1
+      },
+      "configured": {
+        "rulesetVersion": "2026.1-bench-configured",
+        "issueCount": 0,
+        "summary": {
+          "error": 0,
+          "info": 0,
+          "warn": 0
+        },
+        "skippedRules": [],
+        "execution": {
+          "executed": 6,
+          "manual": 0,
+          "skipped": 0,
+          "total": 6,
+          "unsupported": 0
+        },
+        "actual": {
+          "BC-001": 0,
+          "BC-002": 0,
+          "BC-003": 0,
+          "BC-004": 0,
+          "BC-005": 0,
+          "BC-006": 0
+        },
+        "issues": [],
+        "exact": true,
+        "durationMs": 1
+      }
+    },
+    {
+      "id": "clean-03-td-cilop-552032-cw-rfb",
+      "kind": "clean",
+      "targetRule": null,
+      "description": "Clean synthetic register for TD-CILOP-552032-CW-RFB (Chad); the response, verdict and evidence cells are synthetic placeholders, not bidder claims.",
+      "expected": {
+        "BC-001": 0,
+        "BC-002": 0,
+        "BC-003": 0,
+        "BC-004": 0,
+        "BC-005": 0,
+        "BC-006": 0
+      },
+      "default": {
+        "rulesetVersion": "2026.1",
+        "issueCount": 0,
+        "summary": {
+          "error": 0,
+          "info": 0,
+          "warn": 0
+        },
+        "skippedRules": [
+          "BC-002",
+          "BC-005"
+        ],
+        "execution": {
+          "executed": 4,
+          "manual": 0,
+          "skipped": 2,
+          "total": 6,
+          "unsupported": 0
+        },
+        "actual": {
+          "BC-001": 0,
+          "BC-002": 0,
+          "BC-003": 0,
+          "BC-004": 0,
+          "BC-005": 0,
+          "BC-006": 0
+        },
+        "issues": [],
+        "exact": true,
+        "durationMs": 0
+      },
+      "configured": {
+        "rulesetVersion": "2026.1-bench-configured",
+        "issueCount": 0,
+        "summary": {
+          "error": 0,
+          "info": 0,
+          "warn": 0
+        },
+        "skippedRules": [],
+        "execution": {
+          "executed": 6,
+          "manual": 0,
+          "skipped": 0,
+          "total": 6,
+          "unsupported": 0
+        },
+        "actual": {
+          "BC-001": 0,
+          "BC-002": 0,
+          "BC-003": 0,
+          "BC-004": 0,
+          "BC-005": 0,
+          "BC-006": 0
+        },
+        "issues": [],
+        "exact": true,
+        "durationMs": 1
+      }
+    },
+    {
+      "id": "clean-04-et-swepr-573634-cw-rfb",
+      "kind": "clean",
+      "targetRule": null,
+      "description": "Clean synthetic register for ET-SWEPR-573634-CW-RFB (Eastern and Southern Africa); the response, verdict and evidence cells are synthetic placeholders, not bidder claims.",
+      "expected": {
+        "BC-001": 0,
+        "BC-002": 0,
+        "BC-003": 0,
+        "BC-004": 0,
+        "BC-005": 0,
+        "BC-006": 0
+      },
+      "default": {
+        "rulesetVersion": "2026.1",
+        "issueCount": 0,
+        "summary": {
+          "error": 0,
+          "info": 0,
+          "warn": 0
+        },
+        "skippedRules": [
+          "BC-002",
+          "BC-005"
+        ],
+        "execution": {
+          "executed": 4,
+          "manual": 0,
+          "skipped": 2,
+          "total": 6,
+          "unsupported": 0
+        },
+        "actual": {
+          "BC-001": 0,
+          "BC-002": 0,
+          "BC-003": 0,
+          "BC-004": 0,
+          "BC-005": 0,
+          "BC-006": 0
+        },
+        "issues": [],
+        "exact": true,
+        "durationMs": 1
+      },
+      "configured": {
+        "rulesetVersion": "2026.1-bench-configured",
+        "issueCount": 0,
+        "summary": {
+          "error": 0,
+          "info": 0,
+          "warn": 0
+        },
+        "skippedRules": [],
+        "execution": {
+          "executed": 6,
+          "manual": 0,
+          "skipped": 0,
+          "total": 6,
+          "unsupported": 0
+        },
+        "actual": {
+          "BC-001": 0,
+          "BC-002": 0,
+          "BC-003": 0,
+          "BC-004": 0,
+          "BC-005": 0,
+          "BC-006": 0
+        },
+        "issues": [],
+        "exact": true,
+        "durationMs": 1
+      }
+    },
+    {
+      "id": "clean-05-et-afr-rpcu-589814-cw-rfb",
+      "kind": "clean",
+      "targetRule": null,
+      "description": "Clean synthetic register for ET-AFR-RPCU-589814-CW-RFB (Ethiopia); the response, verdict and evidence cells are synthetic placeholders, not bidder claims.",
+      "expected": {
+        "BC-001": 0,
+        "BC-002": 0,
+        "BC-003": 0,
+        "BC-004": 0,
+        "BC-005": 0,
+        "BC-006": 0
+      },
+      "default": {
+        "rulesetVersion": "2026.1",
+        "issueCount": 0,
+        "summary": {
+          "error": 0,
+          "info": 0,
+          "warn": 0
+        },
+        "skippedRules": [
+          "BC-002",
+          "BC-005"
+        ],
+        "execution": {
+          "executed": 4,
+          "manual": 0,
+          "skipped": 2,
+          "total": 6,
+          "unsupported": 0
+        },
+        "actual": {
+          "BC-001": 0,
+          "BC-002": 0,
+          "BC-003": 0,
+          "BC-004": 0,
+          "BC-005": 0,
+          "BC-006": 0
+        },
+        "issues": [],
+        "exact": true,
+        "durationMs": 1
+      },
+      "configured": {
+        "rulesetVersion": "2026.1-bench-configured",
+        "issueCount": 0,
+        "summary": {
+          "error": 0,
+          "info": 0,
+          "warn": 0
+        },
+        "skippedRules": [],
+        "execution": {
+          "executed": 6,
+          "manual": 0,
+          "skipped": 0,
+          "total": 6,
+          "unsupported": 0
+        },
+        "actual": {
+          "BC-001": 0,
+          "BC-002": 0,
+          "BC-003": 0,
+          "BC-004": 0,
+          "BC-005": 0,
+          "BC-006": 0
+        },
+        "issues": [],
+        "exact": true,
+        "durationMs": 1
+      }
+    },
+    {
+      "id": "clean-06-mw-nsdc-565038-cw-rfb",
+      "kind": "clean",
+      "targetRule": null,
+      "description": "Clean synthetic register for MW-NSDC-565038-CW-RFB (Malawi); the response, verdict and evidence cells are synthetic placeholders, not bidder claims.",
+      "expected": {
+        "BC-001": 0,
+        "BC-002": 0,
+        "BC-003": 0,
+        "BC-004": 0,
+        "BC-005": 0,
+        "BC-006": 0
+      },
+      "default": {
+        "rulesetVersion": "2026.1",
+        "issueCount": 0,
+        "summary": {
+          "error": 0,
+          "info": 0,
+          "warn": 0
+        },
+        "skippedRules": [
+          "BC-002",
+          "BC-005"
+        ],
+        "execution": {
+          "executed": 4,
+          "manual": 0,
+          "skipped": 2,
+          "total": 6,
+          "unsupported": 0
+        },
+        "actual": {
+          "BC-001": 0,
+          "BC-002": 0,
+          "BC-003": 0,
+          "BC-004": 0,
+          "BC-005": 0,
+          "BC-006": 0
+        },
+        "issues": [],
+        "exact": true,
+        "durationMs": 1
+      },
+      "configured": {
+        "rulesetVersion": "2026.1-bench-configured",
+        "issueCount": 0,
+        "summary": {
+          "error": 0,
+          "info": 0,
+          "warn": 0
+        },
+        "skippedRules": [],
+        "execution": {
+          "executed": 6,
+          "manual": 0,
+          "skipped": 0,
+          "total": 6,
+          "unsupported": 0
+        },
+        "actual": {
+          "BC-001": 0,
+          "BC-002": 0,
+          "BC-003": 0,
+          "BC-004": 0,
+          "BC-005": 0,
+          "BC-006": 0
+        },
+        "issues": [],
+        "exact": true,
+        "durationMs": 1
+      }
+    },
+    {
+      "id": "clean-07-prdp-su-ib-r009-zdn-009-ser-001-2026-pws",
+      "kind": "clean",
+      "targetRule": null,
+      "description": "Clean synthetic register for PRDP-SU-IB-R009-ZDN-009-SER-001-2026-PWS (Philippines); the response, verdict and evidence cells are synthetic placeholders, not bidder claims.",
+      "expected": {
+        "BC-001": 0,
+        "BC-002": 0,
+        "BC-003": 0,
+        "BC-004": 0,
+        "BC-005": 0,
+        "BC-006": 0
+      },
+      "default": {
+        "rulesetVersion": "2026.1",
+        "issueCount": 0,
+        "summary": {
+          "error": 0,
+          "info": 0,
+          "warn": 0
+        },
+        "skippedRules": [
+          "BC-002",
+          "BC-005"
+        ],
+        "execution": {
+          "executed": 4,
+          "manual": 0,
+          "skipped": 2,
+          "total": 6,
+          "unsupported": 0
+        },
+        "actual": {
+          "BC-001": 0,
+          "BC-002": 0,
+          "BC-003": 0,
+          "BC-004": 0,
+          "BC-005": 0,
+          "BC-006": 0
+        },
+        "issues": [],
+        "exact": true,
+        "durationMs": 1
+      },
+      "configured": {
+        "rulesetVersion": "2026.1-bench-configured",
+        "issueCount": 0,
+        "summary": {
+          "error": 0,
+          "info": 0,
+          "warn": 0
+        },
+        "skippedRules": [],
+        "execution": {
+          "executed": 6,
+          "manual": 0,
+          "skipped": 0,
+          "total": 6,
+          "unsupported": 0
+        },
+        "actual": {
+          "BC-001": 0,
+          "BC-002": 0,
+          "BC-003": 0,
+          "BC-004": 0,
+          "BC-005": 0,
+          "BC-006": 0
+        },
+        "issues": [],
+        "exact": true,
+        "durationMs": 1
+      }
+    },
+    {
+      "id": "clean-08-bf-cilss-bf-574726-cw-rfb",
+      "kind": "clean",
+      "targetRule": null,
+      "description": "Clean synthetic register for BF-CILSS-BF-574726-CW-RFB (Western and Central Africa); the response, verdict and evidence cells are synthetic placeholders, not bidder claims.",
+      "expected": {
+        "BC-001": 0,
+        "BC-002": 0,
+        "BC-003": 0,
+        "BC-004": 0,
+        "BC-005": 0,
+        "BC-006": 0
+      },
+      "default": {
+        "rulesetVersion": "2026.1",
+        "issueCount": 0,
+        "summary": {
+          "error": 0,
+          "info": 0,
+          "warn": 0
+        },
+        "skippedRules": [
+          "BC-002",
+          "BC-005"
+        ],
+        "execution": {
+          "executed": 4,
+          "manual": 0,
+          "skipped": 2,
+          "total": 6,
+          "unsupported": 0
+        },
+        "actual": {
+          "BC-001": 0,
+          "BC-002": 0,
+          "BC-003": 0,
+          "BC-004": 0,
+          "BC-005": 0,
+          "BC-006": 0
+        },
+        "issues": [],
+        "exact": true,
+        "durationMs": 1
+      },
+      "configured": {
+        "rulesetVersion": "2026.1-bench-configured",
+        "issueCount": 0,
+        "summary": {
+          "error": 0,
+          "info": 0,
+          "warn": 0
+        },
+        "skippedRules": [],
+        "execution": {
+          "executed": 6,
+          "manual": 0,
+          "skipped": 0,
+          "total": 6,
+          "unsupported": 0
+        },
+        "actual": {
+          "BC-001": 0,
+          "BC-002": 0,
+          "BC-003": 0,
+          "BC-004": 0,
+          "BC-005": 0,
+          "BC-006": 0
+        },
+        "issues": [],
+        "exact": true,
+        "durationMs": 1
+      }
+    },
+    {
+      "id": "bc001-missing-response-a",
+      "kind": "mutation",
+      "targetRule": "BC-001",
+      "description": "Clean register with the response cell blank on one notice (requirement present, response missing).",
+      "expected": {
+        "BC-001": 1,
+        "BC-002": 0,
+        "BC-003": 0,
+        "BC-004": 0,
+        "BC-005": 0,
+        "BC-006": 0
+      },
+      "default": {
+        "rulesetVersion": "2026.1",
+        "issueCount": 1,
+        "summary": {
+          "error": 0,
+          "info": 0,
+          "warn": 1
+        },
+        "skippedRules": [
+          "BC-002",
+          "BC-005"
+        ],
+        "execution": {
+          "executed": 4,
+          "manual": 0,
+          "skipped": 2,
+          "total": 6,
+          "unsupported": 0
+        },
+        "actual": {
+          "BC-001": 1,
+          "BC-002": 0,
+          "BC-003": 0,
+          "BC-004": 0,
+          "BC-005": 0,
+          "BC-006": 0
+        },
+        "issues": [
+          {
+            "ruleId": "BC-001",
+            "severity": "warn",
+            "locator": {
+              "column": "response",
+              "row": 1
+            },
+            "found": "第 1 行「response」为空"
+          }
+        ],
+        "exact": true,
+        "durationMs": 1
+      },
+      "configured": {
+        "rulesetVersion": "2026.1-bench-configured",
+        "issueCount": 1,
+        "summary": {
+          "error": 0,
+          "info": 0,
+          "warn": 1
+        },
+        "skippedRules": [],
+        "execution": {
+          "executed": 6,
+          "manual": 0,
+          "skipped": 0,
+          "total": 6,
+          "unsupported": 0
+        },
+        "actual": {
+          "BC-001": 1,
+          "BC-002": 0,
+          "BC-003": 0,
+          "BC-004": 0,
+          "BC-005": 0,
+          "BC-006": 0
+        },
+        "issues": [
+          {
+            "ruleId": "BC-001",
+            "severity": "warn",
+            "locator": {
+              "column": "response",
+              "row": 1
+            },
+            "found": "第 1 行「response」为空"
+          }
+        ],
+        "exact": true,
+        "durationMs": 1
+      }
+    },
+    {
+      "id": "bc001-missing-response-b",
+      "kind": "mutation",
+      "targetRule": "BC-001",
+      "description": "Clean register with the response cell blank on a second notice.",
+      "expected": {
+        "BC-001": 1,
+        "BC-002": 0,
+        "BC-003": 0,
+        "BC-004": 0,
+        "BC-005": 0,
+        "BC-006": 0
+      },
+      "default": {
+        "rulesetVersion": "2026.1",
+        "issueCount": 1,
+        "summary": {
+          "error": 0,
+          "info": 0,
+          "warn": 1
+        },
+        "skippedRules": [
+          "BC-002",
+          "BC-005"
+        ],
+        "execution": {
+          "executed": 4,
+          "manual": 0,
+          "skipped": 2,
+          "total": 6,
+          "unsupported": 0
+        },
+        "actual": {
+          "BC-001": 1,
+          "BC-002": 0,
+          "BC-003": 0,
+          "BC-004": 0,
+          "BC-005": 0,
+          "BC-006": 0
+        },
+        "issues": [
+          {
+            "ruleId": "BC-001",
+            "severity": "warn",
+            "locator": {
+              "column": "response",
+              "row": 1
+            },
+            "found": "第 1 行「response」为空"
+          }
+        ],
+        "exact": true,
+        "durationMs": 1
+      },
+      "configured": {
+        "rulesetVersion": "2026.1-bench-configured",
+        "issueCount": 1,
+        "summary": {
+          "error": 0,
+          "info": 0,
+          "warn": 1
+        },
+        "skippedRules": [],
+        "execution": {
+          "executed": 6,
+          "manual": 0,
+          "skipped": 0,
+          "total": 6,
+          "unsupported": 0
+        },
+        "actual": {
+          "BC-001": 1,
+          "BC-002": 0,
+          "BC-003": 0,
+          "BC-004": 0,
+          "BC-005": 0,
+          "BC-006": 0
+        },
+        "issues": [
+          {
+            "ruleId": "BC-001",
+            "severity": "warn",
+            "locator": {
+              "column": "response",
+              "row": 1
+            },
+            "found": "第 1 行「response」为空"
+          }
+        ],
+        "exact": true,
+        "durationMs": 1
+      }
+    },
+    {
+      "id": "bc002-off-vocabulary-a",
+      "kind": "mutation",
+      "targetRule": "BC-002",
+      "description": "Verdict changed to a value outside the benchmark-local vocabulary (only executed by the configured overlay).",
+      "expected": {
+        "BC-001": 0,
+        "BC-002": 1,
+        "BC-003": 0,
+        "BC-004": 0,
+        "BC-005": 0,
+        "BC-006": 0
+      },
+      "default": {
+        "rulesetVersion": "2026.1",
+        "issueCount": 0,
+        "summary": {
+          "error": 0,
+          "info": 0,
+          "warn": 0
+        },
+        "skippedRules": [
+          "BC-002",
+          "BC-005"
+        ],
+        "execution": {
+          "executed": 4,
+          "manual": 0,
+          "skipped": 2,
+          "total": 6,
+          "unsupported": 0
+        },
+        "actual": {
+          "BC-001": 0,
+          "BC-002": 0,
+          "BC-003": 0,
+          "BC-004": 0,
+          "BC-005": 0,
+          "BC-006": 0
+        },
+        "issues": [],
+        "exact": true,
+        "durationMs": 1
+      },
+      "configured": {
+        "rulesetVersion": "2026.1-bench-configured",
+        "issueCount": 1,
+        "summary": {
+          "error": 0,
+          "info": 1,
+          "warn": 0
+        },
+        "skippedRules": [],
+        "execution": {
+          "executed": 6,
+          "manual": 0,
+          "skipped": 0,
+          "total": 6,
+          "unsupported": 0
+        },
+        "actual": {
+          "BC-001": 0,
+          "BC-002": 1,
+          "BC-003": 0,
+          "BC-004": 0,
+          "BC-005": 0,
+          "BC-006": 0
+        },
+        "issues": [
+          {
+            "ruleId": "BC-002",
+            "severity": "info",
+            "locator": {
+              "column": "verdict",
+              "row": 1
+            },
+            "found": "第 1 行「verdict」的值为「SYNTHETIC_OFF_VOCAB」"
+          }
+        ],
+        "exact": true,
+        "durationMs": 1
+      }
+    },
+    {
+      "id": "bc002-off-vocabulary-b",
+      "kind": "mutation",
+      "targetRule": "BC-002",
+      "description": "Second notice carries an off-vocabulary verdict.",
+      "expected": {
+        "BC-001": 0,
+        "BC-002": 1,
+        "BC-003": 0,
+        "BC-004": 0,
+        "BC-005": 0,
+        "BC-006": 0
+      },
+      "default": {
+        "rulesetVersion": "2026.1",
+        "issueCount": 0,
+        "summary": {
+          "error": 0,
+          "info": 0,
+          "warn": 0
+        },
+        "skippedRules": [
+          "BC-002",
+          "BC-005"
+        ],
+        "execution": {
+          "executed": 4,
+          "manual": 0,
+          "skipped": 2,
+          "total": 6,
+          "unsupported": 0
+        },
+        "actual": {
+          "BC-001": 0,
+          "BC-002": 0,
+          "BC-003": 0,
+          "BC-004": 0,
+          "BC-005": 0,
+          "BC-006": 0
+        },
+        "issues": [],
+        "exact": true,
+        "durationMs": 1
+      },
+      "configured": {
+        "rulesetVersion": "2026.1-bench-configured",
+        "issueCount": 1,
+        "summary": {
+          "error": 0,
+          "info": 1,
+          "warn": 0
+        },
+        "skippedRules": [],
+        "execution": {
+          "executed": 6,
+          "manual": 0,
+          "skipped": 0,
+          "total": 6,
+          "unsupported": 0
+        },
+        "actual": {
+          "BC-001": 0,
+          "BC-002": 1,
+          "BC-003": 0,
+          "BC-004": 0,
+          "BC-005": 0,
+          "BC-006": 0
+        },
+        "issues": [
+          {
+            "ruleId": "BC-002",
+            "severity": "info",
+            "locator": {
+              "column": "verdict",
+              "row": 1
+            },
+            "found": "第 1 行「verdict」的值为「SYNTHETIC_OFF_VOCAB」"
+          }
+        ],
+        "exact": true,
+        "durationMs": 2
+      }
+    },
+    {
+      "id": "bc003-duplicate-clause-exact",
+      "kind": "mutation",
+      "targetRule": "BC-003",
+      "description": "The same notice is registered twice with the same clause number.",
+      "expected": {
+        "BC-001": 0,
+        "BC-002": 0,
+        "BC-003": 1,
+        "BC-004": 0,
+        "BC-005": 0,
+        "BC-006": 0
+      },
+      "default": {
+        "rulesetVersion": "2026.1",
+        "issueCount": 1,
+        "summary": {
+          "error": 0,
+          "info": 0,
+          "warn": 1
+        },
+        "skippedRules": [
+          "BC-002",
+          "BC-005"
+        ],
+        "execution": {
+          "executed": 4,
+          "manual": 0,
+          "skipped": 2,
+          "total": 6,
+          "unsupported": 0
+        },
+        "actual": {
+          "BC-001": 0,
+          "BC-002": 0,
+          "BC-003": 1,
+          "BC-004": 0,
+          "BC-005": 0,
+          "BC-006": 0
+        },
+        "issues": [
+          {
+            "ruleId": "BC-003",
+            "severity": "warn",
+            "locator": {
+              "column": "clause",
+              "row": 2
+            },
+            "found": "第 2 行「clause」的值「MOEYS-HEIP2-ITC-ICB-W-001」与第 1 行重复"
+          }
+        ],
+        "exact": true,
+        "durationMs": 1
+      },
+      "configured": {
+        "rulesetVersion": "2026.1-bench-configured",
+        "issueCount": 1,
+        "summary": {
+          "error": 0,
+          "info": 0,
+          "warn": 1
+        },
+        "skippedRules": [],
+        "execution": {
+          "executed": 6,
+          "manual": 0,
+          "skipped": 0,
+          "total": 6,
+          "unsupported": 0
+        },
+        "actual": {
+          "BC-001": 0,
+          "BC-002": 0,
+          "BC-003": 1,
+          "BC-004": 0,
+          "BC-005": 0,
+          "BC-006": 0
+        },
+        "issues": [
+          {
+            "ruleId": "BC-003",
+            "severity": "warn",
+            "locator": {
+              "column": "clause",
+              "row": 2
+            },
+            "found": "第 2 行「clause」的值「MOEYS-HEIP2-ITC-ICB-W-001」与第 1 行重复"
+          }
+        ],
+        "exact": true,
+        "durationMs": 1
+      }
+    },
+    {
+      "id": "bc003-duplicate-clause-whitespace",
+      "kind": "mutation",
+      "targetRule": "BC-003",
+      "description": "A clause number repeats after BC-003 removes whitespace; the values differ only by an internal space.",
+      "expected": {
+        "BC-001": 0,
+        "BC-002": 0,
+        "BC-003": 1,
+        "BC-004": 0,
+        "BC-005": 0,
+        "BC-006": 0
+      },
+      "default": {
+        "rulesetVersion": "2026.1",
+        "issueCount": 1,
+        "summary": {
+          "error": 0,
+          "info": 0,
+          "warn": 1
+        },
+        "skippedRules": [
+          "BC-002",
+          "BC-005"
+        ],
+        "execution": {
+          "executed": 4,
+          "manual": 0,
+          "skipped": 2,
+          "total": 6,
+          "unsupported": 0
+        },
+        "actual": {
+          "BC-001": 0,
+          "BC-002": 0,
+          "BC-003": 1,
+          "BC-004": 0,
+          "BC-005": 0,
+          "BC-006": 0
+        },
+        "issues": [
+          {
+            "ruleId": "BC-003",
+            "severity": "warn",
+            "locator": {
+              "column": "clause",
+              "row": 2
+            },
+            "found": "第 2 行「clause」的值「CM- MINEPAT-570276-CW-RFB」与第 1 行重复"
+          }
+        ],
+        "exact": true,
+        "durationMs": 1
+      },
+      "configured": {
+        "rulesetVersion": "2026.1-bench-configured",
+        "issueCount": 1,
+        "summary": {
+          "error": 0,
+          "info": 0,
+          "warn": 1
+        },
+        "skippedRules": [],
+        "execution": {
+          "executed": 6,
+          "manual": 0,
+          "skipped": 0,
+          "total": 6,
+          "unsupported": 0
+        },
+        "actual": {
+          "BC-001": 0,
+          "BC-002": 0,
+          "BC-003": 1,
+          "BC-004": 0,
+          "BC-005": 0,
+          "BC-006": 0
+        },
+        "issues": [
+          {
+            "ruleId": "BC-003",
+            "severity": "warn",
+            "locator": {
+              "column": "clause",
+              "row": 2
+            },
+            "found": "第 2 行「clause」的值「CM- MINEPAT-570276-CW-RFB」与第 1 行重复"
+          }
+        ],
+        "exact": true,
+        "durationMs": 1
+      }
+    },
+    {
+      "id": "bc004-missing-project",
+      "kind": "mutation",
+      "targetRule": "BC-004",
+      "description": "Register header omits the project name; the bidder remains.",
+      "expected": {
+        "BC-001": 0,
+        "BC-002": 0,
+        "BC-003": 0,
+        "BC-004": 1,
+        "BC-005": 0,
+        "BC-006": 0
+      },
+      "default": {
+        "rulesetVersion": "2026.1",
+        "issueCount": 1,
+        "summary": {
+          "error": 0,
+          "info": 0,
+          "warn": 1
+        },
+        "skippedRules": [
+          "BC-002",
+          "BC-005"
+        ],
+        "execution": {
+          "executed": 4,
+          "manual": 0,
+          "skipped": 2,
+          "total": 6,
+          "unsupported": 0
+        },
+        "actual": {
+          "BC-001": 0,
+          "BC-002": 0,
+          "BC-003": 0,
+          "BC-004": 1,
+          "BC-005": 0,
+          "BC-006": 0
+        },
+        "issues": [
+          {
+            "ruleId": "BC-004",
+            "severity": "warn",
+            "locator": {
+              "column": "project"
+            },
+            "found": "材料表头缺少 project"
+          }
+        ],
+        "exact": true,
+        "durationMs": 1
+      },
+      "configured": {
+        "rulesetVersion": "2026.1-bench-configured",
+        "issueCount": 1,
+        "summary": {
+          "error": 0,
+          "info": 0,
+          "warn": 1
+        },
+        "skippedRules": [],
+        "execution": {
+          "executed": 6,
+          "manual": 0,
+          "skipped": 0,
+          "total": 6,
+          "unsupported": 0
+        },
+        "actual": {
+          "BC-001": 0,
+          "BC-002": 0,
+          "BC-003": 0,
+          "BC-004": 1,
+          "BC-005": 0,
+          "BC-006": 0
+        },
+        "issues": [
+          {
+            "ruleId": "BC-004",
+            "severity": "warn",
+            "locator": {
+              "column": "project"
+            },
+            "found": "材料表头缺少 project"
+          }
+        ],
+        "exact": true,
+        "durationMs": 2
+      }
+    },
+    {
+      "id": "bc004-missing-bidder",
+      "kind": "mutation",
+      "targetRule": "BC-004",
+      "description": "Register header omits the bidder; the project remains.",
+      "expected": {
+        "BC-001": 0,
+        "BC-002": 0,
+        "BC-003": 0,
+        "BC-004": 1,
+        "BC-005": 0,
+        "BC-006": 0
+      },
+      "default": {
+        "rulesetVersion": "2026.1",
+        "issueCount": 1,
+        "summary": {
+          "error": 0,
+          "info": 0,
+          "warn": 1
+        },
+        "skippedRules": [
+          "BC-002",
+          "BC-005"
+        ],
+        "execution": {
+          "executed": 4,
+          "manual": 0,
+          "skipped": 2,
+          "total": 6,
+          "unsupported": 0
+        },
+        "actual": {
+          "BC-001": 0,
+          "BC-002": 0,
+          "BC-003": 0,
+          "BC-004": 1,
+          "BC-005": 0,
+          "BC-006": 0
+        },
+        "issues": [
+          {
+            "ruleId": "BC-004",
+            "severity": "warn",
+            "locator": {
+              "column": "bidder"
+            },
+            "found": "材料表头缺少 bidder"
+          }
+        ],
+        "exact": true,
+        "durationMs": 0
+      },
+      "configured": {
+        "rulesetVersion": "2026.1-bench-configured",
+        "issueCount": 1,
+        "summary": {
+          "error": 0,
+          "info": 0,
+          "warn": 1
+        },
+        "skippedRules": [],
+        "execution": {
+          "executed": 6,
+          "manual": 0,
+          "skipped": 0,
+          "total": 6,
+          "unsupported": 0
+        },
+        "actual": {
+          "BC-001": 0,
+          "BC-002": 0,
+          "BC-003": 0,
+          "BC-004": 1,
+          "BC-005": 0,
+          "BC-006": 0
+        },
+        "issues": [
+          {
+            "ruleId": "BC-004",
+            "severity": "warn",
+            "locator": {
+              "column": "bidder"
+            },
+            "found": "材料表头缺少 bidder"
+          }
+        ],
+        "exact": true,
+        "durationMs": 1
+      }
+    },
+    {
+      "id": "bc004-missing-both",
+      "kind": "mutation",
+      "targetRule": "BC-004",
+      "description": "Register header omits both project and bidder; BC-004 reports one header finding, not two.",
+      "expected": {
+        "BC-001": 0,
+        "BC-002": 0,
+        "BC-003": 0,
+        "BC-004": 1,
+        "BC-005": 0,
+        "BC-006": 0
+      },
+      "default": {
+        "rulesetVersion": "2026.1",
+        "issueCount": 1,
+        "summary": {
+          "error": 0,
+          "info": 0,
+          "warn": 1
+        },
+        "skippedRules": [
+          "BC-002",
+          "BC-005"
+        ],
+        "execution": {
+          "executed": 4,
+          "manual": 0,
+          "skipped": 2,
+          "total": 6,
+          "unsupported": 0
+        },
+        "actual": {
+          "BC-001": 0,
+          "BC-002": 0,
+          "BC-003": 0,
+          "BC-004": 1,
+          "BC-005": 0,
+          "BC-006": 0
+        },
+        "issues": [
+          {
+            "ruleId": "BC-004",
+            "severity": "warn",
+            "locator": {
+              "column": "project"
+            },
+            "found": "材料表头缺少 project、bidder"
+          }
+        ],
+        "exact": true,
+        "durationMs": 1
+      },
+      "configured": {
+        "rulesetVersion": "2026.1-bench-configured",
+        "issueCount": 1,
+        "summary": {
+          "error": 0,
+          "info": 0,
+          "warn": 1
+        },
+        "skippedRules": [],
+        "execution": {
+          "executed": 6,
+          "manual": 0,
+          "skipped": 0,
+          "total": 6,
+          "unsupported": 0
+        },
+        "actual": {
+          "BC-001": 0,
+          "BC-002": 0,
+          "BC-003": 0,
+          "BC-004": 1,
+          "BC-005": 0,
+          "BC-006": 0
+        },
+        "issues": [
+          {
+            "ruleId": "BC-004",
+            "severity": "warn",
+            "locator": {
+              "column": "project"
+            },
+            "found": "材料表头缺少 project、bidder"
+          }
+        ],
+        "exact": true,
+        "durationMs": 1
+      }
+    },
+    {
+      "id": "bc005-missing-evidence-a",
+      "kind": "mutation",
+      "targetRule": "BC-005",
+      "description": "A high-risk requirement carries a blank evidence cell (only executed by the configured overlay).",
+      "expected": {
+        "BC-001": 0,
+        "BC-002": 0,
+        "BC-003": 0,
+        "BC-004": 0,
+        "BC-005": 1,
+        "BC-006": 0
+      },
+      "default": {
+        "rulesetVersion": "2026.1",
+        "issueCount": 0,
+        "summary": {
+          "error": 0,
+          "info": 0,
+          "warn": 0
+        },
+        "skippedRules": [
+          "BC-002",
+          "BC-005"
+        ],
+        "execution": {
+          "executed": 4,
+          "manual": 0,
+          "skipped": 2,
+          "total": 6,
+          "unsupported": 0
+        },
+        "actual": {
+          "BC-001": 0,
+          "BC-002": 0,
+          "BC-003": 0,
+          "BC-004": 0,
+          "BC-005": 0,
+          "BC-006": 0
+        },
+        "issues": [],
+        "exact": true,
+        "durationMs": 1
+      },
+      "configured": {
+        "rulesetVersion": "2026.1-bench-configured",
+        "issueCount": 1,
+        "summary": {
+          "error": 0,
+          "info": 0,
+          "warn": 1
+        },
+        "skippedRules": [],
+        "execution": {
+          "executed": 6,
+          "manual": 0,
+          "skipped": 0,
+          "total": 6,
+          "unsupported": 0
+        },
+        "actual": {
+          "BC-001": 0,
+          "BC-002": 0,
+          "BC-003": 0,
+          "BC-004": 0,
+          "BC-005": 1,
+          "BC-006": 0
+        },
+        "issues": [
+          {
+            "ruleId": "BC-005",
+            "severity": "warn",
+            "locator": {
+              "column": "evidence",
+              "row": 1
+            },
+            "found": "第 1 行的要求命中高风险关键词「Construction」，但未填写证明材料"
+          }
+        ],
+        "exact": true,
+        "durationMs": 1
+      }
+    },
+    {
+      "id": "bc005-missing-evidence-b",
+      "kind": "mutation",
+      "targetRule": "BC-005",
+      "description": "A second high-risk requirement carries a blank evidence cell.",
+      "expected": {
+        "BC-001": 0,
+        "BC-002": 0,
+        "BC-003": 0,
+        "BC-004": 0,
+        "BC-005": 1,
+        "BC-006": 0
+      },
+      "default": {
+        "rulesetVersion": "2026.1",
+        "issueCount": 0,
+        "summary": {
+          "error": 0,
+          "info": 0,
+          "warn": 0
+        },
+        "skippedRules": [
+          "BC-002",
+          "BC-005"
+        ],
+        "execution": {
+          "executed": 4,
+          "manual": 0,
+          "skipped": 2,
+          "total": 6,
+          "unsupported": 0
+        },
+        "actual": {
+          "BC-001": 0,
+          "BC-002": 0,
+          "BC-003": 0,
+          "BC-004": 0,
+          "BC-005": 0,
+          "BC-006": 0
+        },
+        "issues": [],
+        "exact": true,
+        "durationMs": 1
+      },
+      "configured": {
+        "rulesetVersion": "2026.1-bench-configured",
+        "issueCount": 1,
+        "summary": {
+          "error": 0,
+          "info": 0,
+          "warn": 1
+        },
+        "skippedRules": [],
+        "execution": {
+          "executed": 6,
+          "manual": 0,
+          "skipped": 0,
+          "total": 6,
+          "unsupported": 0
+        },
+        "actual": {
+          "BC-001": 0,
+          "BC-002": 0,
+          "BC-003": 0,
+          "BC-004": 0,
+          "BC-005": 1,
+          "BC-006": 0
+        },
+        "issues": [
+          {
+            "ruleId": "BC-005",
+            "severity": "warn",
+            "locator": {
+              "column": "evidence",
+              "row": 1
+            },
+            "found": "第 1 行的要求命中高风险关键词「construction」，但未填写证明材料"
+          }
+        ],
+        "exact": true,
+        "durationMs": 1
+      }
+    },
+    {
+      "id": "bc006-placeholder-double-brace",
+      "kind": "mutation",
+      "targetRule": "BC-006",
+      "description": "The requirement column keeps a {{TBD}} template placeholder.",
+      "expected": {
+        "BC-001": 0,
+        "BC-002": 0,
+        "BC-003": 0,
+        "BC-004": 0,
+        "BC-005": 0,
+        "BC-006": 1
+      },
+      "default": {
+        "rulesetVersion": "2026.1",
+        "issueCount": 1,
+        "summary": {
+          "error": 0,
+          "info": 0,
+          "warn": 1
+        },
+        "skippedRules": [
+          "BC-002",
+          "BC-005"
+        ],
+        "execution": {
+          "executed": 4,
+          "manual": 0,
+          "skipped": 2,
+          "total": 6,
+          "unsupported": 0
+        },
+        "actual": {
+          "BC-001": 0,
+          "BC-002": 0,
+          "BC-003": 0,
+          "BC-004": 0,
+          "BC-005": 0,
+          "BC-006": 1
+        },
+        "issues": [
+          {
+            "ruleId": "BC-006",
+            "severity": "warn",
+            "locator": {
+              "column": "requirement",
+              "row": 1
+            },
+            "found": "第 1 行「requirement」中残留占位符「{{」"
+          }
+        ],
+        "exact": true,
+        "durationMs": 1
+      },
+      "configured": {
+        "rulesetVersion": "2026.1-bench-configured",
+        "issueCount": 1,
+        "summary": {
+          "error": 0,
+          "info": 0,
+          "warn": 1
+        },
+        "skippedRules": [],
+        "execution": {
+          "executed": 6,
+          "manual": 0,
+          "skipped": 0,
+          "total": 6,
+          "unsupported": 0
+        },
+        "actual": {
+          "BC-001": 0,
+          "BC-002": 0,
+          "BC-003": 0,
+          "BC-004": 0,
+          "BC-005": 0,
+          "BC-006": 1
+        },
+        "issues": [
+          {
+            "ruleId": "BC-006",
+            "severity": "warn",
+            "locator": {
+              "column": "requirement",
+              "row": 1
+            },
+            "found": "第 1 行「requirement」中残留占位符「{{」"
+          }
+        ],
+        "exact": true,
+        "durationMs": 1
+      }
+    },
+    {
+      "id": "bc006-placeholder-cjk-bracket",
+      "kind": "mutation",
+      "targetRule": "BC-006",
+      "description": "The requirement column keeps a 【待填】 placeholder.",
+      "expected": {
+        "BC-001": 0,
+        "BC-002": 0,
+        "BC-003": 0,
+        "BC-004": 0,
+        "BC-005": 0,
+        "BC-006": 1
+      },
+      "default": {
+        "rulesetVersion": "2026.1",
+        "issueCount": 1,
+        "summary": {
+          "error": 0,
+          "info": 0,
+          "warn": 1
+        },
+        "skippedRules": [
+          "BC-002",
+          "BC-005"
+        ],
+        "execution": {
+          "executed": 4,
+          "manual": 0,
+          "skipped": 2,
+          "total": 6,
+          "unsupported": 0
+        },
+        "actual": {
+          "BC-001": 0,
+          "BC-002": 0,
+          "BC-003": 0,
+          "BC-004": 0,
+          "BC-005": 0,
+          "BC-006": 1
+        },
+        "issues": [
+          {
+            "ruleId": "BC-006",
+            "severity": "warn",
+            "locator": {
+              "column": "requirement",
+              "row": 1
+            },
+            "found": "第 1 行「requirement」中残留占位符「【」"
+          }
+        ],
+        "exact": true,
+        "durationMs": 1
+      },
+      "configured": {
+        "rulesetVersion": "2026.1-bench-configured",
+        "issueCount": 1,
+        "summary": {
+          "error": 0,
+          "info": 0,
+          "warn": 1
+        },
+        "skippedRules": [],
+        "execution": {
+          "executed": 6,
+          "manual": 0,
+          "skipped": 0,
+          "total": 6,
+          "unsupported": 0
+        },
+        "actual": {
+          "BC-001": 0,
+          "BC-002": 0,
+          "BC-003": 0,
+          "BC-004": 0,
+          "BC-005": 0,
+          "BC-006": 1
+        },
+        "issues": [
+          {
+            "ruleId": "BC-006",
+            "severity": "warn",
+            "locator": {
+              "column": "requirement",
+              "row": 1
+            },
+            "found": "第 1 行「requirement」中残留占位符「【」"
+          }
+        ],
+        "exact": true,
+        "durationMs": 0
+      }
+    },
+    {
+      "id": "bc006-placeholder-xxx",
+      "kind": "mutation",
+      "targetRule": "BC-006",
+      "description": "The requirement column keeps an XXX placeholder.",
+      "expected": {
+        "BC-001": 0,
+        "BC-002": 0,
+        "BC-003": 0,
+        "BC-004": 0,
+        "BC-005": 0,
+        "BC-006": 1
+      },
+      "default": {
+        "rulesetVersion": "2026.1",
+        "issueCount": 1,
+        "summary": {
+          "error": 0,
+          "info": 0,
+          "warn": 1
+        },
+        "skippedRules": [
+          "BC-002",
+          "BC-005"
+        ],
+        "execution": {
+          "executed": 4,
+          "manual": 0,
+          "skipped": 2,
+          "total": 6,
+          "unsupported": 0
+        },
+        "actual": {
+          "BC-001": 0,
+          "BC-002": 0,
+          "BC-003": 0,
+          "BC-004": 0,
+          "BC-005": 0,
+          "BC-006": 1
+        },
+        "issues": [
+          {
+            "ruleId": "BC-006",
+            "severity": "warn",
+            "locator": {
+              "column": "requirement",
+              "row": 1
+            },
+            "found": "第 1 行「requirement」中残留占位符「XXX」"
+          }
+        ],
+        "exact": true,
+        "durationMs": 1
+      },
+      "configured": {
+        "rulesetVersion": "2026.1-bench-configured",
+        "issueCount": 1,
+        "summary": {
+          "error": 0,
+          "info": 0,
+          "warn": 1
+        },
+        "skippedRules": [],
+        "execution": {
+          "executed": 6,
+          "manual": 0,
+          "skipped": 0,
+          "total": 6,
+          "unsupported": 0
+        },
+        "actual": {
+          "BC-001": 0,
+          "BC-002": 0,
+          "BC-003": 0,
+          "BC-004": 0,
+          "BC-005": 0,
+          "BC-006": 1
+        },
+        "issues": [
+          {
+            "ruleId": "BC-006",
+            "severity": "warn",
+            "locator": {
+              "column": "requirement",
+              "row": 1
+            },
+            "found": "第 1 行「requirement」中残留占位符「XXX」"
+          }
+        ],
+        "exact": true,
+        "durationMs": 1
+      }
+    },
+    {
+      "id": "blind-wrong-deadline",
+      "kind": "blind-spot",
+      "targetRule": null,
+      "description": "The bid-side deadline differs from the notice by one day; the register is otherwise clean.",
+      "expected": {
+        "BC-001": 0,
+        "BC-002": 0,
+        "BC-003": 0,
+        "BC-004": 0,
+        "BC-005": 0,
+        "BC-006": 0
+      },
+      "default": {
+        "rulesetVersion": "2026.1",
+        "issueCount": 0,
+        "summary": {
+          "error": 0,
+          "info": 0,
+          "warn": 0
+        },
+        "skippedRules": [
+          "BC-002",
+          "BC-005"
+        ],
+        "execution": {
+          "executed": 4,
+          "manual": 0,
+          "skipped": 2,
+          "total": 6,
+          "unsupported": 0
+        },
+        "actual": {
+          "BC-001": 0,
+          "BC-002": 0,
+          "BC-003": 0,
+          "BC-004": 0,
+          "BC-005": 0,
+          "BC-006": 0
+        },
+        "issues": [],
+        "exact": true,
+        "durationMs": 1
+      },
+      "configured": {
+        "rulesetVersion": "2026.1-bench-configured",
+        "issueCount": 0,
+        "summary": {
+          "error": 0,
+          "info": 0,
+          "warn": 0
+        },
+        "skippedRules": [],
+        "execution": {
+          "executed": 6,
+          "manual": 0,
+          "skipped": 0,
+          "total": 6,
+          "unsupported": 0
+        },
+        "actual": {
+          "BC-001": 0,
+          "BC-002": 0,
+          "BC-003": 0,
+          "BC-004": 0,
+          "BC-005": 0,
+          "BC-006": 0
+        },
+        "issues": [],
+        "exact": true,
+        "durationMs": 1
+      }
+    },
+    {
+      "id": "blind-wrong-notice-type",
+      "kind": "blind-spot",
+      "targetRule": null,
+      "description": "The bid-side notice type is Contract Award while the notice is Invitation for Bids.",
+      "expected": {
+        "BC-001": 0,
+        "BC-002": 0,
+        "BC-003": 0,
+        "BC-004": 0,
+        "BC-005": 0,
+        "BC-006": 0
+      },
+      "default": {
+        "rulesetVersion": "2026.1",
+        "issueCount": 0,
+        "summary": {
+          "error": 0,
+          "info": 0,
+          "warn": 0
+        },
+        "skippedRules": [
+          "BC-002",
+          "BC-005"
+        ],
+        "execution": {
+          "executed": 4,
+          "manual": 0,
+          "skipped": 2,
+          "total": 6,
+          "unsupported": 0
+        },
+        "actual": {
+          "BC-001": 0,
+          "BC-002": 0,
+          "BC-003": 0,
+          "BC-004": 0,
+          "BC-005": 0,
+          "BC-006": 0
+        },
+        "issues": [],
+        "exact": true,
+        "durationMs": 1
+      },
+      "configured": {
+        "rulesetVersion": "2026.1-bench-configured",
+        "issueCount": 0,
+        "summary": {
+          "error": 0,
+          "info": 0,
+          "warn": 0
+        },
+        "skippedRules": [],
+        "execution": {
+          "executed": 6,
+          "manual": 0,
+          "skipped": 0,
+          "total": 6,
+          "unsupported": 0
+        },
+        "actual": {
+          "BC-001": 0,
+          "BC-002": 0,
+          "BC-003": 0,
+          "BC-004": 0,
+          "BC-005": 0,
+          "BC-006": 0
+        },
+        "issues": [],
+        "exact": true,
+        "durationMs": 1
+      }
+    },
+    {
+      "id": "blind-extra-bid-row",
+      "kind": "blind-spot",
+      "targetRule": null,
+      "description": "The bid carries an extra row whose clause is absent from the requirements pack.",
+      "expected": {
+        "BC-001": 0,
+        "BC-002": 0,
+        "BC-003": 0,
+        "BC-004": 0,
+        "BC-005": 0,
+        "BC-006": 0
+      },
+      "default": {
+        "rulesetVersion": "2026.1",
+        "issueCount": 0,
+        "summary": {
+          "error": 0,
+          "info": 0,
+          "warn": 0
+        },
+        "skippedRules": [
+          "BC-002",
+          "BC-005"
+        ],
+        "execution": {
+          "executed": 4,
+          "manual": 0,
+          "skipped": 2,
+          "total": 6,
+          "unsupported": 0
+        },
+        "actual": {
+          "BC-001": 0,
+          "BC-002": 0,
+          "BC-003": 0,
+          "BC-004": 0,
+          "BC-005": 0,
+          "BC-006": 0
+        },
+        "issues": [],
+        "exact": true,
+        "durationMs": 1
+      },
+      "configured": {
+        "rulesetVersion": "2026.1-bench-configured",
+        "issueCount": 0,
+        "summary": {
+          "error": 0,
+          "info": 0,
+          "warn": 0
+        },
+        "skippedRules": [],
+        "execution": {
+          "executed": 6,
+          "manual": 0,
+          "skipped": 0,
+          "total": 6,
+          "unsupported": 0
+        },
+        "actual": {
+          "BC-001": 0,
+          "BC-002": 0,
+          "BC-003": 0,
+          "BC-004": 0,
+          "BC-005": 0,
+          "BC-006": 0
+        },
+        "issues": [],
+        "exact": true,
+        "durationMs": 1
+      }
+    },
+    {
+      "id": "blind-missing-bid-row",
+      "kind": "blind-spot",
+      "targetRule": null,
+      "description": "A requirement in the pack has no corresponding bid row; the bid register has only the other notice.",
+      "expected": {
+        "BC-001": 0,
+        "BC-002": 0,
+        "BC-003": 0,
+        "BC-004": 0,
+        "BC-005": 0,
+        "BC-006": 0
+      },
+      "default": {
+        "rulesetVersion": "2026.1",
+        "issueCount": 0,
+        "summary": {
+          "error": 0,
+          "info": 0,
+          "warn": 0
+        },
+        "skippedRules": [
+          "BC-002",
+          "BC-005"
+        ],
+        "execution": {
+          "executed": 4,
+          "manual": 0,
+          "skipped": 2,
+          "total": 6,
+          "unsupported": 0
+        },
+        "actual": {
+          "BC-001": 0,
+          "BC-002": 0,
+          "BC-003": 0,
+          "BC-004": 0,
+          "BC-005": 0,
+          "BC-006": 0
+        },
+        "issues": [],
+        "exact": true,
+        "durationMs": 1
+      },
+      "configured": {
+        "rulesetVersion": "2026.1-bench-configured",
+        "issueCount": 0,
+        "summary": {
+          "error": 0,
+          "info": 0,
+          "warn": 0
+        },
+        "skippedRules": [],
+        "execution": {
+          "executed": 6,
+          "manual": 0,
+          "skipped": 0,
+          "total": 6,
+          "unsupported": 0
+        },
+        "actual": {
+          "BC-001": 0,
+          "BC-002": 0,
+          "BC-003": 0,
+          "BC-004": 0,
+          "BC-005": 0,
+          "BC-006": 0
+        },
+        "issues": [],
+        "exact": true,
+        "durationMs": 1
+      }
+    }
+  ],
+  "blindSpots": [
+    {
+      "id": "blind-wrong-deadline",
+      "kind": "wrong-deadline",
+      "field": "submission_deadline_date",
+      "requirementValue": "2026-12-04T00:00:00Z",
+      "bidValue": "2026-12-05T00:00:00.000Z",
+      "why": "The six-rule pack has no deadline check and no rule compares a bid row against the notice. The register columns it reads are clause, requirement, response, verdict, evidence and header.",
+      "issuesReported": {
+        "default": 0,
+        "configured": 0
+      },
+      "detected": false
+    },
+    {
+      "id": "blind-wrong-notice-type",
+      "kind": "wrong-notice-type",
+      "field": "notice_type",
+      "requirementValue": "Invitation for Bids",
+      "bidValue": "Contract Award",
+      "why": "The six-rule pack has no notice-type check. Neither BC-001 nor BC-004 reads notice_type; the value is retained by the reader but no rule consumes it.",
+      "issuesReported": {
+        "default": 0,
+        "configured": 0
+      },
+      "detected": false
+    },
+    {
+      "id": "blind-extra-bid-row",
+      "kind": "extra-bid-row",
+      "field": "clause",
+      "requirementValue": null,
+      "bidValue": "SYNTHETIC-PHANTOM-NOT-IN-REQUIREMENTS",
+      "why": "The plugin checks the register it is given; it has no reference set and no referential-integrity rule. It cannot know that a clause is absent from the requirements pack.",
+      "issuesReported": {
+        "default": 0,
+        "configured": 0
+      },
+      "detected": false
+    },
+    {
+      "id": "blind-missing-bid-row",
+      "kind": "missing-bid-row",
+      "field": "clause",
+      "requirementValue": "CM-MINEPAT-570276-CW-RFB",
+      "bidValue": null,
+      "why": "BC-001 checks rows that are present; it cannot report a row that was never in the material. No rule compares the register against an external requirements pack.",
+      "issuesReported": {
+        "default": 0,
+        "configured": 0
+      },
+      "detected": false
+    }
+  ],
+  "failures": [],
+  "limitations": [
+    "The bid side is synthetic. The notices are requirements-side public data; the bidder name, responses, verdicts, evidence placeholders and injected defects are generated fixtures. No real bidder submission, compliance conclusion or award outcome is claimed.",
+    "The plugin is a Chinese tender compliance-register checker. This bench uses World Bank notices only as a public source of requirement text; the plugin's cited clauses are Chinese tendering-law provisions, not World Bank procurement rules. No legal conclusion about a World Bank procurement is drawn.",
+    "The plugin checks register-internal completeness and consistency. It does not judge whether a response satisfies a requirement, whether evidence is authentic or sufficient, or whether a bid is valid, responsive or should be rejected.",
+    "Blind spots: the six-rule pack has no rule for a wrong submission deadline, a wrong notice type, an extra bid row absent from the requirements pack, or a requirement with no bid row at all. The four probes are expected to report zero issues and are excluded from P/R; they are listed separately.",
+    "Generic-engine note: src/shared/rows.ts implements date and field-comparison check kinds, so a deployment could add a deadline rule in its own rule pack. This benchmark deliberately does not: P/R is measured against the shipped six-rule pack, and adding a benchmark-authored rule would score that rule, not the plugin's shipped behaviour. Detecting missing or extra rows against an external requirements pack would need a new check kind or code, which this bench does not add.",
+    "BC-002 and BC-005 ship disabled because their lists are institution/project policy. The configured mode is a benchmark-local overlay generated from the shipped pack; it is not a plugin release artifact and does not change the default deployment.",
+    "The API is live. Selection is deterministic for one fetched page but the notice set can change between runs. Results are tied to the retrieval timestamp and raw SHA-256 recorded in summary.json; re-run fetch -> adapter -> evaluate to refresh.",
+    "The search term is broad: qterm=construction returns contract awards and other notice types too. The adapter filters locally to Invitation for Bids notices whose descriptions contain \"construct\", carry a parseable deadline and carry the six consumed fields.",
+    "The four blind-spot probes are negative controls, not ground truth about the plugin's usefulness. A zero-issue result on a wrong deadline or notice type confirms a scope limitation, not a correct assessment.",
+    "Case labels are injected defects, not annotations of a real tender or bid. Precision/recall describe how faithfully the tool reproduces these labels, not how well it would score a real procurement.",
+    "The dataset-level license is CC BY 4.0 (verified 2026-11-10 in the World Bank Data Catalog). The API response itself carries no license field; the general World Bank site terms also apply. Individual notice text may contain third-party content. Re-verify before redistribution; this README is not legal advice."
+  ],
+  "hashes": {
+    "raw": "7bba29c6bb54df3a5fe6bb983e1555b389dd5202ce9b6d93f689a4bcc88d7ce1",
+    "rawFile": "bench/public-worldbank/.data/wb-procnotices.construction.json",
+    "requirements": "3566d43329a478edafc20dad1607ccbdb61f0eb8f27611f884c2c80c13fdbf19",
+    "requirementsFile": "bench/public-worldbank/.data/requirements.json",
+    "cases": "4aeaadcb3baeae4a3469eb345f8533d7347552b0f424dbd5a7660670d9bba898",
+    "casesFile": "bench/public-worldbank/.data/cases.json",
+    "overlay": "f43b80b399f526a6a8e61e56a9ff73b5b851448d91c19d1670bd13797e8ab47a",
+    "overlayFile": "bench/public-worldbank/.data/rules-configured.yaml"
+  }
+}

@@ -1,0 +1,3 @@
+# Raw API responses, generated cases, audit results and the benchmark rule overlay.
+# The committed report (RESULTS.md) and summary.json carry hashes/provenance instead.
+.data/
