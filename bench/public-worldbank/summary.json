@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-10T11:55:24.017Z",
+  "generatedAt": "2026-11-10T12:24:50.354Z",
   "benchmark": "public-worldbank",
   "command": "node bench/public-worldbank/evaluate.mjs",
   "syntheticBidWarning": "The notices are requirements-side public data. Everything on the bid side (bidder, response, verdict, evidence, mutations) is synthetic and is not a real bidder submission or outcome.",
@@ -12,7 +12,7 @@
       "tools"
     ],
     "entrypoint": "lib/index.mjs",
-    "entrypointSha256": "042ade7b799ee3fb6deb671213fee9ee3f3c0c6b231c436681a6d9a207a97fe1",
+    "entrypointSha256": "8f35a0d3045f64ce10acad3b30916747ab4fce577ae2a4ed676b16bc86a9b137",
     "shippedRulesetVersion": "2026.1",
     "configuredRulesetVersion": "2026.1-bench-configured"
   },
@@ -247,7 +247,9 @@
       ],
       "notScoredRules": [
         "BC-002",
-        "BC-005"
+        "BC-005",
+        "BC-007",
+        "BC-009"
       ],
       "perRule": {
         "BC-001": {
@@ -327,12 +329,14 @@
       "blindSpotDetected": 0,
       "skippedByRule": {
         "BC-002": 26,
-        "BC-005": 26
+        "BC-005": 26,
+        "BC-007": 26,
+        "BC-009": 2
       },
       "executionTotals": {
-        "total": 156,
-        "executed": 104,
-        "skipped": 52,
+        "total": 208,
+        "executed": 128,
+        "skipped": 80,
         "manual": 0,
         "unsupported": 0
       },
@@ -347,7 +351,9 @@
         "BC-003",
         "BC-004",
         "BC-005",
-        "BC-006"
+        "BC-006",
+        "BC-007",
+        "BC-009"
       ],
       "notScoredRules": [],
       "perRule": {
@@ -434,6 +440,34 @@
           "precision": 1,
           "recall": 1,
           "f1": 1
+        },
+        "BC-007": {
+          "rule": "BC-007",
+          "severity": "info",
+          "title": "Bid deadline equals the notice deadline",
+          "expected": 0,
+          "actual": 0,
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "cases": 26,
+          "precision": null,
+          "recall": null,
+          "f1": null
+        },
+        "BC-009": {
+          "rule": "BC-009",
+          "severity": "info",
+          "title": "A response row carries its requirement",
+          "expected": 0,
+          "actual": 0,
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "cases": 26,
+          "precision": null,
+          "recall": null,
+          "f1": null
         }
       },
       "totals": {
@@ -454,11 +488,14 @@
       "mutationPass": 14,
       "blindSpotTotal": 4,
       "blindSpotDetected": 0,
-      "skippedByRule": {},
+      "skippedByRule": {
+        "BC-007": 26,
+        "BC-009": 2
+      },
       "executionTotals": {
-        "total": 156,
-        "executed": 156,
-        "skipped": 0,
+        "total": 208,
+        "executed": 180,
+        "skipped": 28,
         "manual": 0,
         "unsupported": 0
       },
@@ -477,7 +514,9 @@
         "BC-003": 0,
         "BC-004": 0,
         "BC-005": 0,
-        "BC-006": 0
+        "BC-006": 0,
+        "BC-007": 0,
+        "BC-009": 0
       },
       "default": {
         "rulesetVersion": "2026.1",
@@ -489,13 +528,14 @@
         },
         "skippedRules": [
           "BC-002",
-          "BC-005"
+          "BC-005",
+          "BC-007"
         ],
         "execution": {
-          "executed": 4,
+          "executed": 5,
           "manual": 0,
-          "skipped": 2,
-          "total": 6,
+          "skipped": 3,
+          "total": 8,
           "unsupported": 0
         },
         "actual": {
@@ -504,11 +544,13 @@
           "BC-003": 0,
           "BC-004": 0,
           "BC-005": 0,
-          "BC-006": 0
+          "BC-006": 0,
+          "BC-007": 0,
+          "BC-009": 0
         },
         "issues": [],
         "exact": true,
-        "durationMs": 5
+        "durationMs": 8
       },
       "configured": {
         "rulesetVersion": "2026.1-bench-configured",
@@ -518,12 +560,14 @@
           "info": 0,
           "warn": 0
         },
-        "skippedRules": [],
+        "skippedRules": [
+          "BC-007"
+        ],
         "execution": {
-          "executed": 6,
+          "executed": 7,
           "manual": 0,
-          "skipped": 0,
-          "total": 6,
+          "skipped": 1,
+          "total": 8,
           "unsupported": 0
         },
         "actual": {
@@ -532,11 +576,13 @@
           "BC-003": 0,
           "BC-004": 0,
           "BC-005": 0,
-          "BC-006": 0
+          "BC-006": 0,
+          "BC-007": 0,
+          "BC-009": 0
         },
         "issues": [],
         "exact": true,
-        "durationMs": 3
+        "durationMs": 6
       }
     },
     {
@@ -550,7 +596,9 @@
         "BC-003": 0,
         "BC-004": 0,
         "BC-005": 0,
-        "BC-006": 0
+        "BC-006": 0,
+        "BC-007": 0,
+        "BC-009": 0
       },
       "default": {
         "rulesetVersion": "2026.1",
@@ -562,13 +610,14 @@
         },
         "skippedRules": [
           "BC-002",
-          "BC-005"
+          "BC-005",
+          "BC-007"
         ],
         "execution": {
-          "executed": 4,
+          "executed": 5,
           "manual": 0,
-          "skipped": 2,
-          "total": 6,
+          "skipped": 3,
+          "total": 8,
           "unsupported": 0
         },
         "actual": {
@@ -577,11 +626,13 @@
           "BC-003": 0,
           "BC-004": 0,
           "BC-005": 0,
-          "BC-006": 0
+          "BC-006": 0,
+          "BC-007": 0,
+          "BC-009": 0
         },
         "issues": [],
         "exact": true,
-        "durationMs": 1
+        "durationMs": 2
       },
       "configured": {
         "rulesetVersion": "2026.1-bench-configured",
@@ -591,12 +642,14 @@
           "info": 0,
           "warn": 0
         },
-        "skippedRules": [],
+        "skippedRules": [
+          "BC-007"
+        ],
         "execution": {
-          "executed": 6,
+          "executed": 7,
           "manual": 0,
-          "skipped": 0,
-          "total": 6,
+          "skipped": 1,
+          "total": 8,
           "unsupported": 0
         },
         "actual": {
@@ -605,11 +658,13 @@
           "BC-003": 0,
           "BC-004": 0,
           "BC-005": 0,
-          "BC-006": 0
+          "BC-006": 0,
+          "BC-007": 0,
+          "BC-009": 0
         },
         "issues": [],
         "exact": true,
-        "durationMs": 1
+        "durationMs": 2
       }
     },
     {
@@ -623,7 +678,9 @@
         "BC-003": 0,
         "BC-004": 0,
         "BC-005": 0,
-        "BC-006": 0
+        "BC-006": 0,
+        "BC-007": 0,
+        "BC-009": 0
       },
       "default": {
         "rulesetVersion": "2026.1",
@@ -635,13 +692,14 @@
         },
         "skippedRules": [
           "BC-002",
-          "BC-005"
+          "BC-005",
+          "BC-007"
         ],
         "execution": {
-          "executed": 4,
+          "executed": 5,
           "manual": 0,
-          "skipped": 2,
-          "total": 6,
+          "skipped": 3,
+          "total": 8,
           "unsupported": 0
         },
         "actual": {
@@ -650,11 +708,13 @@
           "BC-003": 0,
           "BC-004": 0,
           "BC-005": 0,
-          "BC-006": 0
+          "BC-006": 0,
+          "BC-007": 0,
+          "BC-009": 0
         },
         "issues": [],
         "exact": true,
-        "durationMs": 1
+        "durationMs": 2
       },
       "configured": {
         "rulesetVersion": "2026.1-bench-configured",
@@ -664,12 +724,14 @@
           "info": 0,
           "warn": 0
         },
-        "skippedRules": [],
+        "skippedRules": [
+          "BC-007"
+        ],
         "execution": {
-          "executed": 6,
+          "executed": 7,
           "manual": 0,
-          "skipped": 0,
-          "total": 6,
+          "skipped": 1,
+          "total": 8,
           "unsupported": 0
         },
         "actual": {
@@ -678,11 +740,13 @@
           "BC-003": 0,
           "BC-004": 0,
           "BC-005": 0,
-          "BC-006": 0
+          "BC-006": 0,
+          "BC-007": 0,
+          "BC-009": 0
         },
         "issues": [],
         "exact": true,
-        "durationMs": 2
+        "durationMs": 3
       }
     },
     {
@@ -696,7 +760,9 @@
         "BC-003": 0,
         "BC-004": 0,
         "BC-005": 0,
-        "BC-006": 0
+        "BC-006": 0,
+        "BC-007": 0,
+        "BC-009": 0
       },
       "default": {
         "rulesetVersion": "2026.1",
@@ -708,13 +774,14 @@
         },
         "skippedRules": [
           "BC-002",
-          "BC-005"
+          "BC-005",
+          "BC-007"
         ],
         "execution": {
-          "executed": 4,
+          "executed": 5,
           "manual": 0,
-          "skipped": 2,
-          "total": 6,
+          "skipped": 3,
+          "total": 8,
           "unsupported": 0
         },
         "actual": {
@@ -723,11 +790,13 @@
           "BC-003": 0,
           "BC-004": 0,
           "BC-005": 0,
-          "BC-006": 0
+          "BC-006": 0,
+          "BC-007": 0,
+          "BC-009": 0
         },
         "issues": [],
         "exact": true,
-        "durationMs": 1
+        "durationMs": 2
       },
       "configured": {
         "rulesetVersion": "2026.1-bench-configured",
@@ -737,12 +806,14 @@
           "info": 0,
           "warn": 0
         },
-        "skippedRules": [],
+        "skippedRules": [
+          "BC-007"
+        ],
         "execution": {
-          "executed": 6,
+          "executed": 7,
           "manual": 0,
-          "skipped": 0,
-          "total": 6,
+          "skipped": 1,
+          "total": 8,
           "unsupported": 0
         },
         "actual": {
@@ -751,11 +822,13 @@
           "BC-003": 0,
           "BC-004": 0,
           "BC-005": 0,
-          "BC-006": 0
+          "BC-006": 0,
+          "BC-007": 0,
+          "BC-009": 0
         },
         "issues": [],
         "exact": true,
-        "durationMs": 1
+        "durationMs": 2
       }
     },
     {
@@ -769,7 +842,9 @@
         "BC-003": 0,
         "BC-004": 0,
         "BC-005": 0,
-        "BC-006": 0
+        "BC-006": 0,
+        "BC-007": 0,
+        "BC-009": 0
       },
       "default": {
         "rulesetVersion": "2026.1",
@@ -781,13 +856,14 @@
         },
         "skippedRules": [
           "BC-002",
-          "BC-005"
+          "BC-005",
+          "BC-007"
         ],
         "execution": {
-          "executed": 4,
+          "executed": 5,
           "manual": 0,
-          "skipped": 2,
-          "total": 6,
+          "skipped": 3,
+          "total": 8,
           "unsupported": 0
         },
         "actual": {
@@ -796,7 +872,9 @@
           "BC-003": 0,
           "BC-004": 0,
           "BC-005": 0,
-          "BC-006": 0
+          "BC-006": 0,
+          "BC-007": 0,
+          "BC-009": 0
         },
         "issues": [],
         "exact": true,
@@ -810,12 +888,14 @@
           "info": 0,
           "warn": 0
         },
-        "skippedRules": [],
+        "skippedRules": [
+          "BC-007"
+        ],
         "execution": {
-          "executed": 6,
+          "executed": 7,
           "manual": 0,
-          "skipped": 0,
-          "total": 6,
+          "skipped": 1,
+          "total": 8,
           "unsupported": 0
         },
         "actual": {
@@ -824,11 +904,13 @@
           "BC-003": 0,
           "BC-004": 0,
           "BC-005": 0,
-          "BC-006": 0
+          "BC-006": 0,
+          "BC-007": 0,
+          "BC-009": 0
         },
         "issues": [],
         "exact": true,
-        "durationMs": 1
+        "durationMs": 3
       }
     },
     {
@@ -842,7 +924,9 @@
         "BC-003": 0,
         "BC-004": 0,
         "BC-005": 0,
-        "BC-006": 0
+        "BC-006": 0,
+        "BC-007": 0,
+        "BC-009": 0
       },
       "default": {
         "rulesetVersion": "2026.1",
@@ -854,13 +938,14 @@
         },
         "skippedRules": [
           "BC-002",
-          "BC-005"
+          "BC-005",
+          "BC-007"
         ],
         "execution": {
-          "executed": 4,
+          "executed": 5,
           "manual": 0,
-          "skipped": 2,
-          "total": 6,
+          "skipped": 3,
+          "total": 8,
           "unsupported": 0
         },
         "actual": {
@@ -869,7 +954,9 @@
           "BC-003": 0,
           "BC-004": 0,
           "BC-005": 0,
-          "BC-006": 0
+          "BC-006": 0,
+          "BC-007": 0,
+          "BC-009": 0
         },
         "issues": [],
         "exact": true,
@@ -883,12 +970,14 @@
           "info": 0,
           "warn": 0
         },
-        "skippedRules": [],
+        "skippedRules": [
+          "BC-007"
+        ],
         "execution": {
-          "executed": 6,
+          "executed": 7,
           "manual": 0,
-          "skipped": 0,
-          "total": 6,
+          "skipped": 1,
+          "total": 8,
           "unsupported": 0
         },
         "actual": {
@@ -897,11 +986,13 @@
           "BC-003": 0,
           "BC-004": 0,
           "BC-005": 0,
-          "BC-006": 0
+          "BC-006": 0,
+          "BC-007": 0,
+          "BC-009": 0
         },
         "issues": [],
         "exact": true,
-        "durationMs": 1
+        "durationMs": 6
       }
     },
     {
@@ -915,7 +1006,9 @@
         "BC-003": 0,
         "BC-004": 0,
         "BC-005": 0,
-        "BC-006": 0
+        "BC-006": 0,
+        "BC-007": 0,
+        "BC-009": 0
       },
       "default": {
         "rulesetVersion": "2026.1",
@@ -927,13 +1020,14 @@
         },
         "skippedRules": [
           "BC-002",
-          "BC-005"
+          "BC-005",
+          "BC-007"
         ],
         "execution": {
-          "executed": 4,
+          "executed": 5,
           "manual": 0,
-          "skipped": 2,
-          "total": 6,
+          "skipped": 3,
+          "total": 8,
           "unsupported": 0
         },
         "actual": {
@@ -942,11 +1036,13 @@
           "BC-003": 0,
           "BC-004": 0,
           "BC-005": 0,
-          "BC-006": 0
+          "BC-006": 0,
+          "BC-007": 0,
+          "BC-009": 0
         },
         "issues": [],
         "exact": true,
-        "durationMs": 1
+        "durationMs": 2
       },
       "configured": {
         "rulesetVersion": "2026.1-bench-configured",
@@ -956,12 +1052,14 @@
           "info": 0,
           "warn": 0
         },
-        "skippedRules": [],
+        "skippedRules": [
+          "BC-007"
+        ],
         "execution": {
-          "executed": 6,
+          "executed": 7,
           "manual": 0,
-          "skipped": 0,
-          "total": 6,
+          "skipped": 1,
+          "total": 8,
           "unsupported": 0
         },
         "actual": {
@@ -970,11 +1068,13 @@
           "BC-003": 0,
           "BC-004": 0,
           "BC-005": 0,
-          "BC-006": 0
+          "BC-006": 0,
+          "BC-007": 0,
+          "BC-009": 0
         },
         "issues": [],
         "exact": true,
-        "durationMs": 1
+        "durationMs": 2
       }
     },
     {
@@ -988,7 +1088,9 @@
         "BC-003": 0,
         "BC-004": 0,
         "BC-005": 0,
-        "BC-006": 0
+        "BC-006": 0,
+        "BC-007": 0,
+        "BC-009": 0
       },
       "default": {
         "rulesetVersion": "2026.1",
@@ -1000,13 +1102,14 @@
         },
         "skippedRules": [
           "BC-002",
-          "BC-005"
+          "BC-005",
+          "BC-007"
         ],
         "execution": {
-          "executed": 4,
+          "executed": 5,
           "manual": 0,
-          "skipped": 2,
-          "total": 6,
+          "skipped": 3,
+          "total": 8,
           "unsupported": 0
         },
         "actual": {
@@ -1015,11 +1118,13 @@
           "BC-003": 0,
           "BC-004": 0,
           "BC-005": 0,
-          "BC-006": 0
+          "BC-006": 0,
+          "BC-007": 0,
+          "BC-009": 0
         },
         "issues": [],
         "exact": true,
-        "durationMs": 1
+        "durationMs": 2
       },
       "configured": {
         "rulesetVersion": "2026.1-bench-configured",
@@ -1029,12 +1134,14 @@
           "info": 0,
           "warn": 0
         },
-        "skippedRules": [],
+        "skippedRules": [
+          "BC-007"
+        ],
         "execution": {
-          "executed": 6,
+          "executed": 7,
           "manual": 0,
-          "skipped": 0,
-          "total": 6,
+          "skipped": 1,
+          "total": 8,
           "unsupported": 0
         },
         "actual": {
@@ -1043,11 +1150,13 @@
           "BC-003": 0,
           "BC-004": 0,
           "BC-005": 0,
-          "BC-006": 0
+          "BC-006": 0,
+          "BC-007": 0,
+          "BC-009": 0
         },
         "issues": [],
         "exact": true,
-        "durationMs": 1
+        "durationMs": 2
       }
     },
     {
@@ -1061,7 +1170,9 @@
         "BC-003": 0,
         "BC-004": 0,
         "BC-005": 0,
-        "BC-006": 0
+        "BC-006": 0,
+        "BC-007": 0,
+        "BC-009": 0
       },
       "default": {
         "rulesetVersion": "2026.1",
@@ -1073,13 +1184,15 @@
         },
         "skippedRules": [
           "BC-002",
-          "BC-005"
+          "BC-005",
+          "BC-007",
+          "BC-009"
         ],
         "execution": {
           "executed": 4,
           "manual": 0,
-          "skipped": 2,
-          "total": 6,
+          "skipped": 4,
+          "total": 8,
           "unsupported": 0
         },
         "actual": {
@@ -1088,7 +1201,9 @@
           "BC-003": 0,
           "BC-004": 0,
           "BC-005": 0,
-          "BC-006": 0
+          "BC-006": 0,
+          "BC-007": 0,
+          "BC-009": 0
         },
         "issues": [
           {
@@ -1102,7 +1217,7 @@
           }
         ],
         "exact": true,
-        "durationMs": 1
+        "durationMs": 2
       },
       "configured": {
         "rulesetVersion": "2026.1-bench-configured",
@@ -1112,12 +1227,15 @@
           "info": 0,
           "warn": 1
         },
-        "skippedRules": [],
+        "skippedRules": [
+          "BC-007",
+          "BC-009"
+        ],
         "execution": {
           "executed": 6,
           "manual": 0,
-          "skipped": 0,
-          "total": 6,
+          "skipped": 2,
+          "total": 8,
           "unsupported": 0
         },
         "actual": {
@@ -1126,7 +1244,9 @@
           "BC-003": 0,
           "BC-004": 0,
           "BC-005": 0,
-          "BC-006": 0
+          "BC-006": 0,
+          "BC-007": 0,
+          "BC-009": 0
         },
         "issues": [
           {
@@ -1154,7 +1274,9 @@
         "BC-003": 0,
         "BC-004": 0,
         "BC-005": 0,
-        "BC-006": 0
+        "BC-006": 0,
+        "BC-007": 0,
+        "BC-009": 0
       },
       "default": {
         "rulesetVersion": "2026.1",
@@ -1166,13 +1288,15 @@
         },
         "skippedRules": [
           "BC-002",
-          "BC-005"
+          "BC-005",
+          "BC-007",
+          "BC-009"
         ],
         "execution": {
           "executed": 4,
           "manual": 0,
-          "skipped": 2,
-          "total": 6,
+          "skipped": 4,
+          "total": 8,
           "unsupported": 0
         },
         "actual": {
@@ -1181,7 +1305,9 @@
           "BC-003": 0,
           "BC-004": 0,
           "BC-005": 0,
-          "BC-006": 0
+          "BC-006": 0,
+          "BC-007": 0,
+          "BC-009": 0
         },
         "issues": [
           {
@@ -1195,7 +1321,7 @@
           }
         ],
         "exact": true,
-        "durationMs": 1
+        "durationMs": 2
       },
       "configured": {
         "rulesetVersion": "2026.1-bench-configured",
@@ -1205,12 +1331,15 @@
           "info": 0,
           "warn": 1
         },
-        "skippedRules": [],
+        "skippedRules": [
+          "BC-007",
+          "BC-009"
+        ],
         "execution": {
           "executed": 6,
           "manual": 0,
-          "skipped": 0,
-          "total": 6,
+          "skipped": 2,
+          "total": 8,
           "unsupported": 0
         },
         "actual": {
@@ -1219,7 +1348,9 @@
           "BC-003": 0,
           "BC-004": 0,
           "BC-005": 0,
-          "BC-006": 0
+          "BC-006": 0,
+          "BC-007": 0,
+          "BC-009": 0
         },
         "issues": [
           {
@@ -1233,7 +1364,7 @@
           }
         ],
         "exact": true,
-        "durationMs": 1
+        "durationMs": 2
       }
     },
     {
@@ -1247,7 +1378,9 @@
         "BC-003": 0,
         "BC-004": 0,
         "BC-005": 0,
-        "BC-006": 0
+        "BC-006": 0,
+        "BC-007": 0,
+        "BC-009": 0
       },
       "default": {
         "rulesetVersion": "2026.1",
@@ -1259,13 +1392,14 @@
         },
         "skippedRules": [
           "BC-002",
-          "BC-005"
+          "BC-005",
+          "BC-007"
         ],
         "execution": {
-          "executed": 4,
+          "executed": 5,
           "manual": 0,
-          "skipped": 2,
-          "total": 6,
+          "skipped": 3,
+          "total": 8,
           "unsupported": 0
         },
         "actual": {
@@ -1274,11 +1408,13 @@
           "BC-003": 0,
           "BC-004": 0,
           "BC-005": 0,
-          "BC-006": 0
+          "BC-006": 0,
+          "BC-007": 0,
+          "BC-009": 0
         },
         "issues": [],
         "exact": true,
-        "durationMs": 1
+        "durationMs": 2
       },
       "configured": {
         "rulesetVersion": "2026.1-bench-configured",
@@ -1288,12 +1424,14 @@
           "info": 1,
           "warn": 0
         },
-        "skippedRules": [],
+        "skippedRules": [
+          "BC-007"
+        ],
         "execution": {
-          "executed": 6,
+          "executed": 7,
           "manual": 0,
-          "skipped": 0,
-          "total": 6,
+          "skipped": 1,
+          "total": 8,
           "unsupported": 0
         },
         "actual": {
@@ -1302,7 +1440,9 @@
           "BC-003": 0,
           "BC-004": 0,
           "BC-005": 0,
-          "BC-006": 0
+          "BC-006": 0,
+          "BC-007": 0,
+          "BC-009": 0
         },
         "issues": [
           {
@@ -1330,7 +1470,9 @@
         "BC-003": 0,
         "BC-004": 0,
         "BC-005": 0,
-        "BC-006": 0
+        "BC-006": 0,
+        "BC-007": 0,
+        "BC-009": 0
       },
       "default": {
         "rulesetVersion": "2026.1",
@@ -1342,13 +1484,14 @@
         },
         "skippedRules": [
           "BC-002",
-          "BC-005"
+          "BC-005",
+          "BC-007"
         ],
         "execution": {
-          "executed": 4,
+          "executed": 5,
           "manual": 0,
-          "skipped": 2,
-          "total": 6,
+          "skipped": 3,
+          "total": 8,
           "unsupported": 0
         },
         "actual": {
@@ -1357,11 +1500,13 @@
           "BC-003": 0,
           "BC-004": 0,
           "BC-005": 0,
-          "BC-006": 0
+          "BC-006": 0,
+          "BC-007": 0,
+          "BC-009": 0
         },
         "issues": [],
         "exact": true,
-        "durationMs": 1
+        "durationMs": 2
       },
       "configured": {
         "rulesetVersion": "2026.1-bench-configured",
@@ -1371,12 +1516,14 @@
           "info": 1,
           "warn": 0
         },
-        "skippedRules": [],
+        "skippedRules": [
+          "BC-007"
+        ],
         "execution": {
-          "executed": 6,
+          "executed": 7,
           "manual": 0,
-          "skipped": 0,
-          "total": 6,
+          "skipped": 1,
+          "total": 8,
           "unsupported": 0
         },
         "actual": {
@@ -1385,7 +1532,9 @@
           "BC-003": 0,
           "BC-004": 0,
           "BC-005": 0,
-          "BC-006": 0
+          "BC-006": 0,
+          "BC-007": 0,
+          "BC-009": 0
         },
         "issues": [
           {
@@ -1413,7 +1562,9 @@
         "BC-003": 1,
         "BC-004": 0,
         "BC-005": 0,
-        "BC-006": 0
+        "BC-006": 0,
+        "BC-007": 0,
+        "BC-009": 0
       },
       "default": {
         "rulesetVersion": "2026.1",
@@ -1425,13 +1576,14 @@
         },
         "skippedRules": [
           "BC-002",
-          "BC-005"
+          "BC-005",
+          "BC-007"
         ],
         "execution": {
-          "executed": 4,
+          "executed": 5,
           "manual": 0,
-          "skipped": 2,
-          "total": 6,
+          "skipped": 3,
+          "total": 8,
           "unsupported": 0
         },
         "actual": {
@@ -1440,7 +1592,9 @@
           "BC-003": 1,
           "BC-004": 0,
           "BC-005": 0,
-          "BC-006": 0
+          "BC-006": 0,
+          "BC-007": 0,
+          "BC-009": 0
         },
         "issues": [
           {
@@ -1464,12 +1618,14 @@
           "info": 0,
           "warn": 1
         },
-        "skippedRules": [],
+        "skippedRules": [
+          "BC-007"
+        ],
         "execution": {
-          "executed": 6,
+          "executed": 7,
           "manual": 0,
-          "skipped": 0,
-          "total": 6,
+          "skipped": 1,
+          "total": 8,
           "unsupported": 0
         },
         "actual": {
@@ -1478,7 +1634,9 @@
           "BC-003": 1,
           "BC-004": 0,
           "BC-005": 0,
-          "BC-006": 0
+          "BC-006": 0,
+          "BC-007": 0,
+          "BC-009": 0
         },
         "issues": [
           {
@@ -1506,7 +1664,9 @@
         "BC-003": 1,
         "BC-004": 0,
         "BC-005": 0,
-        "BC-006": 0
+        "BC-006": 0,
+        "BC-007": 0,
+        "BC-009": 0
       },
       "default": {
         "rulesetVersion": "2026.1",
@@ -1518,13 +1678,14 @@
         },
         "skippedRules": [
           "BC-002",
-          "BC-005"
+          "BC-005",
+          "BC-007"
         ],
         "execution": {
-          "executed": 4,
+          "executed": 5,
           "manual": 0,
-          "skipped": 2,
-          "total": 6,
+          "skipped": 3,
+          "total": 8,
           "unsupported": 0
         },
         "actual": {
@@ -1533,7 +1694,9 @@
           "BC-003": 1,
           "BC-004": 0,
           "BC-005": 0,
-          "BC-006": 0
+          "BC-006": 0,
+          "BC-007": 0,
+          "BC-009": 0
         },
         "issues": [
           {
@@ -1557,12 +1720,14 @@
           "info": 0,
           "warn": 1
         },
-        "skippedRules": [],
+        "skippedRules": [
+          "BC-007"
+        ],
         "execution": {
-          "executed": 6,
+          "executed": 7,
           "manual": 0,
-          "skipped": 0,
-          "total": 6,
+          "skipped": 1,
+          "total": 8,
           "unsupported": 0
         },
         "actual": {
@@ -1571,7 +1736,9 @@
           "BC-003": 1,
           "BC-004": 0,
           "BC-005": 0,
-          "BC-006": 0
+          "BC-006": 0,
+          "BC-007": 0,
+          "BC-009": 0
         },
         "issues": [
           {
@@ -1599,7 +1766,9 @@
         "BC-003": 0,
         "BC-004": 1,
         "BC-005": 0,
-        "BC-006": 0
+        "BC-006": 0,
+        "BC-007": 0,
+        "BC-009": 0
       },
       "default": {
         "rulesetVersion": "2026.1",
@@ -1611,13 +1780,14 @@
         },
         "skippedRules": [
           "BC-002",
-          "BC-005"
+          "BC-005",
+          "BC-007"
         ],
         "execution": {
-          "executed": 4,
+          "executed": 5,
           "manual": 0,
-          "skipped": 2,
-          "total": 6,
+          "skipped": 3,
+          "total": 8,
           "unsupported": 0
         },
         "actual": {
@@ -1626,7 +1796,9 @@
           "BC-003": 0,
           "BC-004": 1,
           "BC-005": 0,
-          "BC-006": 0
+          "BC-006": 0,
+          "BC-007": 0,
+          "BC-009": 0
         },
         "issues": [
           {
@@ -1639,7 +1811,7 @@
           }
         ],
         "exact": true,
-        "durationMs": 1
+        "durationMs": 2
       },
       "configured": {
         "rulesetVersion": "2026.1-bench-configured",
@@ -1649,12 +1821,14 @@
           "info": 0,
           "warn": 1
         },
-        "skippedRules": [],
+        "skippedRules": [
+          "BC-007"
+        ],
         "execution": {
-          "executed": 6,
+          "executed": 7,
           "manual": 0,
-          "skipped": 0,
-          "total": 6,
+          "skipped": 1,
+          "total": 8,
           "unsupported": 0
         },
         "actual": {
@@ -1663,7 +1837,9 @@
           "BC-003": 0,
           "BC-004": 1,
           "BC-005": 0,
-          "BC-006": 0
+          "BC-006": 0,
+          "BC-007": 0,
+          "BC-009": 0
         },
         "issues": [
           {
@@ -1676,7 +1852,7 @@
           }
         ],
         "exact": true,
-        "durationMs": 1
+        "durationMs": 2
       }
     },
     {
@@ -1690,7 +1866,9 @@
         "BC-003": 0,
         "BC-004": 1,
         "BC-005": 0,
-        "BC-006": 0
+        "BC-006": 0,
+        "BC-007": 0,
+        "BC-009": 0
       },
       "default": {
         "rulesetVersion": "2026.1",
@@ -1702,13 +1880,14 @@
         },
         "skippedRules": [
           "BC-002",
-          "BC-005"
+          "BC-005",
+          "BC-007"
         ],
         "execution": {
-          "executed": 4,
+          "executed": 5,
           "manual": 0,
-          "skipped": 2,
-          "total": 6,
+          "skipped": 3,
+          "total": 8,
           "unsupported": 0
         },
         "actual": {
@@ -1717,7 +1896,9 @@
           "BC-003": 0,
           "BC-004": 1,
           "BC-005": 0,
-          "BC-006": 0
+          "BC-006": 0,
+          "BC-007": 0,
+          "BC-009": 0
         },
         "issues": [
           {
@@ -1730,7 +1911,7 @@
           }
         ],
         "exact": true,
-        "durationMs": 1
+        "durationMs": 2
       },
       "configured": {
         "rulesetVersion": "2026.1-bench-configured",
@@ -1740,12 +1921,14 @@
           "info": 0,
           "warn": 1
         },
-        "skippedRules": [],
+        "skippedRules": [
+          "BC-007"
+        ],
         "execution": {
-          "executed": 6,
+          "executed": 7,
           "manual": 0,
-          "skipped": 0,
-          "total": 6,
+          "skipped": 1,
+          "total": 8,
           "unsupported": 0
         },
         "actual": {
@@ -1754,7 +1937,9 @@
           "BC-003": 0,
           "BC-004": 1,
           "BC-005": 0,
-          "BC-006": 0
+          "BC-006": 0,
+          "BC-007": 0,
+          "BC-009": 0
         },
         "issues": [
           {
@@ -1767,7 +1952,7 @@
           }
         ],
         "exact": true,
-        "durationMs": 1
+        "durationMs": 2
       }
     },
     {
@@ -1781,7 +1966,9 @@
         "BC-003": 0,
         "BC-004": 1,
         "BC-005": 0,
-        "BC-006": 0
+        "BC-006": 0,
+        "BC-007": 0,
+        "BC-009": 0
       },
       "default": {
         "rulesetVersion": "2026.1",
@@ -1793,13 +1980,14 @@
         },
         "skippedRules": [
           "BC-002",
-          "BC-005"
+          "BC-005",
+          "BC-007"
         ],
         "execution": {
-          "executed": 4,
+          "executed": 5,
           "manual": 0,
-          "skipped": 2,
-          "total": 6,
+          "skipped": 3,
+          "total": 8,
           "unsupported": 0
         },
         "actual": {
@@ -1808,7 +1996,9 @@
           "BC-003": 0,
           "BC-004": 1,
           "BC-005": 0,
-          "BC-006": 0
+          "BC-006": 0,
+          "BC-007": 0,
+          "BC-009": 0
         },
         "issues": [
           {
@@ -1821,7 +2011,7 @@
           }
         ],
         "exact": true,
-        "durationMs": 1
+        "durationMs": 2
       },
       "configured": {
         "rulesetVersion": "2026.1-bench-configured",
@@ -1831,12 +2021,14 @@
           "info": 0,
           "warn": 1
         },
-        "skippedRules": [],
+        "skippedRules": [
+          "BC-007"
+        ],
         "execution": {
-          "executed": 6,
+          "executed": 7,
           "manual": 0,
-          "skipped": 0,
-          "total": 6,
+          "skipped": 1,
+          "total": 8,
           "unsupported": 0
         },
         "actual": {
@@ -1845,7 +2037,9 @@
           "BC-003": 0,
           "BC-004": 1,
           "BC-005": 0,
-          "BC-006": 0
+          "BC-006": 0,
+          "BC-007": 0,
+          "BC-009": 0
         },
         "issues": [
           {
@@ -1858,7 +2052,7 @@
           }
         ],
         "exact": true,
-        "durationMs": 1
+        "durationMs": 2
       }
     },
     {
@@ -1872,7 +2066,9 @@
         "BC-003": 0,
         "BC-004": 0,
         "BC-005": 1,
-        "BC-006": 0
+        "BC-006": 0,
+        "BC-007": 0,
+        "BC-009": 0
       },
       "default": {
         "rulesetVersion": "2026.1",
@@ -1884,13 +2080,14 @@
         },
         "skippedRules": [
           "BC-002",
-          "BC-005"
+          "BC-005",
+          "BC-007"
         ],
         "execution": {
-          "executed": 4,
+          "executed": 5,
           "manual": 0,
-          "skipped": 2,
-          "total": 6,
+          "skipped": 3,
+          "total": 8,
           "unsupported": 0
         },
         "actual": {
@@ -1899,7 +2096,9 @@
           "BC-003": 0,
           "BC-004": 0,
           "BC-005": 0,
-          "BC-006": 0
+          "BC-006": 0,
+          "BC-007": 0,
+          "BC-009": 0
         },
         "issues": [],
         "exact": true,
@@ -1913,12 +2112,14 @@
           "info": 0,
           "warn": 1
         },
-        "skippedRules": [],
+        "skippedRules": [
+          "BC-007"
+        ],
         "execution": {
-          "executed": 6,
+          "executed": 7,
           "manual": 0,
-          "skipped": 0,
-          "total": 6,
+          "skipped": 1,
+          "total": 8,
           "unsupported": 0
         },
         "actual": {
@@ -1927,7 +2128,9 @@
           "BC-003": 0,
           "BC-004": 0,
           "BC-005": 1,
-          "BC-006": 0
+          "BC-006": 0,
+          "BC-007": 0,
+          "BC-009": 0
         },
         "issues": [
           {
@@ -1941,7 +2144,7 @@
           }
         ],
         "exact": true,
-        "durationMs": 1
+        "durationMs": 3
       }
     },
     {
@@ -1955,7 +2158,9 @@
         "BC-003": 0,
         "BC-004": 0,
         "BC-005": 1,
-        "BC-006": 0
+        "BC-006": 0,
+        "BC-007": 0,
+        "BC-009": 0
       },
       "default": {
         "rulesetVersion": "2026.1",
@@ -1967,13 +2172,14 @@
         },
         "skippedRules": [
           "BC-002",
-          "BC-005"
+          "BC-005",
+          "BC-007"
         ],
         "execution": {
-          "executed": 4,
+          "executed": 5,
           "manual": 0,
-          "skipped": 2,
-          "total": 6,
+          "skipped": 3,
+          "total": 8,
           "unsupported": 0
         },
         "actual": {
@@ -1982,7 +2188,9 @@
           "BC-003": 0,
           "BC-004": 0,
           "BC-005": 0,
-          "BC-006": 0
+          "BC-006": 0,
+          "BC-007": 0,
+          "BC-009": 0
         },
         "issues": [],
         "exact": true,
@@ -1996,12 +2204,14 @@
           "info": 0,
           "warn": 1
         },
-        "skippedRules": [],
+        "skippedRules": [
+          "BC-007"
+        ],
         "execution": {
-          "executed": 6,
+          "executed": 7,
           "manual": 0,
-          "skipped": 0,
-          "total": 6,
+          "skipped": 1,
+          "total": 8,
           "unsupported": 0
         },
         "actual": {
@@ -2010,7 +2220,9 @@
           "BC-003": 0,
           "BC-004": 0,
           "BC-005": 1,
-          "BC-006": 0
+          "BC-006": 0,
+          "BC-007": 0,
+          "BC-009": 0
         },
         "issues": [
           {
@@ -2038,7 +2250,9 @@
         "BC-003": 0,
         "BC-004": 0,
         "BC-005": 0,
-        "BC-006": 1
+        "BC-006": 1,
+        "BC-007": 0,
+        "BC-009": 0
       },
       "default": {
         "rulesetVersion": "2026.1",
@@ -2050,13 +2264,14 @@
         },
         "skippedRules": [
           "BC-002",
-          "BC-005"
+          "BC-005",
+          "BC-007"
         ],
         "execution": {
-          "executed": 4,
+          "executed": 5,
           "manual": 0,
-          "skipped": 2,
-          "total": 6,
+          "skipped": 3,
+          "total": 8,
           "unsupported": 0
         },
         "actual": {
@@ -2065,7 +2280,9 @@
           "BC-003": 0,
           "BC-004": 0,
           "BC-005": 0,
-          "BC-006": 1
+          "BC-006": 1,
+          "BC-007": 0,
+          "BC-009": 0
         },
         "issues": [
           {
@@ -2079,7 +2296,7 @@
           }
         ],
         "exact": true,
-        "durationMs": 1
+        "durationMs": 2
       },
       "configured": {
         "rulesetVersion": "2026.1-bench-configured",
@@ -2089,12 +2306,14 @@
           "info": 0,
           "warn": 1
         },
-        "skippedRules": [],
+        "skippedRules": [
+          "BC-007"
+        ],
         "execution": {
-          "executed": 6,
+          "executed": 7,
           "manual": 0,
-          "skipped": 0,
-          "total": 6,
+          "skipped": 1,
+          "total": 8,
           "unsupported": 0
         },
         "actual": {
@@ -2103,7 +2322,9 @@
           "BC-003": 0,
           "BC-004": 0,
           "BC-005": 0,
-          "BC-006": 1
+          "BC-006": 1,
+          "BC-007": 0,
+          "BC-009": 0
         },
         "issues": [
           {
@@ -2117,7 +2338,7 @@
           }
         ],
         "exact": true,
-        "durationMs": 1
+        "durationMs": 2
       }
     },
     {
@@ -2131,7 +2352,9 @@
         "BC-003": 0,
         "BC-004": 0,
         "BC-005": 0,
-        "BC-006": 1
+        "BC-006": 1,
+        "BC-007": 0,
+        "BC-009": 0
       },
       "default": {
         "rulesetVersion": "2026.1",
@@ -2143,13 +2366,14 @@
         },
         "skippedRules": [
           "BC-002",
-          "BC-005"
+          "BC-005",
+          "BC-007"
         ],
         "execution": {
-          "executed": 4,
+          "executed": 5,
           "manual": 0,
-          "skipped": 2,
-          "total": 6,
+          "skipped": 3,
+          "total": 8,
           "unsupported": 0
         },
         "actual": {
@@ -2158,7 +2382,9 @@
           "BC-003": 0,
           "BC-004": 0,
           "BC-005": 0,
-          "BC-006": 1
+          "BC-006": 1,
+          "BC-007": 0,
+          "BC-009": 0
         },
         "issues": [
           {
@@ -2182,12 +2408,14 @@
           "info": 0,
           "warn": 1
         },
-        "skippedRules": [],
+        "skippedRules": [
+          "BC-007"
+        ],
         "execution": {
-          "executed": 6,
+          "executed": 7,
           "manual": 0,
-          "skipped": 0,
-          "total": 6,
+          "skipped": 1,
+          "total": 8,
           "unsupported": 0
         },
         "actual": {
@@ -2196,7 +2424,9 @@
           "BC-003": 0,
           "BC-004": 0,
           "BC-005": 0,
-          "BC-006": 1
+          "BC-006": 1,
+          "BC-007": 0,
+          "BC-009": 0
         },
         "issues": [
           {
@@ -2210,7 +2440,7 @@
           }
         ],
         "exact": true,
-        "durationMs": 0
+        "durationMs": 2
       }
     },
     {
@@ -2224,7 +2454,9 @@
         "BC-003": 0,
         "BC-004": 0,
         "BC-005": 0,
-        "BC-006": 1
+        "BC-006": 1,
+        "BC-007": 0,
+        "BC-009": 0
       },
       "default": {
         "rulesetVersion": "2026.1",
@@ -2236,13 +2468,14 @@
         },
         "skippedRules": [
           "BC-002",
-          "BC-005"
+          "BC-005",
+          "BC-007"
         ],
         "execution": {
-          "executed": 4,
+          "executed": 5,
           "manual": 0,
-          "skipped": 2,
-          "total": 6,
+          "skipped": 3,
+          "total": 8,
           "unsupported": 0
         },
         "actual": {
@@ -2251,7 +2484,9 @@
           "BC-003": 0,
           "BC-004": 0,
           "BC-005": 0,
-          "BC-006": 1
+          "BC-006": 1,
+          "BC-007": 0,
+          "BC-009": 0
         },
         "issues": [
           {
@@ -2265,7 +2500,7 @@
           }
         ],
         "exact": true,
-        "durationMs": 1
+        "durationMs": 2
       },
       "configured": {
         "rulesetVersion": "2026.1-bench-configured",
@@ -2275,12 +2510,14 @@
           "info": 0,
           "warn": 1
         },
-        "skippedRules": [],
+        "skippedRules": [
+          "BC-007"
+        ],
         "execution": {
-          "executed": 6,
+          "executed": 7,
           "manual": 0,
-          "skipped": 0,
-          "total": 6,
+          "skipped": 1,
+          "total": 8,
           "unsupported": 0
         },
         "actual": {
@@ -2289,7 +2526,9 @@
           "BC-003": 0,
           "BC-004": 0,
           "BC-005": 0,
-          "BC-006": 1
+          "BC-006": 1,
+          "BC-007": 0,
+          "BC-009": 0
         },
         "issues": [
           {
@@ -2303,7 +2542,7 @@
           }
         ],
         "exact": true,
-        "durationMs": 1
+        "durationMs": 2
       }
     },
     {
@@ -2317,7 +2556,9 @@
         "BC-003": 0,
         "BC-004": 0,
         "BC-005": 0,
-        "BC-006": 0
+        "BC-006": 0,
+        "BC-007": 0,
+        "BC-009": 0
       },
       "default": {
         "rulesetVersion": "2026.1",
@@ -2329,13 +2570,14 @@
         },
         "skippedRules": [
           "BC-002",
-          "BC-005"
+          "BC-005",
+          "BC-007"
         ],
         "execution": {
-          "executed": 4,
+          "executed": 5,
           "manual": 0,
-          "skipped": 2,
-          "total": 6,
+          "skipped": 3,
+          "total": 8,
           "unsupported": 0
         },
         "actual": {
@@ -2344,7 +2586,9 @@
           "BC-003": 0,
           "BC-004": 0,
           "BC-005": 0,
-          "BC-006": 0
+          "BC-006": 0,
+          "BC-007": 0,
+          "BC-009": 0
         },
         "issues": [],
         "exact": true,
@@ -2358,12 +2602,14 @@
           "info": 0,
           "warn": 0
         },
-        "skippedRules": [],
+        "skippedRules": [
+          "BC-007"
+        ],
         "execution": {
-          "executed": 6,
+          "executed": 7,
           "manual": 0,
-          "skipped": 0,
-          "total": 6,
+          "skipped": 1,
+          "total": 8,
           "unsupported": 0
         },
         "actual": {
@@ -2372,11 +2618,13 @@
           "BC-003": 0,
           "BC-004": 0,
           "BC-005": 0,
-          "BC-006": 0
+          "BC-006": 0,
+          "BC-007": 0,
+          "BC-009": 0
         },
         "issues": [],
         "exact": true,
-        "durationMs": 1
+        "durationMs": 2
       }
     },
     {
@@ -2390,7 +2638,9 @@
         "BC-003": 0,
         "BC-004": 0,
         "BC-005": 0,
-        "BC-006": 0
+        "BC-006": 0,
+        "BC-007": 0,
+        "BC-009": 0
       },
       "default": {
         "rulesetVersion": "2026.1",
@@ -2402,13 +2652,14 @@
         },
         "skippedRules": [
           "BC-002",
-          "BC-005"
+          "BC-005",
+          "BC-007"
         ],
         "execution": {
-          "executed": 4,
+          "executed": 5,
           "manual": 0,
-          "skipped": 2,
-          "total": 6,
+          "skipped": 3,
+          "total": 8,
           "unsupported": 0
         },
         "actual": {
@@ -2417,11 +2668,13 @@
           "BC-003": 0,
           "BC-004": 0,
           "BC-005": 0,
-          "BC-006": 0
+          "BC-006": 0,
+          "BC-007": 0,
+          "BC-009": 0
         },
         "issues": [],
         "exact": true,
-        "durationMs": 1
+        "durationMs": 2
       },
       "configured": {
         "rulesetVersion": "2026.1-bench-configured",
@@ -2431,12 +2684,14 @@
           "info": 0,
           "warn": 0
         },
-        "skippedRules": [],
+        "skippedRules": [
+          "BC-007"
+        ],
         "execution": {
-          "executed": 6,
+          "executed": 7,
           "manual": 0,
-          "skipped": 0,
-          "total": 6,
+          "skipped": 1,
+          "total": 8,
           "unsupported": 0
         },
         "actual": {
@@ -2445,11 +2700,13 @@
           "BC-003": 0,
           "BC-004": 0,
           "BC-005": 0,
-          "BC-006": 0
+          "BC-006": 0,
+          "BC-007": 0,
+          "BC-009": 0
         },
         "issues": [],
         "exact": true,
-        "durationMs": 1
+        "durationMs": 2
       }
     },
     {
@@ -2463,7 +2720,9 @@
         "BC-003": 0,
         "BC-004": 0,
         "BC-005": 0,
-        "BC-006": 0
+        "BC-006": 0,
+        "BC-007": 0,
+        "BC-009": 0
       },
       "default": {
         "rulesetVersion": "2026.1",
@@ -2475,13 +2734,14 @@
         },
         "skippedRules": [
           "BC-002",
-          "BC-005"
+          "BC-005",
+          "BC-007"
         ],
         "execution": {
-          "executed": 4,
+          "executed": 5,
           "manual": 0,
-          "skipped": 2,
-          "total": 6,
+          "skipped": 3,
+          "total": 8,
           "unsupported": 0
         },
         "actual": {
@@ -2490,7 +2750,9 @@
           "BC-003": 0,
           "BC-004": 0,
           "BC-005": 0,
-          "BC-006": 0
+          "BC-006": 0,
+          "BC-007": 0,
+          "BC-009": 0
         },
         "issues": [],
         "exact": true,
@@ -2504,12 +2766,14 @@
           "info": 0,
           "warn": 0
         },
-        "skippedRules": [],
+        "skippedRules": [
+          "BC-007"
+        ],
         "execution": {
-          "executed": 6,
+          "executed": 7,
           "manual": 0,
-          "skipped": 0,
-          "total": 6,
+          "skipped": 1,
+          "total": 8,
           "unsupported": 0
         },
         "actual": {
@@ -2518,11 +2782,13 @@
           "BC-003": 0,
           "BC-004": 0,
           "BC-005": 0,
-          "BC-006": 0
+          "BC-006": 0,
+          "BC-007": 0,
+          "BC-009": 0
         },
         "issues": [],
         "exact": true,
-        "durationMs": 1
+        "durationMs": 2
       }
     },
     {
@@ -2536,7 +2802,9 @@
         "BC-003": 0,
         "BC-004": 0,
         "BC-005": 0,
-        "BC-006": 0
+        "BC-006": 0,
+        "BC-007": 0,
+        "BC-009": 0
       },
       "default": {
         "rulesetVersion": "2026.1",
@@ -2548,13 +2816,14 @@
         },
         "skippedRules": [
           "BC-002",
-          "BC-005"
+          "BC-005",
+          "BC-007"
         ],
         "execution": {
-          "executed": 4,
+          "executed": 5,
           "manual": 0,
-          "skipped": 2,
-          "total": 6,
+          "skipped": 3,
+          "total": 8,
           "unsupported": 0
         },
         "actual": {
@@ -2563,11 +2832,13 @@
           "BC-003": 0,
           "BC-004": 0,
           "BC-005": 0,
-          "BC-006": 0
+          "BC-006": 0,
+          "BC-007": 0,
+          "BC-009": 0
         },
         "issues": [],
         "exact": true,
-        "durationMs": 0
+        "durationMs": 2
       },
       "configured": {
         "rulesetVersion": "2026.1-bench-configured",
@@ -2577,12 +2848,14 @@
           "info": 0,
           "warn": 0
         },
-        "skippedRules": [],
+        "skippedRules": [
+          "BC-007"
+        ],
         "execution": {
-          "executed": 6,
+          "executed": 7,
           "manual": 0,
-          "skipped": 0,
-          "total": 6,
+          "skipped": 1,
+          "total": 8,
           "unsupported": 0
         },
         "actual": {
@@ -2591,11 +2864,13 @@
           "BC-003": 0,
           "BC-004": 0,
           "BC-005": 0,
-          "BC-006": 0
+          "BC-006": 0,
+          "BC-007": 0,
+          "BC-009": 0
         },
         "issues": [],
         "exact": true,
-        "durationMs": 1
+        "durationMs": 2
       }
     }
   ],
@@ -2658,8 +2933,8 @@
     "The bid side is synthetic. The notices are requirements-side public data; the bidder name, responses, verdicts, evidence placeholders and injected defects are generated fixtures. No real bidder submission, compliance conclusion or award outcome is claimed.",
     "The plugin is a Chinese tender compliance-register checker. This bench uses World Bank notices only as a public source of requirement text; the plugin's cited clauses are Chinese tendering-law provisions, not World Bank procurement rules. No legal conclusion about a World Bank procurement is drawn.",
     "The plugin checks register-internal completeness and consistency. It does not judge whether a response satisfies a requirement, whether evidence is authentic or sufficient, or whether a bid is valid, responsive or should be rejected.",
-    "Blind spots: the six-rule pack has no rule for a wrong submission deadline, a wrong notice type, an extra bid row absent from the requirements pack, or a requirement with no bid row at all. The four probes are expected to report zero issues and are excluded from P/R; they are listed separately.",
-    "Generic-engine note: src/shared/rows.ts implements date and field-comparison check kinds, so a deployment could add a deadline rule in its own rule pack. This benchmark deliberately does not: P/R is measured against the shipped six-rule pack, and adding a benchmark-authored rule would score that rule, not the plugin's shipped behaviour. Detecting missing or extra rows against an external requirements pack would need a new check kind or code, which this bench does not add.",
+    "Blind spots: the eight-rule pack compares bid deadline to notice deadline (BC-007) and a response to its requirement (BC-009), but it still has no rule for a wrong notice type, an extra bid row absent from the requirements pack, or a requirement with no bid row at all. The four probes are expected to report zero issues and are excluded from P/R; they are listed separately.",
+    "BC-007 and BC-009 are new shipped rules: deadline equality and response-to-requirement presence. Detecting missing or extra rows against an external requirements pack still needs a new check kind or code; those remain blind spots.",
     "BC-002 and BC-005 ship disabled because their lists are institution/project policy. The configured mode is a benchmark-local overlay generated from the shipped pack; it is not a plugin release artifact and does not change the default deployment.",
     "The API is live. Selection is deterministic for one fetched page but the notice set can change between runs. Results are tied to the retrieval timestamp and raw SHA-256 recorded in summary.json; re-run fetch -> adapter -> evaluate to refresh.",
     "The search term is broad: qterm=construction returns contract awards and other notice types too. The adapter filters locally to Invitation for Bids notices whose descriptions contain \"construct\", carry a parseable deadline and carry the six consumed fields.",
@@ -2670,11 +2945,11 @@
   "hashes": {
     "raw": "7bba29c6bb54df3a5fe6bb983e1555b389dd5202ce9b6d93f689a4bcc88d7ce1",
     "rawFile": "bench/public-worldbank/.data/wb-procnotices.construction.json",
-    "requirements": "3566d43329a478edafc20dad1607ccbdb61f0eb8f27611f884c2c80c13fdbf19",
+    "requirements": "4756f959af2a873296a2d62028c17a77edddbf6527edebed19f1011c60390c0e",
     "requirementsFile": "bench/public-worldbank/.data/requirements.json",
-    "cases": "4aeaadcb3baeae4a3469eb345f8533d7347552b0f424dbd5a7660670d9bba898",
+    "cases": "622fb1e960f78d32c15026e908baccd9854ce0ceea6ffa1600f200e43789285c",
     "casesFile": "bench/public-worldbank/.data/cases.json",
-    "overlay": "f43b80b399f526a6a8e61e56a9ff73b5b851448d91c19d1670bd13797e8ab47a",
+    "overlay": "d0f08f0bf1f8ccf3f8b09973adfd1deca9019927549a12e15db7b0199e8a4642",
     "overlayFile": "bench/public-worldbank/.data/rules-configured.yaml"
   }
 }

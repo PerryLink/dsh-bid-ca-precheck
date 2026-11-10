@@ -1,0 +1,7 @@
+{
+  "ruleId": "BC-009",
+  "pairs": [
+    { "name": "expected-state", "material": "BC-009-compliant.json", "expect": { "ruleId": "BC-009", "count": 0 } },
+    { "name": "difference-present", "material": "BC-009-unsafe.json", "expect": { "ruleId": "BC-009", "count": 1 } }
+  ]
+}

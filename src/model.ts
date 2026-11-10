@@ -22,6 +22,8 @@ const COLUMNS = {
   response: ['投标响应', '响应情况', '响应内容', '投标响应内容', 'response'],
   verdict: ['响应结论', '结论', '判定', '是否符合', 'verdict', 'compliance'],
   evidence: ['证明材料', '证明文件', '支撑材料', '页码', 'evidence', 'reference'],
+  bidDeadline: ['投标截止日期', '投标截止时间', '响应截止日期', 'bidDeadline'],
+  noticeDeadline: ['公告截止日期', '招标公告截止日期', '公告截止时间', 'noticeDeadline'],
   note: ['备注', '说明', 'note', 'remark'],
 } as const
 

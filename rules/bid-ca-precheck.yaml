@@ -190,4 +190,45 @@ rules:
       本次未取得明文条号，故封顶 warn。
       terms 为本条查找的占位符清单，可按本机构模板调整。
 
+  - id: BC-007
+    title: 投标截止日期应与公告截止日期一致
+    severity: info
+    basis:
+      document: 本机构投标台账管理办法（内部规则）
+      number: 本次未取得公开条号
+      clause: 截止日期核对
+      excerpt: 投标台账应抄录招标公告的截止日期，并与公告截止日期保持一致；本条只做日期相等比较，不判断公告是否有效。
+      kind: institutional-configuration
+      source: https://www.gov.cn/zhengce/
+    params:
+      check:
+        kind: date
+        field: bidDeadline
+        notBeforeField: noticeDeadline
+        notAfterField: noticeDeadline
+    note: >-
+      本条只比较台账里的「投标截止日期」与「公告截止日期」是否相等；
+      任一日期缺失时进 skipped。日期格式须可解析。
+      本条不判断投标是否逾期，也不判断公告是否有效。
+
+  - id: BC-009
+    title: 有响应的行应写明对应招标要求
+    severity: info
+    basis:
+      document: 本机构投标台账管理办法（内部规则）
+      number: 本次未取得公开条号
+      clause: 要求与响应成对
+      excerpt: 投标台账中的每一条响应都应能追溯到一条招标要求；只有响应、没有要求说明的孤儿行无法复核。
+      kind: institutional-configuration
+      source: https://www.gov.cn/zhengce/
+    params:
+      check:
+        kind: conditionalPresence
+        conditionField: response
+        requiredFields: [requirement]
+    note: >-
+      本条只核对“有响应内容时，招标要求栏是否填写”。
+      它不核对“每条要求是否都有响应”（BC-001 负责），也不判断响应是否满足要求。
+      没有响应内容的行不触发本条。
+
 disabled: []

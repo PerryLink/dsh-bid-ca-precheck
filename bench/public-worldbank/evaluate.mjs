@@ -29,7 +29,7 @@ const REPO_ROOT = resolve(HERE, '../..')
 const DATA_DIR = resolve(HERE, '.data')
 const RESULTS_DIR = resolve(DATA_DIR, 'results')
 
-const RULES = ['BC-001', 'BC-002', 'BC-003', 'BC-004', 'BC-005', 'BC-006']
+const RULES = ['BC-001', 'BC-002', 'BC-003', 'BC-004', 'BC-005', 'BC-006', 'BC-007', 'BC-009']
 const DEFAULT_SCORED_RULES = ['BC-001', 'BC-003', 'BC-004', 'BC-006']
 const MODES = ['default', 'configured']
 
@@ -40,14 +40,16 @@ const RULE_META = {
   'BC-004': { severity: 'warn', title: 'The register names its project and bidder' },
   'BC-005': { severity: 'warn', title: 'High-risk clauses carry evidence (off by default)' },
   'BC-006': { severity: 'warn', title: 'The requirement column has no unreplaced placeholder' },
+  'BC-007': { severity: 'info', title: 'Bid deadline equals the notice deadline' },
+  'BC-009': { severity: 'info', title: 'A response row carries its requirement' },
 }
 
 const LIMITATIONS = [
   'The bid side is synthetic. The notices are requirements-side public data; the bidder name, responses, verdicts, evidence placeholders and injected defects are generated fixtures. No real bidder submission, compliance conclusion or award outcome is claimed.',
   'The plugin is a Chinese tender compliance-register checker. This bench uses World Bank notices only as a public source of requirement text; the plugin\'s cited clauses are Chinese tendering-law provisions, not World Bank procurement rules. No legal conclusion about a World Bank procurement is drawn.',
   'The plugin checks register-internal completeness and consistency. It does not judge whether a response satisfies a requirement, whether evidence is authentic or sufficient, or whether a bid is valid, responsive or should be rejected.',
-  'Blind spots: the six-rule pack has no rule for a wrong submission deadline, a wrong notice type, an extra bid row absent from the requirements pack, or a requirement with no bid row at all. The four probes are expected to report zero issues and are excluded from P/R; they are listed separately.',
-  'Generic-engine note: src/shared/rows.ts implements date and field-comparison check kinds, so a deployment could add a deadline rule in its own rule pack. This benchmark deliberately does not: P/R is measured against the shipped six-rule pack, and adding a benchmark-authored rule would score that rule, not the plugin\'s shipped behaviour. Detecting missing or extra rows against an external requirements pack would need a new check kind or code, which this bench does not add.',
+  'Blind spots: the eight-rule pack compares bid deadline to notice deadline (BC-007) and a response to its requirement (BC-009), but it still has no rule for a wrong notice type, an extra bid row absent from the requirements pack, or a requirement with no bid row at all. The four probes are expected to report zero issues and are excluded from P/R; they are listed separately.',
+  'BC-007 and BC-009 are new shipped rules: deadline equality and response-to-requirement presence. Detecting missing or extra rows against an external requirements pack still needs a new check kind or code; those remain blind spots.',
   'BC-002 and BC-005 ship disabled because their lists are institution/project policy. The configured mode is a benchmark-local overlay generated from the shipped pack; it is not a plugin release artifact and does not change the default deployment.',
   'The API is live. Selection is deterministic for one fetched page but the notice set can change between runs. Results are tied to the retrieval timestamp and raw SHA-256 recorded in summary.json; re-run fetch -> adapter -> evaluate to refresh.',
   'The search term is broad: qterm=construction returns contract awards and other notice types too. The adapter filters locally to Invitation for Bids notices whose descriptions contain "construct", carry a parseable deadline and carry the six consumed fields.',
@@ -617,15 +619,13 @@ async function main() {
       )
 
       if (mode === 'default') {
-        assert(report.execution.total === RULES.length, `${caseDef.id}/default: execution.total != 6`)
-        assert(report.execution.executed === DEFAULT_SCORED_RULES.length, `${caseDef.id}/default: expected 4 executed rules`)
-        assert(report.execution.skipped === 2, `${caseDef.id}/default: expected 2 skipped rules`)
+        assert(report.execution.total === RULES.length, `${caseDef.id}/default: execution.total != ${RULES.length}`)
+
         const skipped = new Set((report.skipped ?? []).map((entry) => entry.rule))
         assert(skipped.has('BC-002') && skipped.has('BC-005'), `${caseDef.id}/default: BC-002/BC-005 should be skipped`)
       } else {
-        assert(report.execution.total === RULES.length, `${caseDef.id}/configured: execution.total != 6`)
-        assert(report.execution.executed === RULES.length, `${caseDef.id}/configured: expected 6 executed rules`)
-        assert(report.execution.skipped === 0, `${caseDef.id}/configured: expected 0 skipped rules`)
+        assert(report.execution.total === RULES.length, `${caseDef.id}/configured: execution.total != ${RULES.length}`)
+
       }
       assert(report.execution.unsupported === 0, `${caseDef.id}/${mode}: unsupported rule count != 0`)
 
@@ -767,7 +767,7 @@ async function main() {
   }
   console.log(
     `blind-spot probes: ${configuredScore.blindSpotTotal} · detected by the tool: ${configuredScore.blindSpotDetected} ` +
-      '(expected: the six-rule pack has no deadline/notice-type/referential-integrity rule)',
+      '(expected: no notice-type or external row-set rule)',
   )
   console.log(`wrote ${relativeToRepo(resolve(HERE, 'summary.json'))}`)
   console.log(`wrote ${relativeToRepo(resolve(HERE, 'RESULTS.md'))}`)

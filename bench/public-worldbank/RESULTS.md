@@ -2,16 +2,16 @@
 
 > **The bid side is synthetic.** The World Bank notices are requirements-side public data. The bidder name, responses, verdicts, evidence placeholders and injected defects are generated fixtures. They are not real bidder submissions and say nothing about any company's compliance, eligibility or outcome.
 
-Generated 2026-11-10T11:55:24.017Z · plugin 0.2.14 · tool `bid_ca_precheck` · entry point `lib/index.mjs`
+Generated 2026-11-10T12:24:50.354Z · plugin 0.2.14 · tool `bid_ca_precheck` · entry point `lib/index.mjs`
 
 ## At a glance
 
 | Mode | Rules scored | Expected hits | TP | FP | FN | Precision | Recall | F1 | Clean | Mutations | Case exact |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
-| default | 4/6 | 10 | 10 | 0 | 0 | 1.000 | 1.000 | 1.000 | 8/8 | 10/10 | 26/26 |
-| configured | 6/6 | 14 | 14 | 0 | 0 | 1.000 | 1.000 | 1.000 | 8/8 | 14/14 | 26/26 |
+| default | 4/8 | 10 | 10 | 0 | 0 | 1.000 | 1.000 | 1.000 | 8/8 | 10/10 | 26/26 |
+| configured | 8/8 | 14 | 14 | 0 | 0 | 1.000 | 1.000 | 1.000 | 8/8 | 14/14 | 26/26 |
 
-The shipped pack executes 4 of 6 rules per case. BC-002 and BC-005 report themselves in `skipped` because their lists ship empty. The configured mode runs the same six rules with only those two lists filled; it scores all 6 rules.
+The shipped pack executes 4 of 8 rules per case. BC-002 and BC-005 report themselves in `skipped` because their lists ship empty. The configured mode runs the same six rules with only those two lists filled; it scores all 8 rules.
 
 ## Source and license
 
@@ -107,6 +107,8 @@ BC-002 and BC-005 are not scored here: the shipped pack ships `values: []` and `
 | BC-004 | warn | The register names its project and bidder | 3 | 3 | 3 | 0 | 0 | 1.000 | 1.000 | 1.000 |
 | BC-005 | warn | High-risk clauses carry evidence (off by default) | 2 | 2 | 2 | 0 | 0 | 1.000 | 1.000 | 1.000 |
 | BC-006 | warn | The requirement column has no unreplaced placeholder | 3 | 3 | 3 | 0 | 0 | 1.000 | 1.000 | 1.000 |
+| BC-007 | info | Bid deadline equals the notice deadline | 0 | 0 | 0 | 0 | 0 | n/a | n/a | n/a |
+| BC-009 | info | A response row carries its requirement | 0 | 0 | 0 | 0 | 0 | n/a | n/a | n/a |
 | **Total** | | | **14** | **14** | **14** | **0** | **0** | **1.000** | **1.000** | **1.000** |
 
 The overlay fills only BC-002 `values` (["SYNTHETIC_ACK"]) and BC-005 `highRiskKeywords` (["Construction","construction","CONSTRUCTION"]). Everything else is the shipped pack. The overlay is generated into `.data/` and is not a release artifact.
@@ -127,8 +129,8 @@ These four probes change something the six-rule pack does not check: a row field
 - The bid side is synthetic. The notices are requirements-side public data; the bidder name, responses, verdicts, evidence placeholders and injected defects are generated fixtures. No real bidder submission, compliance conclusion or award outcome is claimed.
 - The plugin is a Chinese tender compliance-register checker. This bench uses World Bank notices only as a public source of requirement text; the plugin's cited clauses are Chinese tendering-law provisions, not World Bank procurement rules. No legal conclusion about a World Bank procurement is drawn.
 - The plugin checks register-internal completeness and consistency. It does not judge whether a response satisfies a requirement, whether evidence is authentic or sufficient, or whether a bid is valid, responsive or should be rejected.
-- Blind spots: the six-rule pack has no rule for a wrong submission deadline, a wrong notice type, an extra bid row absent from the requirements pack, or a requirement with no bid row at all. The four probes are expected to report zero issues and are excluded from P/R; they are listed separately.
-- Generic-engine note: src/shared/rows.ts implements date and field-comparison check kinds, so a deployment could add a deadline rule in its own rule pack. This benchmark deliberately does not: P/R is measured against the shipped six-rule pack, and adding a benchmark-authored rule would score that rule, not the plugin's shipped behaviour. Detecting missing or extra rows against an external requirements pack would need a new check kind or code, which this bench does not add.
+- Blind spots: the eight-rule pack compares bid deadline to notice deadline (BC-007) and a response to its requirement (BC-009), but it still has no rule for a wrong notice type, an extra bid row absent from the requirements pack, or a requirement with no bid row at all. The four probes are expected to report zero issues and are excluded from P/R; they are listed separately.
+- BC-007 and BC-009 are new shipped rules: deadline equality and response-to-requirement presence. Detecting missing or extra rows against an external requirements pack still needs a new check kind or code; those remain blind spots.
 - BC-002 and BC-005 ship disabled because their lists are institution/project policy. The configured mode is a benchmark-local overlay generated from the shipped pack; it is not a plugin release artifact and does not change the default deployment.
 - The API is live. Selection is deterministic for one fetched page but the notice set can change between runs. Results are tied to the retrieval timestamp and raw SHA-256 recorded in summary.json; re-run fetch -> adapter -> evaluate to refresh.
 - The search term is broad: qterm=construction returns contract awards and other notice types too. The adapter filters locally to Invitation for Bids notices whose descriptions contain "construct", carry a parseable deadline and carry the six consumed fields.
@@ -154,10 +156,10 @@ Observed in this run: 8 clean notices, 26 cases (8 clean, 14 mutation, 4 blind-s
 | Artifact | SHA-256 |
 |---|---|
 | `bench/public-worldbank/.data/wb-procnotices.construction.json` | `7bba29c6bb54df3a5fe6bb983e1555b389dd5202ce9b6d93f689a4bcc88d7ce1` |
-| `bench/public-worldbank/.data/requirements.json` | `3566d43329a478edafc20dad1607ccbdb61f0eb8f27611f884c2c80c13fdbf19` |
-| `bench/public-worldbank/.data/cases.json` | `4aeaadcb3baeae4a3469eb345f8533d7347552b0f424dbd5a7660670d9bba898` |
-| `bench/public-worldbank/.data/rules-configured.yaml` | `f43b80b399f526a6a8e61e56a9ff73b5b851448d91c19d1670bd13797e8ab47a` |
-| `lib/index.mjs` | `042ade7b799ee3fb6deb671213fee9ee3f3c0c6b231c436681a6d9a207a97fe1` |
+| `bench/public-worldbank/.data/requirements.json` | `4756f959af2a873296a2d62028c17a77edddbf6527edebed19f1011c60390c0e` |
+| `bench/public-worldbank/.data/cases.json` | `622fb1e960f78d32c15026e908baccd9854ce0ceea6ffa1600f200e43789285c` |
+| `bench/public-worldbank/.data/rules-configured.yaml` | `d0f08f0bf1f8ccf3f8b09973adfd1deca9019927549a12e15db7b0199e8a4642` |
+| `lib/index.mjs` | `8f35a0d3045f64ce10acad3b30916747ab4fce577ae2a4ed676b16bc86a9b137` |
 
 ## Files
 
