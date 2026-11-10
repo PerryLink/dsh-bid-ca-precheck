@@ -165,7 +165,7 @@ artifact.
 6. **Mutations.** A single labelled defect is injected into a clean case and the expected issue count is
    recorded. The mutation cases cover all six rules, including a clause that differs only by an internal
    space and a header with both project and bidder missing (one BC-004 finding, not two).
-7. **Blind-spot probes.** Four cases change something the eight-rule pack does not check: a row field it
+7. **Blind-spot probes.** Four cases change something the nine-rule pack does not check: a row field it
    ignores (deadline, notice type) or the row set itself (extra or missing row). They expect zero issues
    and are excluded from P/R; they document the scope limit instead of pretending to test it.
 
@@ -195,7 +195,7 @@ artifact.
     so both are blind-spot probes (`blind-missing-bid-row`, `blind-extra-bid-row`).
 - **Wrong deadline / wrong notice type** → `blind-wrong-deadline` and `blind-wrong-notice-type`. The
   adapter changes the row's `submission_deadline_date` or `notice_type`; the reader retains the fields, but
-  BC-007 checks bid vs notice deadline; the wrong-notice-type probe remains outside the shipped pack and is reported
+  BC-007 checks bid vs notice deadline; BC-008 checks notice type vs material category; the blind wrong-notice-type probe does not carry the material category, so it remains a negative control.
   as blind spots, not as successful detections.
 
 ---
@@ -234,8 +234,8 @@ Source snapshot: `2026-11-10T11:48:24.771Z`; raw SHA-256
 
 | Mode | Rules scored | Expected hits | TP | FP | FN | Precision | Recall | F1 | Clean | Mutations | Case-exact |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
-| Default (shipped pack) | 4/8 | 10 | 10 | 0 | 0 | 1.000 | 1.000 | 1.000 | 8/8 | 10/10 | 26/26 |
-| Configured overlay | 8/8 | 14 | 14 | 0 | 0 | 1.000 | 1.000 | 1.000 | 8/8 | 14/14 | 26/26 |
+| Default (shipped pack) | 4/9 | 10 | 10 | 0 | 0 | 1.000 | 1.000 | 1.000 | 9/9 | 10/10 | 26/26 |
+| Configured overlay | 9/9 | 14 | 14 | 0 | 0 | 1.000 | 1.000 | 1.000 | 9/9 | 14/14 | 26/26 |
 
 ### Per rule — default mode
 
@@ -294,7 +294,7 @@ labels were reproduced exactly.
   issues; that is the limitation, not a pass.
 - **Generic engine vs. shipped pack.** `src/shared/rows.ts` implements date and field-comparison check
   kinds, so a deployment could add a deadline rule to its own rule pack. This bench deliberately does not:
-  P/R is measured against the shipped eight-rule pack, and a benchmark-authored rule would score that rule,
+  P/R is measured against the shipped nine-rule pack, and a benchmark-authored rule would score that rule,
   not the plugin's shipped behaviour. Detecting missing or extra rows against an external requirements
   pack would need a new check kind or code, which this bench does not add.
 - **Two rules off by default.** `BC-002` and `BC-005` depend on institution/project lists that ship empty.
@@ -336,11 +336,11 @@ Key output lines from the recorded run:
 
 ```text
 wb fetch: 200 notices on page 1 (API total 128545)
-wb adapter: 8/8 clean notices selected from 200 API rows (18 candidate(s) passed the filter)
+wb adapter: 9/9 clean notices selected from 200 API rows (18 candidate(s) passed the filter)
   countries: Cambodia, Cameroon, Chad, Eastern and Southern Africa, Ethiopia, Malawi, Philippines, Western and Central Africa
   cases: 26 (8 clean, 14 mutation, 4 blind-spot)
-default: 4/8 rules scored · TP 10 FP 0 FN 0 · P 1.000 R 1.000 · clean 8/8 · exact 26/26
-configured: 8/8 rules scored · TP 14 FP 0 FN 0 · P 1.000 R 1.000 · clean 8/8 · exact 26/26
+default: 4/9 rules scored · TP 10 FP 0 FN 0 · P 1.000 R 1.000 · clean 9/9 · exact 26/26
+configured: 9/9 rules scored · TP 14 FP 0 FN 0 · P 1.000 R 1.000 · clean 9/9 · exact 26/26
 blind-spot probes: 4 · detected by the tool: 0
 ```
 

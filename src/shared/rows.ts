@@ -1967,6 +1967,43 @@ function dateGap(ctx: CheckContext): void {
   }
 }
 
+/** `enumByField` — a field's value must be allowed for the row's category. */
+function enumByField(ctx: CheckContext): void {
+  const field = str(ctx.params, 'field')
+  const byField = str(ctx.params, 'byField')
+  const matrix = ctx.params.matrix
+  if (field === '' || byField === '' || typeof matrix !== 'object' || matrix === null || Array.isArray(matrix)) {
+    ctx.skip('规则库未配置 field/byField/matrix，本条不执行')
+    return
+  }
+  const entries = Object.entries(matrix as Record<string, unknown>).filter(([, value]) => Array.isArray(value) && value.length > 0)
+  if (entries.length === 0) {
+    ctx.skip('规则库的 matrix 为空：公告类型与材料类别的对应关系由本机构配置，本引擎不硬编码')
+    return
+  }
+  const rows = ctx.input.rows.filter((row) => filled(valueOf(ctx.input, row, byField)) && filled(valueOf(ctx.input, row, field)))
+  if (rows.length === 0) {
+    ctx.skip(`材料没有同时填写「${byField}」与「${field}」的行，本条不适用`)
+    return
+  }
+  let checked = 0
+  for (const row of rows) {
+    const category = valueOf(ctx.input, row, byField) ?? ''
+    const allowed = (matrix as Record<string, unknown>)[category]
+    if (!Array.isArray(allowed) || allowed.length === 0) continue
+    checked += 1
+    const value = valueOf(ctx.input, row, field) ?? ''
+    if ((allowed as unknown[]).map(String).includes(value)) continue
+    ctx.add(
+      locatorOf(row.row, field),
+      `第 ${row.row} 行「${byField}」为「${category}」，「${field}」为「${value}」`,
+      `「${category}」允许的「${field}」：${(allowed as unknown[]).map(String).join(' / ')}`,
+      '核对公告类型与材料类别；矩阵来自本机构配置，不是法定清单',
+    )
+  }
+  if (checked === 0) ctx.skip(`matrix 没有覆盖材料中的任何「${byField}」值，本条未执行`)
+}
+
 /** Run one check by its declared kind. */
 function runOneCheck(ctx: CheckContext): void {
   const kind = str(ctx.params, 'kind')
@@ -1977,6 +2014,8 @@ function runOneCheck(ctx: CheckContext): void {
       return presenceAny(ctx)
     case 'enum':
       return enumCheck(ctx)
+    case 'enumByField':
+      return enumByField(ctx)
     case 'pattern':
       return patternCheck(ctx)
     case 'date':

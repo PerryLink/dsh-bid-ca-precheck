@@ -1,0 +1,8 @@
+{
+  "ruleId": "BC-008",
+  "configure": { "BC-008": { "matrix": { "公开招标": ["资格文件"] } } },
+  "pairs": [
+    { "name": "expected-state", "material": "BC-008-compliant.json", "expect": { "ruleId": "BC-008", "count": 0 } },
+    { "name": "difference-present", "material": "BC-008-unsafe.json", "expect": { "ruleId": "BC-008", "count": 1 } }
+  ]
+}

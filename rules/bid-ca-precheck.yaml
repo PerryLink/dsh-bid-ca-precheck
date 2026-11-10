@@ -231,4 +231,24 @@ rules:
       它不核对“每条要求是否都有响应”（BC-001 负责），也不判断响应是否满足要求。
       没有响应内容的行不触发本条。
 
+  - id: BC-008
+    title: 公告类型应允许该行材料类别
+    severity: info
+    basis:
+      document: 本机构投标台账管理办法（内部规则）
+      number: 本次未取得公开条号
+      clause: 公告类型与材料类别
+      excerpt: 本机构投标台账管理办法要求按公告类型核对提交材料类别；映射由本机构配置，本插件不硬编码法定清单。
+      kind: institutional-configuration
+      source: https://www.gov.cn/zhengce/
+    params:
+      check:
+        kind: enumByField
+        field: materialCategory
+        byField: noticeType
+        matrix: {}
+    note: >-
+      本条只核对台账自己填写的公告类型与材料类别是否落在配置矩阵内。
+      matrix 为空时进 skipped；它不判断某一公告类型在法律上应提交哪些材料。
+
 disabled: []
