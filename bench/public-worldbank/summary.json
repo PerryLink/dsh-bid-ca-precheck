@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-10T12:24:50.354Z",
+  "generatedAt": "2026-11-10T12:27:40.699Z",
   "benchmark": "public-worldbank",
   "command": "node bench/public-worldbank/evaluate.mjs",
   "syntheticBidWarning": "The notices are requirements-side public data. Everything on the bid side (bidder, response, verdict, evidence, mutations) is synthetic and is not a real bidder submission or outcome.",
@@ -550,7 +550,7 @@
         },
         "issues": [],
         "exact": true,
-        "durationMs": 8
+        "durationMs": 6
       },
       "configured": {
         "rulesetVersion": "2026.1-bench-configured",
@@ -582,7 +582,7 @@
         },
         "issues": [],
         "exact": true,
-        "durationMs": 6
+        "durationMs": 5
       }
     },
     {
@@ -632,7 +632,7 @@
         },
         "issues": [],
         "exact": true,
-        "durationMs": 2
+        "durationMs": 1
       },
       "configured": {
         "rulesetVersion": "2026.1-bench-configured",
@@ -664,7 +664,7 @@
         },
         "issues": [],
         "exact": true,
-        "durationMs": 2
+        "durationMs": 1
       }
     },
     {
@@ -746,7 +746,7 @@
         },
         "issues": [],
         "exact": true,
-        "durationMs": 3
+        "durationMs": 2
       }
     },
     {
@@ -828,7 +828,7 @@
         },
         "issues": [],
         "exact": true,
-        "durationMs": 2
+        "durationMs": 1
       }
     },
     {
@@ -910,7 +910,7 @@
         },
         "issues": [],
         "exact": true,
-        "durationMs": 3
+        "durationMs": 2
       }
     },
     {
@@ -992,7 +992,7 @@
         },
         "issues": [],
         "exact": true,
-        "durationMs": 6
+        "durationMs": 1
       }
     },
     {
@@ -1042,7 +1042,7 @@
         },
         "issues": [],
         "exact": true,
-        "durationMs": 2
+        "durationMs": 1
       },
       "configured": {
         "rulesetVersion": "2026.1-bench-configured",
@@ -1074,7 +1074,7 @@
         },
         "issues": [],
         "exact": true,
-        "durationMs": 2
+        "durationMs": 1
       }
     },
     {
@@ -1124,7 +1124,7 @@
         },
         "issues": [],
         "exact": true,
-        "durationMs": 2
+        "durationMs": 1
       },
       "configured": {
         "rulesetVersion": "2026.1-bench-configured",
@@ -1156,7 +1156,7 @@
         },
         "issues": [],
         "exact": true,
-        "durationMs": 2
+        "durationMs": 1
       }
     },
     {
@@ -1260,7 +1260,7 @@
           }
         ],
         "exact": true,
-        "durationMs": 2
+        "durationMs": 1
       }
     },
     {
@@ -1456,7 +1456,7 @@
           }
         ],
         "exact": true,
-        "durationMs": 1
+        "durationMs": 2
       }
     },
     {
@@ -1506,7 +1506,7 @@
         },
         "issues": [],
         "exact": true,
-        "durationMs": 2
+        "durationMs": 1
       },
       "configured": {
         "rulesetVersion": "2026.1-bench-configured",
@@ -1650,7 +1650,7 @@
           }
         ],
         "exact": true,
-        "durationMs": 1
+        "durationMs": 2
       }
     },
     {
@@ -1752,7 +1752,7 @@
           }
         ],
         "exact": true,
-        "durationMs": 1
+        "durationMs": 2
       }
     },
     {
@@ -1811,7 +1811,7 @@
           }
         ],
         "exact": true,
-        "durationMs": 2
+        "durationMs": 3
       },
       "configured": {
         "rulesetVersion": "2026.1-bench-configured",
@@ -1952,7 +1952,7 @@
           }
         ],
         "exact": true,
-        "durationMs": 2
+        "durationMs": 1
       }
     },
     {
@@ -2011,7 +2011,7 @@
           }
         ],
         "exact": true,
-        "durationMs": 2
+        "durationMs": 1
       },
       "configured": {
         "rulesetVersion": "2026.1-bench-configured",
@@ -2052,7 +2052,7 @@
           }
         ],
         "exact": true,
-        "durationMs": 2
+        "durationMs": 3
       }
     },
     {
@@ -2236,7 +2236,7 @@
           }
         ],
         "exact": true,
-        "durationMs": 1
+        "durationMs": 2
       }
     },
     {
@@ -2338,7 +2338,7 @@
           }
         ],
         "exact": true,
-        "durationMs": 2
+        "durationMs": 1
       }
     },
     {
@@ -2440,7 +2440,7 @@
           }
         ],
         "exact": true,
-        "durationMs": 2
+        "durationMs": 1
       }
     },
     {
@@ -2500,7 +2500,7 @@
           }
         ],
         "exact": true,
-        "durationMs": 2
+        "durationMs": 1
       },
       "configured": {
         "rulesetVersion": "2026.1-bench-configured",
@@ -2674,7 +2674,7 @@
         },
         "issues": [],
         "exact": true,
-        "durationMs": 2
+        "durationMs": 1
       },
       "configured": {
         "rulesetVersion": "2026.1-bench-configured",
@@ -2756,7 +2756,7 @@
         },
         "issues": [],
         "exact": true,
-        "durationMs": 1
+        "durationMs": 2
       },
       "configured": {
         "rulesetVersion": "2026.1-bench-configured",
@@ -2838,7 +2838,7 @@
         },
         "issues": [],
         "exact": true,
-        "durationMs": 2
+        "durationMs": 1
       },
       "configured": {
         "rulesetVersion": "2026.1-bench-configured",

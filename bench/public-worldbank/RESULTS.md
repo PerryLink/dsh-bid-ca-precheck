@@ -2,7 +2,7 @@
 
 > **The bid side is synthetic.** The World Bank notices are requirements-side public data. The bidder name, responses, verdicts, evidence placeholders and injected defects are generated fixtures. They are not real bidder submissions and say nothing about any company's compliance, eligibility or outcome.
 
-Generated 2026-11-10T12:24:50.354Z · plugin 0.2.14 · tool `bid_ca_precheck` · entry point `lib/index.mjs`
+Generated 2026-11-10T12:27:40.699Z · plugin 0.2.14 · tool `bid_ca_precheck` · entry point `lib/index.mjs`
 
 ## At a glance
 
