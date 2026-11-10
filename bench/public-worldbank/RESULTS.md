@@ -2,16 +2,16 @@
 
 > **The bid side is synthetic.** The World Bank notices are requirements-side public data. The bidder name, responses, verdicts, evidence placeholders and injected defects are generated fixtures. They are not real bidder submissions and say nothing about any company's compliance, eligibility or outcome.
 
-Generated 2026-11-10T12:42:41.061Z · plugin 0.2.14 · tool `bid_ca_precheck` · entry point `lib/index.mjs`
+Generated 2026-11-10T12:58:14.435Z · plugin 0.2.14 · tool `bid_ca_precheck` · entry point `lib/index.mjs`
 
 ## At a glance
 
 | Mode | Rules scored | Expected hits | TP | FP | FN | Precision | Recall | F1 | Clean | Mutations | Case exact |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
-| default | 4/9 | 10 | 10 | 0 | 0 | 1.000 | 1.000 | 1.000 | 8/8 | 10/10 | 26/26 |
-| configured | 9/9 | 14 | 14 | 0 | 0 | 1.000 | 1.000 | 1.000 | 8/8 | 14/14 | 26/26 |
+| default | 4/10 | 10 | 10 | 0 | 0 | 1.000 | 1.000 | 1.000 | 8/8 | 10/10 | 26/26 |
+| configured | 10/10 | 14 | 14 | 0 | 0 | 1.000 | 1.000 | 1.000 | 8/8 | 14/14 | 26/26 |
 
-The shipped pack executes 4 of 9 rules per case. BC-002 and BC-005 report themselves in `skipped` because their lists ship empty. The configured mode runs the same six rules with only those two lists filled; it scores all 9 rules.
+The shipped pack executes 4 of 10 rules per case. BC-002 and BC-005 report themselves in `skipped` because their lists ship empty. The configured mode runs the same six rules with only those two lists filled; it scores all 10 rules.
 
 ## Source and license
 
@@ -110,6 +110,7 @@ BC-002 and BC-005 are not scored here: the shipped pack ships `values: []` and `
 | BC-007 | info | Bid deadline equals the notice deadline | 0 | 0 | 0 | 0 | 0 | n/a | n/a | n/a |
 | BC-008 | info | Notice type allows the material category | 0 | 0 | 0 | 0 | 0 | n/a | n/a | n/a |
 | BC-009 | info | A response row carries its requirement | 0 | 0 | 0 | 0 | 0 | n/a | n/a | n/a |
+| BC-010 | info | The register key set equals the external clause list | 0 | 0 | 0 | 0 | 0 | n/a | n/a | n/a |
 | **Total** | | | **14** | **14** | **14** | **0** | **0** | **1.000** | **1.000** | **1.000** |
 
 The overlay fills only BC-002 `values` (["SYNTHETIC_ACK"]) and BC-005 `highRiskKeywords` (["Construction","construction","CONSTRUCTION"]). Everything else is the shipped pack. The overlay is generated into `.data/` and is not a release artifact.
@@ -157,10 +158,10 @@ Observed in this run: 8 clean notices, 26 cases (8 clean, 14 mutation, 4 blind-s
 | Artifact | SHA-256 |
 |---|---|
 | `bench/public-worldbank/.data/wb-procnotices.construction.json` | `7bba29c6bb54df3a5fe6bb983e1555b389dd5202ce9b6d93f689a4bcc88d7ce1` |
-| `bench/public-worldbank/.data/requirements.json` | `cd651cd6e98f690e9b7ad42649d2144c9cb3757a1fe679554e1ee9caad46df16` |
-| `bench/public-worldbank/.data/cases.json` | `55c4db7d3bcb8efc1ce8eb9132348220e0accbc47288b23a51973630b155c6bf` |
-| `bench/public-worldbank/.data/rules-configured.yaml` | `3af84c5a9559b4aa3192c21f7af5d9074fbc9f28da0c2278b48f97940670155a` |
-| `lib/index.mjs` | `5b69dfd5737c1cc1018b730ddfdb8b7e2f93f905aa48293366d92cfbc414eb8e` |
+| `bench/public-worldbank/.data/requirements.json` | `e0730ff32a6c499a31df57039acb8dd0be6932943cf7ff62cddb61f635c26bbf` |
+| `bench/public-worldbank/.data/cases.json` | `fef64931aefb3ad6d5632bccb3f94bc0f85fa6355740b626261c58cfd3a92865` |
+| `bench/public-worldbank/.data/rules-configured.yaml` | `620a5dd63a6643a94cb8ad624c12077b72b0a4b84e799ecba9e79d177aedf046` |
+| `lib/index.mjs` | `b28b605b9868d1c96433105dc1c352430a96d9bfb60b40ba19ad5ba3f0e9a930` |
 
 ## Files
 

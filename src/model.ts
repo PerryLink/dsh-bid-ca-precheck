@@ -43,6 +43,7 @@ export const SPEC: TableSpec = {
     project: ['project', '项目名称', '招标项目名称', '工程名称'],
     tenderNo: ['tenderNo', '招标编号', '项目编号'],
     bidder: ['bidder', '投标人', '投标单位名称'],
+    expectedClauses: ['expectedClauses', '外部要求清单', '要求清单', 'expectedClauseIds'],
   },
 }
 

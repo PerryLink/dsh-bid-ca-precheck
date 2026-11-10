@@ -251,4 +251,24 @@ rules:
       本条只核对台账自己填写的公告类型与材料类别是否落在配置矩阵内。
       matrix 为空时进 skipped；它不判断某一公告类型在法律上应提交哪些材料。
 
+  - id: BC-010
+    title: 要求清单应与外部清单一致
+    severity: info
+    basis:
+      document: 本机构投标台账管理办法（内部规则）
+      number: 本次未取得公开条号
+      clause: 外部要求清单与台账键集合
+      excerpt: 投标台账的条款键应与招标文件或外部要求清单一一对应；本条只核对键集合，不判断响应内容。
+      kind: institutional-configuration
+      source: https://www.gov.cn/zhengce/
+    params:
+      check:
+        kind: setParity
+        keyField: clause
+        expectedField: expectedClauses
+    note: >-
+      表头 expectedClauses 用逗号/分号/换行分隔外部要求条款号。
+      本条报告缺失键和多余键；它不判断每条响应是否满足要求（BC-001/002 负责）。
+      没有外部清单时进 skipped。
+
 disabled: []

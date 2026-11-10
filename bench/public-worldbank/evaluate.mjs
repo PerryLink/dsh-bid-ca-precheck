@@ -29,7 +29,7 @@ const REPO_ROOT = resolve(HERE, '../..')
 const DATA_DIR = resolve(HERE, '.data')
 const RESULTS_DIR = resolve(DATA_DIR, 'results')
 
-const RULES = ['BC-001', 'BC-002', 'BC-003', 'BC-004', 'BC-005', 'BC-006', 'BC-007', 'BC-008', 'BC-009']
+const RULES = ['BC-001', 'BC-002', 'BC-003', 'BC-004', 'BC-005', 'BC-006', 'BC-007', 'BC-008', 'BC-009', 'BC-010']
 const DEFAULT_SCORED_RULES = ['BC-001', 'BC-003', 'BC-004', 'BC-006']
 const MODES = ['default', 'configured']
 
@@ -42,6 +42,7 @@ const RULE_META = {
   'BC-006': { severity: 'warn', title: 'The requirement column has no unreplaced placeholder' },
   'BC-007': { severity: 'info', title: 'Bid deadline equals the notice deadline' },
   'BC-008': { severity: 'info', title: 'Notice type allows the material category' },
+  'BC-010': { severity: 'info', title: 'The register key set equals the external clause list' },
   'BC-009': { severity: 'info', title: 'A response row carries its requirement' },
 }
 

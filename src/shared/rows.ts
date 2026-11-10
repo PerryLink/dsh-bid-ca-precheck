@@ -2004,6 +2004,38 @@ function enumByField(ctx: CheckContext): void {
   if (checked === 0) ctx.skip(`matrix 没有覆盖材料中的任何「${byField}」值，本条未执行`)
 }
 
+/** `setParity` — the register's key set must equal an external key list. */
+function setParity(ctx: CheckContext): void {
+  const keyField = str(ctx.params, 'keyField', 'clause')
+  const expectedField = str(ctx.params, 'expectedField', 'expectedClauses')
+  const expectedRaw = (ctx.input.header[expectedField] ?? '').trim()
+  if (expectedRaw === '') {
+    ctx.skip(`材料没有「${expectedField}」外部清单，本条不适用`)
+    return
+  }
+  const expected = expectedRaw.split(/[,;，；\n]/u).map((item) => item.trim()).filter((item) => item !== '')
+  if (expected.length === 0) {
+    ctx.skip(`「${expectedField}」为空，本条不适用`)
+    return
+  }
+  const actualRows = ctx.input.rows.filter((row) => filled(valueOf(ctx.input, row, keyField)))
+  if (actualRows.length === 0) {
+    ctx.skip(`材料没有「${keyField}」列的有效行，本条不适用`)
+    return
+  }
+  const actual = new Set(actualRows.map((row) => valueOf(ctx.input, row, keyField)!.trim()))
+  const expectedSet = new Set(expected)
+  for (const key of expectedSet) {
+    if (actual.has(key)) continue
+    ctx.add({ row: 0, field: keyField }, `外部清单中的「${key}」在台账中没有对应行`, `台账应包含外部清单的每一条`, '补登缺失的要求/响应行；本条只核对键集合，不判断响应内容')
+  }
+  for (const key of actual) {
+    if (expectedSet.has(key)) continue
+    const row = actualRows.find((item) => valueOf(ctx.input, item, keyField)!.trim() === key)
+    ctx.add({ row: row?.row ?? 0, field: keyField }, `台账中的「${key}」不在外部清单中`, `台账键应来自外部清单`, '核对是否多登或条款号抄错；本条只核对键集合')
+  }
+}
+
 /** Run one check by its declared kind. */
 function runOneCheck(ctx: CheckContext): void {
   const kind = str(ctx.params, 'kind')
@@ -2016,6 +2048,8 @@ function runOneCheck(ctx: CheckContext): void {
       return enumCheck(ctx)
     case 'enumByField':
       return enumByField(ctx)
+    case 'setParity':
+      return setParity(ctx)
     case 'pattern':
       return patternCheck(ctx)
     case 'date':
