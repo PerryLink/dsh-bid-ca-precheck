@@ -86,6 +86,11 @@ dsh plugin --profile <name> add dsh-bid-ca-precheck
 
    ![dsh-bid-ca-precheck 首次运行的真实输出](docs/assets/quickstart.png)
 
+![dsh-bid-ca-precheck 首次运行的真实输出](docs/assets/dsh-bid-ca-precheck-demo.gif)
+
+*本仓库一次真实运行的动图回放。*
+
+
 **卸载**：`dsh plugin --profile <name> remove dsh-bid-ca-precheck`（或从 profile patch 删掉该行）。
 
 <details>

@@ -86,6 +86,11 @@ It does not decide whether a bid is valid, whether it should be rejected, whethe
 
    ![Real output of the first run of dsh-bid-ca-precheck](docs/assets/quickstart.png)
 
+![Real output of the first run of dsh-bid-ca-precheck](docs/assets/dsh-bid-ca-precheck-demo.gif)
+
+*Animated replay of a real run recorded in this repository.*
+
+
 **Uninstall**: `dsh plugin --profile <name> remove dsh-bid-ca-precheck` (or remove the row from the profile patch).
 
 <details>

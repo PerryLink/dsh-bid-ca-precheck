@@ -86,6 +86,11 @@ dsh plugin --profile <name> add dsh-bid-ca-precheck
 
    ![dsh-bid-ca-precheck के पहले रन का वास्तविक आउटपुट](docs/assets/quickstart.png)
 
+![dsh-bid-ca-precheck के पहले रन का वास्तविक आउटपुट](docs/assets/dsh-bid-ca-precheck-demo.gif)
+
+*इस रिपॉज़िटरी में दर्ज असली रन का एनिमेटेड रीप्ले।*
+
+
 **अनइंस्टॉल**: `dsh plugin --profile <name> remove dsh-bid-ca-precheck` (या प्रोफ़ाइल patch से वह पंक्ति हटा दें)।
 
 <details>

@@ -86,6 +86,11 @@ No decide si una oferta es válida, si debe rechazarse, si una respuesta constit
 
    ![Salida real de la primera ejecución de dsh-bid-ca-precheck](docs/assets/quickstart.png)
 
+![Salida real de la primera ejecución de dsh-bid-ca-precheck](docs/assets/dsh-bid-ca-precheck-demo.gif)
+
+*Repetición animada de una ejecución real registrada en este repositorio.*
+
+
 **Desinstalar**: `dsh plugin --profile <name> remove dsh-bid-ca-precheck` (o elimina la fila del patch del perfil).
 
 <details>
