@@ -11,6 +11,8 @@
 
 A register-shaped checker for DeepSeek Harness: it reads one bid compliance response register (the tender's requirements and the bidder's responses, keyed by the register's own column names in Chinese or English), applies a versioned rule pack (BC-001..BC-006) rule by rule, and lists only the differences it can point to inside the material — no compliance verdict, no liability finding.
 
+Last verified on DeepSeek Harness `dsh-v0.2.3-alpha.1` (2026-11-22).
+
 [Install](#three-step-setup) · [Configuration](#configuration) · [FAQ](#faq) · [简体中文](README.md) · [English](README.en.md) · [Español](README.es.md) · [Português](README.pt.md) · [हिन्दी](README.hi.md)
 
 [![License](https://img.shields.io/badge/license-Apache--2.0-3366CC?style=flat-square&labelColor=2B3245)](LICENSE)
@@ -89,7 +91,6 @@ It does not decide whether a bid is valid, whether it should be rejected, whethe
 ![Real output of the first run of dsh-bid-ca-precheck](docs/assets/dsh-bid-ca-precheck-demo.gif)
 
 *Animated replay of a real run recorded in this repository.*
-
 
 **Uninstall**: `dsh plugin --profile <name> remove dsh-bid-ca-precheck` (or remove the row from the profile patch).
 

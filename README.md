@@ -11,6 +11,8 @@
 
 面向 DeepSeek Harness 的台账型核查插件：读取一份投标符合性响应台账（招标要求与投标响应，按台账自己的中英文列名取值），套用随包的版本化规则包（BC-001..BC-006）逐条核对，只列材料内部能指认的差异，不判合规、不认定责任。
 
+最近一次核验：DeepSeek Harness `dsh-v0.2.3-alpha.1`（2026-11-22）。
+
 [安装](#三步上手) · [配置](#配置) · [FAQ](#faq) · [简体中文](README.md) · [English](README.en.md) · [Español](README.es.md) · [Português](README.pt.md) · [हिन्दी](README.hi.md)
 
 [![License](https://img.shields.io/badge/license-Apache--2.0-3366CC?style=flat-square&labelColor=2B3245)](LICENSE)
@@ -89,7 +91,6 @@ dsh plugin --profile <name> add dsh-bid-ca-precheck
 ![dsh-bid-ca-precheck 首次运行的真实输出](docs/assets/dsh-bid-ca-precheck-demo.gif)
 
 *本仓库一次真实运行的动图回放。*
-
 
 **卸载**：`dsh plugin --profile <name> remove dsh-bid-ca-precheck`（或从 profile patch 删掉该行）。
 
