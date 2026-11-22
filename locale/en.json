@@ -1,6 +1,6 @@
 {
   "meta": {
     "title": "Bid compliance precheck",
-    "description": "投标文件符合性预检（按招标文件逐条核对响应情况，仅提示差异，不作出定性结论）"
+    "description": "Check a bid compliance response register for completeness and internal consistency — get a list of what is inconsistent, where, and what to fix; the verdict stays with the evaluation committee."
   }
 }

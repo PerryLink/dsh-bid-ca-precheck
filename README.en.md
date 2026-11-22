@@ -7,6 +7,8 @@
 
 # dsh-bid-ca-precheck
 
+Current version `0.2.16`.
+
 **Check a bid compliance response register for completeness and internal consistency — get a list of what is inconsistent, where, and what to fix; the verdict stays with the evaluation committee.**
 
 A register-shaped checker for DeepSeek Harness: it reads one bid compliance response register (the tender's requirements and the bidder's responses, keyed by the register's own column names in Chinese or English), applies a versioned rule pack (BC-001..BC-006) rule by rule, and lists only the differences it can point to inside the material — no compliance verdict, no liability finding.
